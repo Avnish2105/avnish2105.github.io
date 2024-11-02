@@ -23,6 +23,7 @@ In 2024, I transitioned to the control department and worked extensively with RO
 
 ### 🛠️ Project Management
 <img src="https://img.shields.io/badge/Project%20Management-0078D4?style=for-the-badge&logo=microsoftteams&logoColor=white" style="border-radius: 12px;">
+Learned and applied multiple project management systems, such as agile sprints, through observation and direct implementation. I continue enhancing my skills with experiences, research papers, and guidance from alumni.
 
 ## Social Links
 Feel free to connect with me on social media:
@@ -37,10 +38,21 @@ Feel free to connect with me on social media:
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" style="border-radius: 12px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
 </a>
 
-Learned and applied multiple project management systems, such as agile sprints, through observation and direct implementation. I continue enhancing my skills with experiences, research papers, and guidance from alumni.
+## LinkedIn Profile
+<div style="border: 2px solid #0A66C2; border-radius: 12px; padding: 10px; display: flex; align-items: center; gap: 10px; background-color: #f0f8ff;">
+    <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">
+    <div>
+        <h3 style="margin: 0;">Avnish Deshmukh</h3>
+        <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Electronics | ROS2 | Project Management</p>
+        <a href="https://www.linkedin.com/in/avnish-deshmukh" style="text-decoration: none; background-color: #0A66C2; color: white; padding: 5px 10px; border-radius: 8px;">View LinkedIn Profile</a>
+    </div>
+</div>
 
-## Contact
-You can reach me at [avnishd2105@gmail.com](mailto:avnishd2105@gmail.com).
+## Contact Me
+<a href="mailto:avnishd2105@gmail.com">
+    <img src="https://img.shields.io/badge/Contact%20Me-0078D4?style=for-the-badge&logo=mail&logoColor=white" style="border-radius: 12px;">
+</a>
+You can also reach me at [avnishd2105@gmail.com](mailto:avnishd2105@gmail.com).
 
 <footer style="text-align: center; margin-top: 20px;">
     © 2024 Avnish Deshmukh | All rights reserved. | "Exploring technology, one project at a time."
