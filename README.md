@@ -1,6 +1,7 @@
 # Welcome to My Personal Website
 
 ## About Me
+
 <div style="display: flex; align-items: center;">
     <img src="./profile_picture.jpej" alt="Profile Picture" style="border-radius: 50%; width: 150px; height: 150px; margin-right: 20px;">
     <div>
