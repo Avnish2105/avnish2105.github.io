@@ -159,8 +159,3 @@ You can also reach me at [avnishd2105@gmail.com](mailto:avnishd2105@gmail.com).
 <footer style="text-align: center; margin-top: 20px;">
     © 2024 Avnish Deshmukh | All rights reserved. | "Exploring technology, one project at a time."
 </footer>
-
-/* Styling for links, headers, buttons, etc. */
-a, h1, h2, h3, h4, h5, h6 {
-    color: #bb86fc;
-}
