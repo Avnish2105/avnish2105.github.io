@@ -160,13 +160,6 @@ You can also reach me at [avnishd2105@gmail.com](mailto:avnishd2105@gmail.com).
     © 2024 Avnish Deshmukh | All rights reserved. | "Exploring technology, one project at a time."
 </footer>
 
-```css
-/* Dark mode as default */
-body {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
 /* Styling for links, headers, buttons, etc. */
 a, h1, h2, h3, h4, h5, h6 {
     color: #bb86fc;
