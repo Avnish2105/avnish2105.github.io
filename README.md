@@ -9,98 +9,6 @@
     </div>
 </div>
 
-## My Experience Timeline
-
-<div style="position: relative; max-width: 600px; margin: auto; padding: 20px; border-left: 2px solid #0078D4;">
-
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -50px; top: 0;">2005</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Born</h3>
-            <p>2005</p>
-        </div>
-    </div>
-    
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -50px; top: 0;">2021</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Completed 10th Grade</h3>
-            <p>Stella Maris School</p>
-        </div>
-    </div>
-    
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -50px; top: 0;">2022</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Started Diploma</h3>
-            <p>MIT World Peace University</p>
-        </div>
-    </div>
-
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -50px; top: 0;">2022</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Participated in Robocon Air 4</h3>
-            <p>2022</p>
-        </div>
-    </div>
-
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -50px; top: 0;">2023</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Participated in Robocon Air 2</h3>
-            <p>2023</p>
-        </div>
-    </div>
-
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -50px; top: 0;">2024</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Participated in Robocon Air 3</h3>
-            <p>2024</p>
-        </div>
-    </div>
-
-    <div style="margin: 20px 0; position: relative; animation: fadeIn 1s;">
-        <div style="font-weight: bold; color: #FF6F00; position: absolute; left: -50px; top: 0;">2025</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #FF6F00; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3 style="color: #FF6F00;">Aiming for Robocon Air 1</h3>
-            <p>2025</p>
-        </div>
-    </div>
-
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -50px; top: 0;">2024</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Learning ROS2</h3>
-            <p>From 2024</p>
-        </div>
-    </div>
-
-</div>
-
-<style>
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-</style>
-
-
 ## Skills
 
 ### ⚡ Electronics and Circuit Design
@@ -117,6 +25,108 @@ In 2024, I transitioned to the control department and worked extensively with RO
 
 <img src="https://img.shields.io/badge/Project%20Management-0078D4?style=for-the-badge&logo=microsoftteams&logoColor=white" style="border-radius: 12px;">
 Learned and applied multiple project management systems, such as agile sprints, through observation and direct implementation. I continue enhancing my skills with experiences, research papers, and guidance from alumni.
+
+## Fast Forwarding through my Timeline
+
+<div style="position: relative; max-width: 600px; margin: auto; padding: 20px; border-left: 2px solid #0078D4;">
+    
+    <div style="margin: 20px 0; position: relative;">
+        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2005</div>
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Born</h3>
+            <p>2005</p>
+        </div>
+    </div>
+    
+    <div style="margin: 20px 0; position: relative;">
+        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2021</div>
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Completed 10th Grade</h3>
+            <p>Stella Maris School</p>
+        </div>
+    </div>
+    
+    <div style="margin: 20px 0; position: relative;">
+        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2022</div>
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Started Diploma</h3>
+            <p>MIT World Peace University</p>
+        </div>
+    </div>
+
+    <div style="margin: 20px 0; position: relative;">
+        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2022</div>
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Participated in DD Robocon Air 4</h3>
+            <p>2022</p>
+        </div>
+    </div>
+
+    <div style="margin: 20px 0; position: relative;">
+        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2023</div>
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Participated in DD Robocon Air 2</h3>
+            <p>2023</p>
+        </div>
+    </div>
+
+    <div style="margin: 20px 0; position: relative;">
+        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2024</div>
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Participated in DD Robocon Air 3</h3>
+            <p>2024</p>
+        </div>
+    </div>
+
+    <div style="margin: 20px 0; position: relative; animation: bounce 1s infinite alternate;">
+        <div style="font-weight: bold; color: #FF6F00; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2025</div>
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #FF6F00; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3 style="color: #FF6F00;">Aiming for DD Robocon Air 1</h3>
+            <p>2025</p>
+        </div>
+    </div>
+
+    <div style="margin: 20px 0; position: relative;">
+        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2024</div>
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Learning ROS2</h3>
+            <p>From 2024</p>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    @keyframes bounce {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-5px);
+        }
+    }
+</style>
+
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
 
 ## Social Links
 <div style="display: flex; justify-content: space-between; gap: 20px; margin-top: 20px;">
