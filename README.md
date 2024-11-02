@@ -26,28 +26,35 @@ In 2024, I transitioned to the control department and worked extensively with RO
 Learned and applied multiple project management systems, such as agile sprints, through observation and direct implementation. I continue enhancing my skills with experiences, research papers, and guidance from alumni.
 
 ## Social Links
-Feel free to connect with me on social media:
-
-<div style="display: flex; justify-content: space-between; margin-top: 20px;">
-    <div style="border: 2px solid #0A66C2; border-radius: 12px; padding: 10px; flex: 1; margin-right: 10px; background-color: #f0f8ff;">
+<div style="display: flex; justify-content: space-between; gap: 20px; margin-top: 20px;">
+    <!-- LinkedIn Profile Box -->
+    <div style="border: 2px solid #0A66C2; border-radius: 12px; padding: 10px; flex: 1; display: flex; align-items: center; gap: 10px; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
         <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">
-        <h3 style="margin: 0;">Avnish Deshmukh</h3>
-        <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Electronics | ROS2 | Project Management</p>
-        <a href="https://www.linkedin.com/in/avnish-deshmukh" style="text-decoration: none; background-color: #0A66C2; color: white; padding: 5px 10px; border-radius: 8px;">View LinkedIn Profile</a>
+        <div>
+            <h3 style="margin: 0;">Avnish Deshmukh</h3>
+            <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Electronics | ROS2 | Project Management</p>
+            <a href="https://www.linkedin.com/in/avnish-deshmukh" style="text-decoration: none; background-color: #0A66C2; color: white; padding: 5px 8px; border-radius: 8px; font-size: 0.9em;">View LinkedIn</a>
+        </div>
     </div>
 
-    <div style="border: 2px solid #181717; border-radius: 12px; padding: 10px; flex: 1; margin-right: 10px; background-color: #f0f8ff;">
+    <!-- GitHub Profile Box -->
+    <div style="border: 2px solid #181717; border-radius: 12px; padding: 10px; flex: 1; display: flex; align-items: center; gap: 10px; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
         <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">
-        <h3 style="margin: 0;">Avnish Deshmukh</h3>
-        <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Exploring code and hardware</p>
-        <a href="https://github.com/avnishd2105" style="text-decoration: none; background-color: #181717; color: white; padding: 5px 10px; border-radius: 8px;">View GitHub Profile</a>
+        <div>
+            <h3 style="margin: 0;">Avnish Deshmukh</h3>
+            <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Exploring code and hardware</p>
+            <a href="https://github.com/avnishd2105" style="text-decoration: none; background-color: #181717; color: white; padding: 5px 8px; border-radius: 8px; font-size: 0.9em;">View GitHub</a>
+        </div>
     </div>
 
-    <div style="border: 2px solid #E4405F; border-radius: 12px; padding: 10px; flex: 1; background-color: #f0f8ff;">
+    <!-- Instagram Profile Box -->
+    <div style="border: 2px solid #E4405F; border-radius: 12px; padding: 10px; flex: 1; display: flex; align-items: center; gap: 10px; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
         <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">
-        <h3 style="margin: 0;">Avnish Deshmukh</h3>
-        <p style="margin: 0;">Capturing moments & sharing my journey in tech and robotics</p>
-        <a href="https://www.instagram.com/av.nish2105/" style="text-decoration: none; background-color: #E4405F; color: white; padding: 5px 10px; border-radius: 8px;">View Instagram Profile</a>
+        <div>
+            <h3 style="margin: 0;">Avnish Deshmukh</h3>
+            <p style="margin: 0;">Capturing moments & sharing my journey in tech and robotics</p>
+            <a href="https://www.instagram.com/av.nish2105/" style="text-decoration: none; background-color: #E4405F; color: white; padding: 5px 8px; border-radius: 8px; font-size: 0.9em;">View Instagram</a>
+        </div>
     </div>
 </div>
 
