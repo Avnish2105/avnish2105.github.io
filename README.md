@@ -1,1 +1,1 @@
-# Avnish2105.github.io
+👋 Hi! I am Avnish Deshmukh — a 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. I love solving complex problems and pushing the boundaries of technology. Living with ⚡ epilepsy has taught me resilience and has been an integral part of my journey, shaping who I am today. Welcome to my personal website, where I share my projects, experiences, and insights from the world of robotics and beyond! 🚀
