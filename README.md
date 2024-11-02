@@ -12,13 +12,32 @@
 ## Social Links
 Feel free to connect with me on social media:
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/avnishd2105)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/avnish-deshmukh)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/av.nish2105/)
+<a href="https://github.com/avnishd2105" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" style="border-radius: 12px;">
+</a>
+<a href="https://www.linkedin.com/in/avnish-deshmukh" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" style="border-radius: 12px;">
+</a>
+<a href="https://www.instagram.com/av.nish2105/" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" style="border-radius: 12px;">
+</a>
 
-## Projects
-Here are some of the projects I've been working on:
-(to be updated)
+## Skills
+
+### ⚡ Electronics and Circuit Design
+<img src="https://img.shields.io/badge/Electronics-FF6F00?style=for-the-badge&logo=arduino&logoColor=white" style="border-radius: 12px;">
+
+Joined the MIT Tech team in 2022 and spent two years developing expertise in electronics. Learned circuit design, debugging techniques, and now enjoy building robots and spending time perfecting them through thorough troubleshooting.
+
+### 🤖 Robot Operating System (ROS2)
+<img src="https://img.shields.io/badge/ROS2-22314E?style=for-the-badge&logo=ros&logoColor=white" style="border-radius: 12px;">
+
+In 2024, I transitioned to the control department and worked extensively with ROS2, collaborating with my team on implementing various hardware interfaces and mastering ROS2 fundamentals.
+
+### 🛠️ Project Management
+<img src="https://img.shields.io/badge/Project%20Management-0078D4?style=for-the-badge&logo=microsoftteams&logoColor=white" style="border-radius: 12px;">
+
+Learned and applied multiple project management systems, such as agile sprints, through observation and direct implementation. I continue enhancing my skills with experiences, research papers, and guidance from alumni.
 
 ## Contact
 You can reach me at [avnishd2105@gmail.com](mailto:avnishd2105@gmail.com).
