@@ -64,19 +64,6 @@ Learned and applied multiple project management systems, such as agile sprints, 
 
 ## Contact Me
 <a href="mailto:avnishd2105@gmail.com">
-    <img src="https://img.shields.io/badge/Contact%20Me-0078D4?style=for-the-badge&logo=mail&logoColor=white" style="border-radius
-
-
-
-
-
-
-
-Continue generating
-
-
-## Contact Me
-<a href="mailto:avnishd2105@gmail.com">
     <img src="https://img.shields.io/badge/Contact%20Me-0078D4?style=for-the-badge&logo=mail&logoColor=white" style="border-radius: 12px;">
 </a>
 
