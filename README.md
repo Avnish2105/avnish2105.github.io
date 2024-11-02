@@ -33,6 +33,7 @@ Learned and applied multiple project management systems, such as agile sprints, 
         <div>
             <h3 style="margin: 0;">Avnish Deshmukh</h3>
             <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Electronics | ROS2 | Project Management</p>
+            <p style="margin: 0; margin-top: 10px;"> </p> <!-- Adds spacing -->
             <a href="https://www.linkedin.com/in/avnish-deshmukh" style="text-decoration: none; background-color: #0A66C2; color: white; padding: 5px 8px; border-radius: 8px; font-size: 0.9em;">View LinkedIn</a>
         </div>
     </div>
@@ -43,6 +44,7 @@ Learned and applied multiple project management systems, such as agile sprints, 
         <div>
             <h3 style="margin: 0;">Avnish Deshmukh</h3>
             <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Exploring code and hardware</p>
+            <p style="margin: 0; margin-top: 10px;"> </p> <!-- Adds spacing -->
             <a href="https://github.com/avnishd2105" style="text-decoration: none; background-color: #181717; color: white; padding: 5px 8px; border-radius: 8px; font-size: 0.9em;">View GitHub</a>
         </div>
     </div>
@@ -53,6 +55,7 @@ Learned and applied multiple project management systems, such as agile sprints, 
         <div>
             <h3 style="margin: 0;">Avnish Deshmukh</h3>
             <p style="margin: 0;">Capturing moments & sharing my journey in tech and robotics</p>
+            <p style="margin: 0; margin-top: 10px;"> </p> <!-- Adds spacing -->
             <a href="https://www.instagram.com/av.nish2105/" style="text-decoration: none; background-color: #E4405F; color: white; padding: 5px 8px; border-radius: 8px; font-size: 0.9em;">View Instagram</a>
         </div>
     </div>
