@@ -52,17 +52,8 @@ Learned and applied multiple project management systems, such as agile sprints, 
         <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2022</div>
         <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
         <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Started Diploma</h3>
-            <p>MIT World Peace University</p>
-        </div>
-    </div>
-
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2022</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Participated in DD Robocon Air 4</h3>
-            <p>2022</p>
+            <h3>Started Diploma, joined MIT Tech Team Robocon in branch electronics and Participated in DD Robocon Air 4</h3>
+            <p>MIT World Peace University<br>2022</p>
         </div>
     </div>
 
@@ -79,7 +70,7 @@ Learned and applied multiple project management systems, such as agile sprints, 
         <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2024</div>
         <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
         <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Participated in DD Robocon Air 3</h3>
+            <h3>Started with ROS2 at MIT Tech Team and Participated in DD Robocon Air 3  </h3>
             <p>2024</p>
         </div>
     </div>
@@ -93,15 +84,6 @@ Learned and applied multiple project management systems, such as agile sprints, 
         </div>
     </div>
 
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -60px; top: 0; font-size: 0.9em;">2024</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
-            <h3>Learning ROS2</h3>
-            <p>From 2024</p>
-        </div>
-    </div>
-
 </div>
 
 <style>
@@ -111,19 +93,6 @@ Learned and applied multiple project management systems, such as agile sprints, 
         }
         100% {
             transform: translateY(-5px);
-        }
-    }
-</style>
-
-<style>
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
         }
     }
 </style>
