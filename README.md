@@ -22,6 +22,7 @@ Joined the MIT Tech team in 2022 and spent two years developing expertise in ele
 In 2024, I transitioned to the control department and worked extensively with ROS2, collaborating with my team on implementing various hardware interfaces and mastering ROS2 fundamentals.
 
 ### 🛠️ Project Management
+
 <img src="https://img.shields.io/badge/Project%20Management-0078D4?style=for-the-badge&logo=microsoftteams&logoColor=white" style="border-radius: 12px;">
 Learned and applied multiple project management systems, such as agile sprints, through observation and direct implementation. I continue enhancing my skills with experiences, research papers, and guidance from alumni.
 
@@ -66,6 +67,7 @@ Learned and applied multiple project management systems, such as agile sprints, 
 <a href="mailto:avnishd2105@gmail.com">
     <img src="https://img.shields.io/badge/Contact%20Me-0078D4?style=for-the-badge&logo=mail&logoColor=white" style="border-radius: 12px;">
 </a>
+
 You can also reach me at [avnishd2105@gmail.com](mailto:avnishd2105@gmail.com).
 
 <footer style="text-align: center; margin-top: 20px;">
