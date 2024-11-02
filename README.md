@@ -5,8 +5,54 @@
     <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 200px; height: 200px; margin-right: 20px;">
     <div>
         <h2>Robotics Enthusiast & Tech Innovator</h2>
-        <p>👋 a 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. I love solving complex problems and pushing the boundaries of technology. Living with ⚡ epilepsy has taught me resilience and has been an integral part of my journey, shaping who I am today. Welcome to my personal website, where I share my projects, experiences, and insights from the world of robotics and beyond! 🚀</p>
+        <p>a 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. I love solving complex problems and pushing the boundaries of technology. Living with ⚡ epilepsy has taught me resilience and has been an integral part of my journey, shaping who I am today. Welcome to my personal website, where I share my projects, experiences, and insights from the world of robotics and beyond! 🚀</p>
     </div>
+</div>
+
+## My Experience Timeline
+
+<div style="position: relative; max-width: 600px; margin: auto; padding: 20px; border-left: 2px solid #0078D4;">
+
+    <div style="margin: 20px 0; position: relative;">
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Born</h3>
+            <p>2005</p>
+        </div>
+    </div>
+    
+    <div style="margin: 20px 0; position: relative;">
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Completed 10th Grade</h3>
+            <p>Stella Maris School, 2021</p>
+        </div>
+    </div>
+    
+    <div style="margin: 20px 0; position: relative;">
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Started Diploma</h3>
+            <p>MIT World Peace University, 2022</p>
+        </div>
+    </div>
+    
+    <div style="margin: 20px 0; position: relative;">
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Joined Robocon</h3>
+            <p>Electronics (2022 & 2023)</p>
+        </div>
+    </div>
+    
+    <div style="margin: 20px 0; position: relative;">
+        <div style="position: absolute; left: -7px; top: 0; width: 14px; height: 14px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
+        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 20px;">
+            <h3>Learning ROS2</h3>
+            <p>From 2024</p>
+        </div>
+    </div>
+
 </div>
 
 ## Skills
