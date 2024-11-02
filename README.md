@@ -39,11 +39,6 @@ In 2024, I transitioned to the control department and worked extensively with RO
 
 Learned and applied multiple project management systems, such as agile sprints, through observation and direct implementation. I continue enhancing my skills with experiences, research papers, and guidance from alumni.
 
-## Projects
-### Robotic Arm Control System
-![Project Image](link_to_image.jpg)  
-Developed a custom robotic arm control interface using ROS2, enabling precise real-time movement. [View on GitHub](link)
-
 ## Contact
 You can reach me at [avnishd2105@gmail.com](mailto:avnishd2105@gmail.com).
 
