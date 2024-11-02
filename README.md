@@ -62,9 +62,26 @@ Learned and applied multiple project management systems, such as agile sprints, 
     </div>
 </div>
 
+<style>
+    .contact-button {
+        display: inline-block;
+        border-radius: 12px;
+        background-color: #0078D4; /* Button color */
+        color: white; /* Text color */
+        text-decoration: none; /* Remove underline from link */
+        padding: 10px 20px; /* Padding for the button */
+        transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+    }
+
+    .contact-button:hover {
+        background-color: #005999; /* Darker shade for hover */
+        transform: scale(1.05); /* Slightly increase size on hover */
+    }
+</style>
+
 ## Contact Me
-<a href="mailto:avnishd2105@gmail.com">
-    <img src="https://img.shields.io/badge/Contact%20Me-0078D4?style=for-the-badge&logo=mail&logoColor=white" style="border-radius: 12px;">
+<a class="contact-button" href="mailto:avnishd2105@gmail.com">
+    Contact Me
 </a>
 
 You can also reach me at [avnishd2105@gmail.com](mailto:avnishd2105@gmail.com).
