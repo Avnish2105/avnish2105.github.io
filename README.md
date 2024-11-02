@@ -29,9 +29,9 @@ Learned and applied multiple project management systems, such as agile sprints, 
 ## Social Links
 <div style="display: flex; justify-content: space-between; gap: 20px; margin-top: 20px;">
     <!-- LinkedIn Profile Box -->
-    <div style="border: 2px solid #0A66C2; border-radius: 12px; padding: 10px; flex: 1; display: flex; align-items: center; gap: 10px; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">
-        <div>
+    <div style="border: 2px solid #0A66C2; border-radius: 12px; padding: 10px; flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://img.icons8.com/color/48/000000/linkedin-circled.png" alt="LinkedIn Logo" style="border-radius: 50%; margin-bottom: 10px;">
+        <div style="text-align: center;">
             <h3 style="margin: 0;">Avnish Deshmukh</h3>
             <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Electronics | ROS2 | Project Management</p>
             <p style="margin: 0; margin-top: 10px;"> </p> <!-- Adds spacing -->
@@ -40,9 +40,9 @@ Learned and applied multiple project management systems, such as agile sprints, 
     </div>
 
     <!-- GitHub Profile Box -->
-    <div style="border: 2px solid #181717; border-radius: 12px; padding: 10px; flex: 1; display: flex; align-items: center; gap: 10px; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">
-        <div>
+    <div style="border: 2px solid #181717; border-radius: 12px; padding: 10px; flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://img.icons8.com/material-rounded/48/000000/github.png" alt="GitHub Logo" style="border-radius: 50%; margin-bottom: 10px;">
+        <div style="text-align: center;">
             <h3 style="margin: 0;">Avnish Deshmukh</h3>
             <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Exploring code and hardware</p>
             <p style="margin: 0; margin-top: 10px;"> </p> <!-- Adds spacing -->
@@ -51,9 +51,9 @@ Learned and applied multiple project management systems, such as agile sprints, 
     </div>
 
     <!-- Instagram Profile Box -->
-    <div style="border: 2px solid #E4405F; border-radius: 12px; padding: 10px; flex: 1; display: flex; align-items: center; gap: 10px; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 50px; height: 50px;">
-        <div>
+    <div style="border: 2px solid #E4405F; border-radius: 12px; padding: 10px; flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram Logo" style="border-radius: 50%; margin-bottom: 10px;">
+        <div style="text-align: center;">
             <h3 style="margin: 0;">Avnish Deshmukh</h3>
             <p style="margin: 0;">Capturing moments & sharing my journey in tech and robotics</p>
             <p style="margin: 0; margin-top: 10px;"> </p> <!-- Adds spacing -->
@@ -61,6 +61,18 @@ Learned and applied multiple project management systems, such as agile sprints, 
         </div>
     </div>
 </div>
+
+## Contact Me
+<a href="mailto:avnishd2105@gmail.com">
+    <img src="https://img.shields.io/badge/Contact%20Me-0078D4?style=for-the-badge&logo=mail&logoColor=white" style="border-radius
+
+
+
+
+
+
+
+Continue generating
 
 
 ## Contact Me
