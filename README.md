@@ -12,12 +12,13 @@
 ## Social Links
 Feel free to connect with me on social media:
 
-- [GitHub](https://github.com/yourusername)
-- [LinkedIn](https://www.linkedin.com/in/yourusername)
-- [Twitter](https://twitter.com/yourusername)
+- [GitHub](https://github.com/avnishd2105)
+- [LinkedIn](https://www.linkedin.com/in/avnish-deshmukh)
+- [Instagram](https://www.instagram.com/av.nish2105/)
 
 ## Projects
 Here are some of the projects I've been working on:
+
 (to be updated)
 
 ## Contact
