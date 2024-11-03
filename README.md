@@ -2,6 +2,33 @@
     <h1>👋 Hi! I am Avnish Deshmukh</h1>
 </div>
 
+<button id="modeToggle" style="position: fixed; top: 20px; right: 20px;">Toggle Mode</button>
+
+<script>
+    const toggle = document.getElementById('modeToggle');
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+</script>
+
+<style>
+    .dark-mode {
+        background-color: #333;
+        color: #f0f0f0;
+    }
+    .dark-mode a {
+        color: #f0f0f0;
+    }
+</style>
+
+
+<nav style="display: flex; justify-content: center; gap: 20px; padding: 10px; background-color: #333; color: white;">
+    <a href="#about" style="color: white; text-decoration: none;">About</a>
+    <a href="#skills" style="color: white; text-decoration: none;">Skills</a>
+    <a href="#journey" style="color: white; text-decoration: none;">Journey</a>
+    <a href="#contact" style="color: white; text-decoration: none;">Contact</a>
+</nav>
+
 <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin: 20px 0;">
     <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 200px; height: 200px; margin: 10px;">
     <div style="max-width: 600px; text-align: center;">
