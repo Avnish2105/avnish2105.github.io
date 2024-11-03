@@ -216,7 +216,6 @@
     <img id="profilePicture" src="./profile_picture.jpeg" alt="Profile Picture" style="width: 200px; height: auto; transform: scale(0); transition: transform 0.5s ease-in-out;" />
     <div class="profile-text">
         <h2 style="color: #0078D4;">Hi! I am Avnish Deshmukh.</h2>
-        <p>Your description goes here.</p>
         <h2 style="color: #0078D4;">Robotics Enthusiast & Tech Innovator</h2>
         <p>
             A 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. 
