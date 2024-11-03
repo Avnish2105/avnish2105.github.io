@@ -337,7 +337,7 @@
 </style>
 
     <!-- Journey Timeline -->
-    <div id="journeyTimeline" style="max-width: 800px; margin: auto;">
+    <div id="journeyTimeline" style="max-width: 800px; margin-top: 250px;">
         <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
     
         <!-- Timeline Events -->
