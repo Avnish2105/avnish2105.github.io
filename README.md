@@ -285,11 +285,10 @@
     
         .moving-event {
             animation: bounce 1s infinite;
-            color: #0078D4; /* Optional: change color for the future event */
-            font-weight: bold; /* Optional: make it bold */
+            color: #FF4500; /* Change to an eye-catching color, like orange-red */
+            font-weight: bold; /* Make it bold */
         }
     </style>
-
 
 
     <!-- Social Links Section -->
