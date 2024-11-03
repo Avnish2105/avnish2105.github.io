@@ -324,7 +324,7 @@
 .logo-slider {
     display: flex;
     flex-wrap: nowrap; /* Prevents wrapping */
-    animation: scroll 30s linear infinite;
+    animation: scroll 20s linear infinite;
     gap: 20px; /* Ensure there's space between logo groups */
 }
 
@@ -333,7 +333,7 @@
             transform: translateX(0);
         }
         100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
         }
     }
 </style>
