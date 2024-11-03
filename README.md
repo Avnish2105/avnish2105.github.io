@@ -291,15 +291,15 @@
 </div>
 
 <style>
-    /* Override theme's default centering and padding */
+    /* Reset default Cayman theme alignment */
     .logo-slider-container {
         width: 100vw;
         overflow: hidden;
         background-color: #f0f0f0;
-        padding: 0;
-        margin: 0 auto; /* Center horizontally while using full width */
-        position: relative;
-        left: 0;
+        margin: 0; /* Remove any extra margin */
+        padding: 0; /* Remove any extra padding */
+        position: absolute; /* Force alignment */
+        left: 0; /* Start at the very left edge */
     }
 
     .logo-slider {
@@ -309,7 +309,7 @@
 
     .logo-group {
         display: flex;
-        gap: 20px; /* Space between each logo */
+        gap: 20px;
     }
 
     .logo-slider img {
