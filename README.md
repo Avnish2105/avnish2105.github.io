@@ -351,71 +351,107 @@
 
 </style>
 
-    <!-- Journey Timeline -->
-    <div id="journeyTimeline" style="max-width: 800px; margin-top: 200px;">
-        <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
-    
-        <!-- Timeline Events -->
-        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
-            <div style="flex: 1; min-width: 120px;">
-                <h3>Born</h3>
-                <p>2005</p>
-            </div>
-        </div>
-    
-        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
-            <div style="flex: 1; min-width: 120px;">
-                <h3>Completed 10th Grade</h3>
-                <p>Stella Maris School</p>
-            </div>
-        </div>
-    
-        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
-            <div style="flex: 1; min-width: 120px;">
-                <h3>Started Diploma & Joined MIT Tech Team</h3>
-                <p>Participated in DD Robocon Air 4<br>MIT World Peace University</p>
-            </div>
-        </div>
-    
-        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
-            <div style="flex: 1; min-width: 120px;">
-                <h3>Participated in DD Robocon Air 2</h3>
-                <p>2023</p>
-            </div>
-        </div>
-    
-        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
-            <div style="flex: 1; min-width: 120px;">
-                <h3>Started with ROS2</h3>
-                <p>Participated in DD Robocon Air 3<br>2024</p>
-            </div>
-        </div>
-    
-        <div class="timeline-event moving-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
-            <div style="flex: 1; min-width: 120px;">
-                <h3>Aiming for DD Robocon Air 1</h3>
-                <p>2025</p>
-            </div>
+<div id="journeyTimeline" style="max-width: 800px; margin-top: 200px;">
+    <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
+
+    <!-- Timeline Events -->
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+        <div style="flex: 1; min-width: 120px;">
+            <h3>Born</h3>
+            <p>2005</p>
         </div>
     </div>
-    
-    <style>
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-    
-        .moving-event {
-            animation: bounce 1s infinite;
-            color: #FF4500; /* Change to an eye-catching color, like orange-red */
-            font-weight: bold; /* Make it bold */
-        }
-    </style>
 
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+        <div style="flex: 1; min-width: 120px;">
+            <h3>Completed 10th Grade</h3>
+            <p>Stella Maris School<br>2022</p>
+        </div>
+    </div>
+
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+        <div style="flex: 1; min-width: 120px;">
+            <h3>Started Diploma & Joined MIT Tech Team</h3>
+            <p>MIT World Peace University<br>2022</p>
+        </div>
+    </div>
+
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+        <div style="flex: 1; min-width: 120px;">
+            <h3>Participated in DD Robocon Air 4</h3>
+            <p>2022</p>
+        </div>
+    </div>
+
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+        <div style="flex: 1; min-width: 120px;">
+            <h3>Participated in DD Robocon Air 2</h3>
+            <p>2023</p>
+        </div>
+    </div>
+
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+        <div style="flex: 1; min-width: 120px;">
+            <h3>Started with ROS2</h3>
+            <p>Participated in DD Robocon Air 3<br>2024</p>
+        </div>
+    </div>
+
+    <div class="timeline-event moving-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+        <div style="flex: 1; min-width: 120px;">
+            <h3>Aiming for DD Robocon Air 1</h3>
+            <p>2025</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .timeline-event {
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .visible {
+        animation: fadeInUp 0.5s forwards;
+    }
+
+    .moving-event {
+        animation: bounce 1s infinite;
+        color: #FF4500; /* Change to an eye-catching color, like orange-red */
+        font-weight: bold; /* Make it bold */
+    }
+</style>
+
+<script>
+    document.addEventListener('scroll', function() {
+        const elements = document.querySelectorAll('.timeline-event');
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                el.classList.add('visible');
+            }
+        });
+    });
+</script>
 
     <!-- Social Links Section -->
     <div id="socialLinks">
