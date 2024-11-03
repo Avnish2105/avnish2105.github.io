@@ -453,7 +453,6 @@
     });
 </script>
 
-
     <!-- Social Links Section -->
     <div id="socialLinks">
         <!-- LinkedIn Profile Box -->
