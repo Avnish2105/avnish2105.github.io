@@ -510,7 +510,7 @@
 	
 	<style>
 	#cursor-trail {
-	    position: relative;
+	    position: fixed;
 	    width: 10px;
 	    height: 10px;
 	    border-radius: 50%;
@@ -522,7 +522,7 @@
 	</style>
 	
 	<script>
-	document.addEventListener('fixed', function(e) {
+	document.addEventListener('mousemove', function(e) {
 	    let cursorTrail = document.getElementById('cursor-trail');
 	    cursorTrail.style.left = e.clientX + 'px';
 	    cursorTrail.style.top = e.clientY + 'px';
