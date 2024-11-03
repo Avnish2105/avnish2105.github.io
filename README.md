@@ -345,7 +345,7 @@
 	        transform: translateX(0);
 	    }
 	    100% {
-	        transform: translateX(-100%); /* Scroll the entire width of the combined content */
+	        transform: translateX(-200%); /* Scroll the entire width of the combined content */
 	    }
 	}
 
