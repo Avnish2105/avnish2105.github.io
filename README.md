@@ -1,5 +1,6 @@
-
-## 👋 Hi! I am Avnish Deshmukh
+<div style="text-align: initial;">
+    <h1>👋 Hi! I am Avnish Deshmukh</h1>
+</div>
 
 <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin: 20px 0;">
     <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 200px; height: 200px; margin: 10px;">
