@@ -294,10 +294,10 @@
     .logo-slider-container {
         width: 100vw;
         overflow: hidden;
+        background-color: #f0f0f0;
         margin: 0;
         padding: 0;
-        height: 120px; /* Adjust to desired height */
-        position: relative; /* Keeps it in the document flow */
+        position: absolute;
         left: 0;
     }
 
@@ -308,7 +308,7 @@
 
     .logo-group {
         display: flex;
-        gap: 40px;
+        gap: 40px; /* Increased gap for more spacing between logos */
     }
 
     .logo-slider img {
@@ -326,7 +326,6 @@
         }
     }
 </style>
-
     <!-- Journey Timeline -->
     <div id="journeyTimeline" style="max-width: 800px; margin: auto;">
         <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
