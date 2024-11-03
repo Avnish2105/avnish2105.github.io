@@ -1,11 +1,11 @@
 # 👋Hi! I am Avnish Deshmukh
 
 ## About Me
-<div style="display: flex; align-items: center;">
-    <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 200px; height: 200px; margin-right: 20px;">
-    <div>
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 20px;">
+    <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 150px; height: 150px; margin-bottom: 15px;">
+    <div style="max-width: 600px; padding: 0 15px;">
         <h2>Robotics Enthusiast & Tech Innovator</h2>
-        <p>a 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. I love solving complex problems and pushing the boundaries of technology. Living with ⚡ epilepsy has taught me resilience and has been an integral part of my journey, shaping who I am today. Welcome to my personal website, where I share my projects, experiences, and insights from the world of robotics and beyond! 🚀</p>
+        <p>I am a 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. I love solving complex problems and pushing the boundaries of technology. Living with ⚡ epilepsy has taught me resilience and has been an integral part of my journey, shaping who I am today. Welcome to my personal website, where I share my projects, experiences, and insights from the world of robotics and beyond! 🚀</p>
     </div>
 </div>
 
