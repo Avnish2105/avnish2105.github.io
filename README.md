@@ -1,17 +1,112 @@
+<!-- Navigation Bar -->
+<nav style="
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 15px 20px; 
+    background-color: #2e3d49; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+">
+    <a href="#about" style="
+        color: #f0f0f0; 
+        text-decoration: none; 
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+    ">About</a>
+
+    <a href="#skills" style="
+        color: #f0f0f0; 
+        text-decoration: none; 
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+    ">Skills</a>
+
+    <a href="#journey" style="
+        color: #f0f0f0; 
+        text-decoration: none; 
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+    ">Journey</a>
+
+    <a href="#contact" style="
+        color: #f0f0f0; 
+        text-decoration: none; 
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+    ">Contact</a>
+</nav>
+
+<style>
+    /* Smooth scrolling for entire page */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Hover Effect for Links */
+    nav a:hover {
+        background-color: #4a5967;
+        color: #fff;
+    }
+
+    /* Active State for Links */
+    nav a:active {
+        background-color: #1e2a34;
+    }
+</style>
+
+<script>
+    // JavaScript for smooth scrolling when links are clicked
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default jump behavior
+            const targetId = this.getAttribute('href').substring(1); // Get ID without '#'
+            const targetElement = document.getElementById(targetId);
+
+            // Scroll smoothly to the target section
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
 <div style="text-align: initial;">
     <h1>👋 Hi! I am Avnish Deshmukh</h1>
 </div>
 
-<button id="modeToggle" style="position: fixed; top: 20px; right: 20px;">Toggle Mode</button>
+<!-- Toggle Mode Button -->
+<button id="modeToggle" style="position: fixed; top: 20px; right: 20px; background: none; border: none; cursor: pointer;">
+    <img id="modeIcon" src="https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png" alt="Toggle Mode" style="width: 30px; height: 30px; border-radius: 50%; background-color: #555; padding: 5px;">
+</button>
 
 <script>
+    // Initially set to dark mode
+    document.body.classList.add('dark-mode');
+
     const toggle = document.getElementById('modeToggle');
+    const modeIcon = document.getElementById('modeIcon');
+
+    // Toggle dark mode on button click and switch the icon
     toggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
+
+        if (document.body.classList.contains('dark-mode')) {
+            modeIcon.src = "https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png"; // Moon icon for dark mode
+        } else {
+            modeIcon.src = "https://img.icons8.com/ios-filled/50/333333/sun--v1.png"; // Sun icon for light mode
+        }
     });
 </script>
 
 <style>
+    /* Dark mode styles */
     .dark-mode {
         background-color: #333;
         color: #f0f0f0;
@@ -19,15 +114,11 @@
     .dark-mode a {
         color: #f0f0f0;
     }
+    /* Light mode styles */
+    a {
+        color: #333;
+    }
 </style>
-
-
-<nav style="display: flex; justify-content: center; gap: 20px; padding: 10px; background-color: #333; color: white;">
-    <a href="#about" style="color: white; text-decoration: none;">About</a>
-    <a href="#skills" style="color: white; text-decoration: none;">Skills</a>
-    <a href="#journey" style="color: white; text-decoration: none;">Journey</a>
-    <a href="#contact" style="color: white; text-decoration: none;">Contact</a>
-</nav>
 
 <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin: 20px 0;">
     <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 200px; height: 200px; margin: 10px;">
