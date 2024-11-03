@@ -216,29 +216,29 @@
 <div class="logo-slider-container">
     <div class="logo-slider">
         <!-- Update these image paths as needed -->
-        <img src="assets/logos/logo1.png" alt="Logo 1">
-        <img src="assets/logos/logo2.png" alt="Logo 2">
-        <img src="assets/logos/logo2.png" alt="Logo 3">
-        <img src="assets/logos/logo2.png" alt="Logo 4">
-        <img src="assets/logos/logo2.png" alt="Logo 5">
-        <img src="assets/logos/logo2.png" alt="Logo 6">
-        <img src="assets/logos/logo2.png" alt="Logo 7">
-        <img src="assets/logos/logo2.png" alt="Logo 8">
-        <img src="assets/logos/logo2.png" alt="Logo 9">
-        <img src="assets/logos/logo2.png" alt="Logo 10">
-        <img src="assets/logos/logo2.png" alt="Logo 11">
-        <img src="assets/logos/logo2.png" alt="Logo 12">
-        <img src="assets/logos/logo2.png" alt="Logo 13">
-        <img src="assets/logos/logo2.png" alt="Logo 14">
-        <img src="assets/logos/logo2.png" alt="Logo 15">
-        <img src="assets/logos/logo2.png" alt="Logo 16">
-        <img src="assets/logos/logo2.png" alt="Logo 17">
-        <img src="assets/logos/logo2.png" alt="Logo 18">
-        <img src="assets/logos/logo2.png" alt="Logo 19">
-        <img src="assets/logos/logo2.png" alt="Logo 20">
-        <img src="assets/logos/logo2.png" alt="Logo 21">
-        <img src="assets/logos/logo2.png" alt="Logo 22">
-        <img src="assets/logos/logo2.png" alt="Logo 23">
+        <img src="./logos/logo1.png" alt="Logo 1">
+        <img src="./logos/logo2.png" alt="Logo 2">
+        <img src="./logos/logo3.png" alt="Logo 3">
+        <img src="./logos/logo4.png" alt="Logo 4">
+        <img src="./logos/logo5.png" alt="Logo 5">
+        <img src="./logos/logo6.png" alt="Logo 6">
+        <img src="./logos/logo7.png" alt="Logo 7">
+        <img src="./logos/logo8.png" alt="Logo 8">
+        <img src="./logos/logo9.png" alt="Logo 9">
+        <img src="./logos/logo10.png" alt="Logo 10">
+        <img src="./logos/logo11.png" alt="Logo 11">
+        <img src="./logos/logo12.png" alt="Logo 12">
+        <img src="./logos/logo13.png" alt="Logo 13">
+        <img src="./logos/logo14.png" alt="Logo 14">
+        <img src="./logos/logo15.png" alt="Logo 15">
+        <img src="./logos/logo16.png" alt="Logo 16">
+        <img src="./logos/logo17.png" alt="Logo 17">
+        <img src="./logos/logo18.png" alt="Logo 18">
+        <img src="./logos/logo19.png" alt="Logo 19">
+        <img src="./logos/logo20.png" alt="Logo 20">
+        <img src="./logos/logo21.png" alt="Logo 21">
+        <img src="./logos/logo22.png" alt="Logo 22">
+        <img src="./logos/logo23.png" alt="Logo 23">
 
         <!-- Continue adding logos as needed -->
     </div>
