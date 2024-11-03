@@ -293,12 +293,15 @@
 <style>
     body {
         margin: 0;
+        padding: 0;
     }
 
     .logo-slider-container {
         width: 100vw;
         overflow: hidden;
         background-color: #f0f0f0;
+        padding: 0; /* Ensure no extra padding */
+        margin: 0; /* Remove any margin */
     }
 
     .logo-slider {
