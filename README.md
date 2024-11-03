@@ -307,6 +307,7 @@
         margin: 0;
         padding: 0;
         position: absolute; /* Keep in document flow */
+	left: 0;
     }
 
     .logo-slider {
