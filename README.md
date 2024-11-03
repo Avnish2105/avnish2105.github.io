@@ -459,9 +459,10 @@
         <div class="profile-box" style="border: 2px solid #0A66C2;">
             <img src="https://img.icons8.com/color/48/000000/linkedin-circled.png" alt="LinkedIn Logo">
             <h3>Avnish Deshmukh</h3>
-            <p>Robotics Enthusiast & Tech Innovator | Electronics | ROS2 | Project Management</p>
+            <p> Tech team member at MIT Tech Team (electronics & ros)</p>
             <a href="https://www.linkedin.com/in/avnish-deshmukh" class="profile-link" style="background-color: #0A66C2;">View LinkedIn</a>
         </div>
+
 
         <!-- GitHub Profile Box -->
         <div class="profile-box" style="border: 2px solid #181717;">
@@ -475,36 +476,37 @@
         <div class="profile-box" style="border: 2px solid #E4405F;">
             <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram Logo">
             <h3>Avnish Deshmukh</h3>
-            <p>Follow me for behind-the-scenes of my tech and robotic endeavors!</p>
+            <p>Follow my journey through tech, adventures, and everything in between.!</p>
             <a href="https://www.instagram.com/avnishdeshmukh" class="profile-link" style="background-color: #E4405F;">View Instagram</a>
         </div>
     </div>
 
     <!-- Contact Button -->
     <div style="text-align: center;">
-        <br><br><br> <!-- Added space -->
-        <a href="mailto:avnishdeshmukh2105@gmail.com" class="contact-button">Contact Me</a>
+        <br><br> <!-- Added space -->
+        <a href="mailto:avnishd2105@gmail.com" class="contact-button">Contact Me</a>
     </div>
 
-    <!-- Back-to-Top Button -->
-    <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
-
-    <script>
-        // Scroll-to-Top Function
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Display back-to-top button when scrolling
-        window.onscroll = function () {
-            const button = document.getElementById('backToTopBtn');
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                button.style.display = 'block';
-            } else {
-                button.style.display = 'none';
-            }
-        };
-    </script>
+	<button id="backToTopBtn" onclick="scrollToTop()" style="display: none; border: none; background: transparent; cursor: pointer;">
+	    <img src="path/to/your/logo.png" alt="Back to Top" style="width: 30px; height: 30px;" />
+	</button>
+	
+	<script>
+	    // Scroll-to-Top Function
+	    function scrollToTop() {
+	        window.scrollTo({ top: 0, behavior: 'smooth' });
+	    }
+	
+	    // Display back-to-top button when scrolling
+	    window.onscroll = function () {
+	        const button = document.getElementById('backToTopBtn');
+	        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+	            button.style.display = 'block';
+	        } else {
+	            button.style.display = 'none';
+	        }
+	    };
+	</script>
 
 	<div id="cursor-trail"></div>
 	
