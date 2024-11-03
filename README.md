@@ -298,8 +298,10 @@
         background-color: #f0f0f0;
         margin: 0;
         padding: 0;
-        position: absolute;
+        position: fixed; /* Fixed position */
+        top: 0; /* Start at the top of the viewport */
         left: 0;
+        z-index: 10; /* Ensure it stays above other sections */
     }
 
     .logo-slider {
