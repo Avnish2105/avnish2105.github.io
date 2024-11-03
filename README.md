@@ -172,66 +172,131 @@ In 2024, I transitioned to the control department and worked extensively with RO
 <img src="https://img.shields.io/badge/Project%20Management-0078D4?style=for-the-badge&logo=microsoftteams&logoColor=white" style="border-radius: 12px;">
 Learned and applied multiple project management systems, such as agile sprints, through observation and direct implementation. I continue enhancing my skills with experiences, research papers, and guidance from alumni.
 
-<div style="position: relative; max-width: 600px; margin: auto; padding: 20px; border-left: 4px solid #0078D4; background-color: #f9f9f9;">
+<!-- Journey Timeline -->
+<div id="journeyTimeline" style="position: relative; max-width: 600px; margin: auto; padding: 20px; border-left: 4px solid #0078D4; background-color: #f9f9f9;">
     <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
     
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -70px; top: 0; font-size: 0.9em;">2005</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 16px; height: 16px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 30px;">
-            <h3 style="margin: 0; color: #0078D4;">Born</h3>
-            <p style="margin: 0;">2005</p>
-        </div>
+    <!-- Timeline Events -->
+    <div class="timeline-event" data-year="2005">
+        <h3>Born</h3>
+        <p>2005</p>
     </div>
     
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -70px; top: 0; font-size: 0.9em;">2021</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 16px; height: 16px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 30px;">
-            <h3 style="margin: 0; color: #0078D4;">Completed 10th Grade</h3>
-            <p style="margin: 0;">Stella Maris School</p>
-        </div>
-    </div>
-    
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -70px; top: 0; font-size: 0.9em;">2022</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 16px; height: 16px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 30px;">
-            <h3 style="margin: 0; color: #0078D4;">Started Diploma & Joined MIT Tech Team</h3>
-            <p style="margin: 0;">Participated in DD Robocon Air 4<br>MIT World Peace University</p>
-        </div>
+    <div class="timeline-event" data-year="2021">
+        <h3>Completed 10th Grade</h3>
+        <p>Stella Maris School</p>
     </div>
 
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -70px; top: 0; font-size: 0.9em;">2023</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 16px; height: 16px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 30px;">
-            <h3 style="margin: 0; color: #0078D4;">Participated in DD Robocon Air 2</h3>
-            <p style="margin: 0;">2023</p>
-        </div>
+    <div class="timeline-event" data-year="2022">
+        <h3>Started Diploma & Joined MIT Tech Team</h3>
+        <p>Participated in DD Robocon Air 4<br>MIT World Peace University</p>
     </div>
 
-    <div style="margin: 20px 0; position: relative;">
-        <div style="font-weight: bold; color: #0078D4; position: absolute; left: -70px; top: 0; font-size: 0.9em;">2024</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 16px; height: 16px; background-color: #0078D4; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 30px;">
-            <h3 style="margin: 0; color: #0078D4;">Started with ROS2</h3>
-            <p style="margin: 0;">Participated in DD Robocon Air 3<br>2024</p>
-        </div>
+    <div class="timeline-event" data-year="2023">
+        <h3>Participated in DD Robocon Air 2</h3>
+        <p>2023</p>
     </div>
 
-    <div style="margin: 20px 0; position: relative; animation: bounce 1s infinite alternate;">
-        <div style="font-weight: bold; color: #FF6F00; position: absolute; left: -70px; top: 0; font-size: 0.9em;">2025</div>
-        <div style="position: absolute; left: -7px; top: 0; width: 16px; height: 16px; background-color: #FF6F00; border-radius: 50%; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);"></div>
-        <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-left: 30px;">
-            <h3 style="margin: 0; color: #FF6F00;">Aiming for DD Robocon Air 1</h3>
-            <p style="margin: 0;">2025</p>
-        </div>
+    <div class="timeline-event" data-year="2024">
+        <h3>Started with ROS2</h3>
+        <p>Participated in DD Robocon Air 3<br>2024</p>
     </div>
 
+    <div class="timeline-event bounce" data-year="2025" style="--color: #FF6F00;">
+        <h3>Aiming for DD Robocon Air 1</h3>
+        <p>2025</p>
+    </div>
 </div>
 
+<!-- Dark Mode & Timeline Styles -->
 <style>
+    /* Base Styles for Timeline */
+    #journeyTimeline {
+        border-left: 4px solid #0078D4;
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+
+    #journeyTimeline h2 {
+        color: #0078D4;
+    }
+
+    .timeline-event {
+        margin: 20px 0;
+        position: relative;
+        padding-left: 50px;
+    }
+
+    .timeline-event::before {
+        content: attr(data-year);
+        font-weight: bold;
+        color: #0078D4;
+        position: absolute;
+        left: -70px;
+        top: 0;
+        font-size: 0.9em;
+    }
+
+    .timeline-event::after {
+        content: '';
+        position: absolute;
+        left: -7px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        background-color: #0078D4;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .timeline-event > div {
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        margin-left: 30px;
+    }
+
+    .timeline-event h3 {
+        margin: 0;
+        color: #0078D4;
+    }
+
+    /* Dark Mode Styles */
+    .dark-mode #journeyTimeline {
+        background-color: #2c3e50;
+        border-left-color: #ffffff;
+    }
+
+    .dark-mode #journeyTimeline h2 {
+        color: #ffffff;
+    }
+
+    .dark-mode .timeline-event::before {
+        color: #ffffff;
+    }
+
+    .dark-mode .timeline-event::after {
+        background-color: #ffffff;
+    }
+
+    .dark-mode .timeline-event > div {
+        background-color: #34495e;
+        color: #ecf0f1;
+    }
+
+    .dark-mode .timeline-event h3 {
+        color: #ecf0f1;
+    }
+
+    /* Special bounce event */
+    .timeline-event.bounce::before,
+    .timeline-event.bounce::after {
+        color: var(--color, #FF6F00);
+        background-color: var(--color, #FF6F00);
+    }
+
+    /* Bounce Animation */
     @keyframes bounce {
         0% {
             transform: translateY(0);
@@ -240,43 +305,125 @@ Learned and applied multiple project management systems, such as agile sprints, 
             transform: translateY(-5px);
         }
     }
+
+    .timeline-event.bounce {
+        animation: bounce 1s infinite alternate;
+    }
 </style>
 
-## Social Links
-<div style="display: flex; justify-content: space-between; gap: 20px; margin-top: 20px;">
+<script>
+    // Dark mode toggle logic
+    const toggleButton = document.getElementById('modeToggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+</script>
+
+<!-- Social Links Section -->
+<div id="socialLinks" style="display: flex; justify-content: space-between; gap: 20px; margin-top: 20px;">
     <!-- LinkedIn Profile Box -->
-    <div style="border: 2px solid #0A66C2; border-radius: 12px; padding: 10px; flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="https://img.icons8.com/color/48/000000/linkedin-circled.png" alt="LinkedIn Logo" style="border-radius: 50%; margin-bottom: 10px;">
+    <div class="profile-box" style="border: 2px solid #0A66C2;">
+        <img src="https://img.icons8.com/color/48/000000/linkedin-circled.png" alt="LinkedIn Logo" class="profile-logo">
         <div style="text-align: center;">
-            <h3 style="margin: 0;">Avnish Deshmukh</h3>
-            <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Electronics | ROS2 | Project Management</p>
-            <p style="margin: 0; margin-top: 10px;"> </p> <!-- Adds spacing -->
-            <a href="https://www.linkedin.com/in/avnish-deshmukh" style="text-decoration: none; background-color: #0A66C2; color: white; padding: 5px 8px; border-radius: 8px; font-size: 0.9em;">View LinkedIn</a>
+            <h3>Avnish Deshmukh</h3>
+            <p>Robotics Enthusiast & Tech Innovator | Electronics | ROS2 | Project Management</p>
+            <a href="https://www.linkedin.com/in/avnish-deshmukh" class="profile-link" style="background-color: #0A66C2;">View LinkedIn</a>
         </div>
     </div>
 
     <!-- GitHub Profile Box -->
-    <div style="border: 2px solid #181717; border-radius: 12px; padding: 10px; flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="https://img.icons8.com/material-rounded/48/000000/github.png" alt="GitHub Logo" style="border-radius: 50%; margin-bottom: 10px;">
+    <div class="profile-box" style="border: 2px solid #181717;">
+        <img src="https://img.icons8.com/material-rounded/48/000000/github.png" alt="GitHub Logo" class="profile-logo">
         <div style="text-align: center;">
-            <h3 style="margin: 0;">Avnish Deshmukh</h3>
-            <p style="margin: 0;">Robotics Enthusiast & Tech Innovator | Exploring code and hardware</p>
-            <p style="margin: 0; margin-top: 10px;"> </p> <!-- Adds spacing -->
-            <a href="https://github.com/avnishd2105" style="text-decoration: none; background-color: #181717; color: white; padding: 5px 8px; border-radius: 8px; font-size: 0.9em;">View GitHub</a>
+            <h3>Avnish Deshmukh</h3>
+            <p>Robotics Enthusiast & Tech Innovator | Exploring code and hardware</p>
+            <a href="https://github.com/avnishd2105" class="profile-link" style="background-color: #181717;">View GitHub</a>
         </div>
     </div>
 
     <!-- Instagram Profile Box -->
-    <div style="border: 2px solid #E4405F; border-radius: 12px; padding: 10px; flex: 1; display: flex; flex-direction: column; align-items: center; background-color: #f0f8ff; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-        <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram Logo" style="border-radius: 50%; margin-bottom: 10px;">
+    <div class="profile-box" style="border: 2px solid #E4405F;">
+        <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram Logo" class="profile-logo">
         <div style="text-align: center;">
-            <h3 style="margin: 0;">Avnish Deshmukh</h3>
-            <p style="margin: 0;">Capturing moments & sharing my journey in tech and robotics</p>
-            <p style="margin: 0; margin-top: 10px;"> </p> <!-- Adds spacing -->
-            <a href="https://www.instagram.com/av.nish2105/" style="text-decoration: none; background-color: #E4405F; color: white; padding: 5px 8px; border-radius: 8px; font-size: 0.9em;">View Instagram</a>
+            <h3>Avnish Deshmukh</h3>
+            <p>Capturing moments & sharing my journey in tech and robotics</p>
+            <a href="https://www.instagram.com/av.nish2105/" class="profile-link" style="background-color: #E4405F;">View Instagram</a>
         </div>
     </div>
 </div>
+
+<!-- Dark Mode Styles -->
+<style>
+    /* Base Profile Box Styles */
+    .profile-box {
+        border-radius: 12px;
+        padding: 15px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f0f8ff;
+        transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    }
+
+    /* Hover Scale Effect */
+    .profile-box:hover {
+        transform: scale(1.02);
+    }
+
+    /* Logo Styling */
+    .profile-logo {
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    /* Profile Link Button Styling */
+    .profile-link {
+        text-decoration: none;
+        color: white;
+        padding: 5px 8px;
+        border-radius: 8px;
+        font-size: 0.9em;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    /* Dark Mode Styles */
+    .dark-mode .profile-box {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+    }
+
+    .dark-mode .profile-box h3,
+    .dark-mode .profile-box p {
+        color: #ecf0f1;
+    }
+
+    .dark-mode .profile-link {
+        color: #ffffff;
+    }
+
+    /* Adjust icon backgrounds in dark mode */
+    .dark-mode .profile-box:nth-child(1) {
+        border-color: #0A66C2;
+    }
+    
+    .dark-mode .profile-box:nth-child(2) {
+        border-color: #ffffff; /* GitHub */
+    }
+    
+    .dark-mode .profile-box:nth-child(3) {
+        border-color: #E4405F;
+    }
+</style>
+
+<script>
+    // Dark mode toggle logic
+    const toggleButton = document.getElementById('modeToggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+</script>
 
 <style>
     .contact-button {
