@@ -211,58 +211,94 @@
 </head>
 <body>
 
-<!-- Add this in your page directly, within HTML blocks if using Jekyll -->
-
 <div class="logo-slider-container">
     <div class="logo-slider">
-        <!-- Update these image paths as needed -->
-        <img src="./logos/logo1.png" alt="Logo 1">
-        <img src="./logos/logo2.png" alt="Logo 2">
-        <img src="./logos/logo3.png" alt="Logo 3">
-        <img src="./logos/logo4.png" alt="Logo 4">
-        <img src="./logos/logo5.png" alt="Logo 5">
-        <img src="./logos/logo6.png" alt="Logo 6">
-        <img src="./logos/logo7.png" alt="Logo 7">
-        <img src="./logos/logo8.png" alt="Logo 8">
-        <img src="./logos/logo9.png" alt="Logo 9">
-        <img src="./logos/logo10.png" alt="Logo 10">
-        <img src="./logos/logo11.png" alt="Logo 11">
-        <img src="./logos/logo12.png" alt="Logo 12">
-        <img src="./logos/logo13.png" alt="Logo 13">
-        <img src="./logos/logo14.png" alt="Logo 14">
-        <img src="./logos/logo15.png" alt="Logo 15">
-        <img src="./logos/logo16.png" alt="Logo 16">
-        <img src="./logos/logo17.png" alt="Logo 17">
-        <img src="./logos/logo18.png" alt="Logo 18">
-        <img src="./logos/logo19.png" alt="Logo 19">
-        <img src="./logos/logo20.png" alt="Logo 20">
-        <img src="./logos/logo21.png" alt="Logo 21">
-        <img src="./logos/logo22.png" alt="Logo 22">
-        <img src="./logos/logo23.png" alt="Logo 23">
-
-        <!-- Continue adding logos as needed -->
+        <!-- Duplicate logos for seamless scrolling -->
+        <div class="logo-group">
+            <img src="./logos/logo1.png" alt="Logo 1">
+            <img src="./logos/logo2.png" alt="Logo 2">
+            <img src="./logos/logo3.png" alt="Logo 3">
+            <img src="./logos/logo4.png" alt="Logo 4">
+            <img src="./logos/logo5.png" alt="Logo 5">
+            <img src="./logos/logo6.png" alt="Logo 6">
+            <img src="./logos/logo7.png" alt="Logo 7">
+            <img src="./logos/logo8.png" alt="Logo 8">
+            <img src="./logos/logo9.png" alt="Logo 9">
+            <img src="./logos/logo10.png" alt="Logo 10">
+            <img src="./logos/logo11.png" alt="Logo 11">
+            <img src="./logos/logo12.png" alt="Logo 12">
+            <img src="./logos/logo13.png" alt="Logo 13">
+            <img src="./logos/logo14.png" alt="Logo 14">
+            <img src="./logos/logo15.png" alt="Logo 15">
+            <img src="./logos/logo16.png" alt="Logo 16">
+            <img src="./logos/logo17.png" alt="Logo 17">
+            <img src="./logos/logo18.png" alt="Logo 18">
+            <img src="./logos/logo19.png" alt="Logo 19">
+            <img src="./logos/logo20.png" alt="Logo 20">
+            <img src="./logos/logo21.png" alt="Logo 21">
+            <img src="./logos/logo22.png" alt="Logo 22">
+            <img src="./logos/logo23.png" alt="Logo 23">
+        </div>
+        <!-- Duplicated logo group for seamless scrolling -->
+        <div class="logo-group">
+            <img src="./logos/logo1.png" alt="Logo 1">
+            <img src="./logos/logo2.png" alt="Logo 2">
+            <img src="./logos/logo3.png" alt="Logo 3">
+            <img src="./logos/logo4.png" alt="Logo 4">
+            <img src="./logos/logo5.png" alt="Logo 5">
+            <img src="./logos/logo6.png" alt="Logo 6">
+            <img src="./logos/logo7.png" alt="Logo 7">
+            <img src="./logos/logo8.png" alt="Logo 8">
+            <img src="./logos/logo9.png" alt="Logo 9">
+            <img src="./logos/logo10.png" alt="Logo 10">
+            <img src="./logos/logo11.png" alt="Logo 11">
+            <img src="./logos/logo12.png" alt="Logo 12">
+            <img src="./logos/logo13.png" alt="Logo 13">
+            <img src="./logos/logo14.png" alt="Logo 14">
+            <img src="./logos/logo15.png" alt="Logo 15">
+            <img src="./logos/logo16.png" alt="Logo 16">
+            <img src="./logos/logo17.png" alt="Logo 17">
+            <img src="./logos/logo18.png" alt="Logo 18">
+            <img src="./logos/logo19.png" alt="Logo 19">
+            <img src="./logos/logo20.png" alt="Logo 20">
+            <img src="./logos/logo21.png" alt="Logo 21">
+            <img src="./logos/logo22.png" alt="Logo 22">
+            <img src="./logos/logo23.png" alt="Logo 23">
+        </div>
     </div>
 </div>
 
 <style>
-.logo-slider-container {
-    width: 100%;
-    overflow: hidden;
-    padding: 10px;
-}
-.logo-slider {
-    display: flex;
-    width: fit-content;
-    animation: scroll 60s linear infinite;
-}
-.logo-slider img {
-    height: 80px;
-    margin: 0 15px;
-}
-@keyframes scroll {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
+    .logo-slider-container {
+        width: 100%; /* Full width */
+        overflow: hidden;
+        background-color: #f0f0f0; /* Optional background */
+        padding: 10px; /* Optional padding */
+    }
+
+    .logo-slider {
+        display: flex;
+        animation: scroll 30s linear infinite; /* Adjust timing here for speed */
+    }
+
+    .logo-group {
+        display: flex; /* Maintain horizontal layout */
+    }
+
+    .logo-slider img {
+        height: 80px; /* Adjust height as needed */
+        margin: 0 15px; /* Space between logos */
+        border-radius: 15px; /* Rounded edges */
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%); /* Adjust to half of the logos for seamless scrolling */
+        }
+    }
 </style>
 
 <!-- Profile Section -->
