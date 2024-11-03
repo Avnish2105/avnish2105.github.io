@@ -354,6 +354,9 @@
 <div id="journeyTimeline" style="max-width: 800px; margin-top: 200px;">
     <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
 
+<div id="journeyTimeline" style="max-width: 800px; margin-top: 200px;">
+    <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
+
     <!-- Timeline Events -->
     <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
@@ -392,8 +395,8 @@
 
     <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
-            <h3>Started with ROS2</h3>
-            <p>Participated in DD Robocon Air 3<br>2024</p>
+            <h3>Participated in DD Robocon Air 3</h3>
+            <p>2024</p>
         </div>
     </div>
 
@@ -452,6 +455,7 @@
         });
     });
 </script>
+
 
     <!-- Social Links Section -->
     <div id="socialLinks">
