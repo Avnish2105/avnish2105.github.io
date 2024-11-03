@@ -355,49 +355,49 @@
     <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
 
     <!-- Timeline Events -->
-    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 1; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
             <h3>Born</h3>
             <p>2005</p>
         </div>
     </div>
 
-    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 1; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
             <h3>Completed 10th Grade</h3>
             <p>Stella Maris School<br>2022</p>
         </div>
     </div>
 
-    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 1; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
             <h3>Started Diploma & Joined MIT Tech Team</h3>
             <p>MIT World Peace University<br>2022</p>
         </div>
     </div>
 
-    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 1; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
             <h3>Participated in DD Robocon Air 4</h3>
             <p>2022</p>
         </div>
     </div>
 
-    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 1; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
             <h3>Participated in DD Robocon Air 2</h3>
             <p>2023</p>
         </div>
     </div>
 
-    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+    <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 1; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
             <h3>Participated in DD Robocon Air 3</h3>
             <p>2024</p>
         </div>
     </div>
 
-    <div class="timeline-event moving-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
+    <div class="timeline-event moving-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 1; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
             <h3>Aiming for DD Robocon Air 1</h3>
             <p>2025</p>
