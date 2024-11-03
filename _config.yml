@@ -4,7 +4,7 @@ url: "https://avnishd2105.github.io"
 baseurl: ""
 author: "Avnish Deshmukh"
 show_downloads: false
-color_scheme: dark
+color_scheme: light
 
 # Adding profile picture
 profile_image: /profile_picture.jpeg # Ensure the path matches your image location
