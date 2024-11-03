@@ -237,6 +237,8 @@
 <div class="logo-slider-container">
     <div class="logo-slider">
         <div class="logo-group">
+            <!-- Images here -->
+        </div>
             <img src="./logos/logo1.png" alt="Logo 1">
             <img src="./logos/logo2.png" alt="Logo 2">
             <img src="./logos/logo3.png" alt="Logo 3">
@@ -260,8 +262,6 @@
             <img src="./logos/logo21.png" alt="Logo 21">
             <img src="./logos/logo22.png" alt="Logo 22">
             <img src="./logos/logo23.png" alt="Logo 23">
-        </div>
-        <!-- Duplicated logo group for seamless scrolling -->
         <div class="logo-group">
             <img src="./logos/logo1.png" alt="Logo 1">
             <img src="./logos/logo2.png" alt="Logo 2">
@@ -292,29 +292,29 @@
 
 <style>
     body {
-        margin: 0; /* Remove default margin */
+        margin: 0;
     }
 
     .logo-slider-container {
-        width: 100vw; /* Full viewport width */
-        overflow: hidden; /* Hide overflow */
-        background-color: #f0f0f0; /* Optional background */
+        width: 100vw;
+        overflow: hidden;
+        background-color: #f0f0f0;
     }
 
     .logo-slider {
         display: flex;
-        animation: scroll 30s linear infinite; /* Adjust timing here for speed */
+        animation: scroll 30s linear infinite;
     }
 
     .logo-group {
-        display: flex; /* Maintain horizontal layout */
+        display: flex;
+        flex: 1 1 auto; /* Expand each group to fill space */
+        gap: 10px; /* Space between logos */
     }
 
     .logo-slider img {
-        height: 80px; /* Adjust height as needed */
-        margin: 0; /* Remove margin to avoid overlapping */
-        padding: 0; /* Ensure no padding */
-        border-radius: 15px; /* Rounded edges */
+        height: 80px;
+        border-radius: 15px;
     }
 
     @keyframes scroll {
@@ -322,11 +322,10 @@
             transform: translateX(0);
         }
         100% {
-            transform: translateX(-50%); /* Adjust for seamless scrolling */
+            transform: translateX(-100%); /* Full-width scroll */
         }
     }
 </style>
-
 
     <!-- Journey Timeline -->
     <div id="journeyTimeline" style="max-width: 800px; margin: auto;">
