@@ -308,11 +308,11 @@
 
     .logo-group {
         display: flex;
-        flex: 1 1 auto; /* Expand each group to fill space */
-        gap: 10px; /* Space between logos */
+        gap: 20px; /* Space between each logo */
     }
 
     .logo-slider img {
+        width: 150px; /* Fixed width to avoid overlap */
         height: 80px;
         border-radius: 15px;
     }
@@ -322,7 +322,7 @@
             transform: translateX(0);
         }
         100% {
-            transform: translateX(-100%); /* Full-width scroll */
+            transform: translateX(-100%);
         }
     }
 </style>
