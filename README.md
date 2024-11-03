@@ -235,73 +235,78 @@
     };
 </script>
 
-<div class="logo-slider-container">
-    <div class="logo-slider">
-        <div class="logo-group">
-            <!-- Images here -->
-        </div>
-            <img src="./logos/logo1.png" alt="Logo 1">
-            <img src="./logos/logo2.png" alt="Logo 2">
-            <img src="./logos/logo3.png" alt="Logo 3">
-            <img src="./logos/logo4.png" alt="Logo 4">
-            <img src="./logos/logo5.png" alt="Logo 5">
-            <img src="./logos/logo6.png" alt="Logo 6">
-            <img src="./logos/logo7.png" alt="Logo 7">
-            <img src="./logos/logo8.png" alt="Logo 8">
-            <img src="./logos/logo9.png" alt="Logo 9">
-            <img src="./logos/logo10.png" alt="Logo 10">
-            <img src="./logos/logo11.png" alt="Logo 11">
-            <img src="./logos/logo12.png" alt="Logo 12">
-            <img src="./logos/logo13.png" alt="Logo 13">
-            <img src="./logos/logo14.png" alt="Logo 14">
-            <img src="./logos/logo15.png" alt="Logo 15">
-            <img src="./logos/logo16.png" alt="Logo 16">
-            <img src="./logos/logo17.png" alt="Logo 17">
-            <img src="./logos/logo18.png" alt="Logo 18">
-            <img src="./logos/logo19.png" alt="Logo 19">
-            <img src="./logos/logo20.png" alt="Logo 20">
-            <img src="./logos/logo21.png" alt="Logo 21">
-            <img src="./logos/logo22.png" alt="Logo 22">
-            <img src="./logos/logo23.png" alt="Logo 23">
-        <div class="logo-group">
-            <img src="./logos/logo1.png" alt="Logo 1">
-            <img src="./logos/logo2.png" alt="Logo 2">
-            <img src="./logos/logo3.png" alt="Logo 3">
-            <img src="./logos/logo4.png" alt="Logo 4">
-            <img src="./logos/logo5.png" alt="Logo 5">
-            <img src="./logos/logo6.png" alt="Logo 6">
-            <img src="./logos/logo7.png" alt="Logo 7">
-            <img src="./logos/logo8.png" alt="Logo 8">
-            <img src="./logos/logo9.png" alt="Logo 9">
-            <img src="./logos/logo10.png" alt="Logo 10">
-            <img src="./logos/logo11.png" alt="Logo 11">
-            <img src="./logos/logo12.png" alt="Logo 12">
-            <img src="./logos/logo13.png" alt="Logo 13">
-            <img src="./logos/logo14.png" alt="Logo 14">
-            <img src="./logos/logo15.png" alt="Logo 15">
-            <img src="./logos/logo16.png" alt="Logo 16">
-            <img src="./logos/logo17.png" alt="Logo 17">
-            <img src="./logos/logo18.png" alt="Logo 18">
-            <img src="./logos/logo19.png" alt="Logo 19">
-            <img src="./logos/logo20.png" alt="Logo 20">
-            <img src="./logos/logo21.png" alt="Logo 21">
-            <img src="./logos/logo22.png" alt="Logo 22">
-            <img src="./logos/logo23.png" alt="Logo 23">
+<div class="logo-slider-wrapper">
+    <div class="logo-slider-container">
+        <div class="logo-slider">
+            <div class="logo-group">
+		    <img src="./logos/logo1.png" alt="Logo 1">
+		    <img src="./logos/logo2.png" alt="Logo 2">
+		    <img src="./logos/logo3.png" alt="Logo 3">
+		    <img src="./logos/logo4.png" alt="Logo 4">
+		    <img src="./logos/logo5.png" alt="Logo 5">
+		    <img src="./logos/logo6.png" alt="Logo 6">
+		    <img src="./logos/logo7.png" alt="Logo 7">
+		    <img src="./logos/logo8.png" alt="Logo 8">
+		    <img src="./logos/logo9.png" alt="Logo 9">
+		    <img src="./logos/logo10.png" alt="Logo 10">
+		    <img src="./logos/logo11.png" alt="Logo 11">
+		    <img src="./logos/logo12.png" alt="Logo 12">
+		    <img src="./logos/logo13.png" alt="Logo 13">
+		    <img src="./logos/logo14.png" alt="Logo 14">
+		    <img src="./logos/logo15.png" alt="Logo 15">
+		    <img src="./logos/logo16.png" alt="Logo 16">
+		    <img src="./logos/logo17.png" alt="Logo 17">
+		    <img src="./logos/logo18.png" alt="Logo 18">
+		    <img src="./logos/logo19.png" alt="Logo 19">
+		    <img src="./logos/logo20.png" alt="Logo 20">
+		    <img src="./logos/logo21.png" alt="Logo 21">
+		    <img src="./logos/logo22.png" alt="Logo 22">
+		    <img src="./logos/logo23.png" alt="Logo 23">
+            </div>
+		    <div class="logo-group">
+		    <img src="./logos/logo1.png" alt="Logo 1">
+		    <img src="./logos/logo2.png" alt="Logo 2">
+		    <img src="./logos/logo3.png" alt="Logo 3">
+		    <img src="./logos/logo4.png" alt="Logo 4">
+		    <img src="./logos/logo5.png" alt="Logo 5">
+		    <img src="./logos/logo6.png" alt="Logo 6">
+		    <img src="./logos/logo7.png" alt="Logo 7">
+		    <img src="./logos/logo8.png" alt="Logo 8">
+		    <img src="./logos/logo9.png" alt="Logo 9">
+		    <img src="./logos/logo10.png" alt="Logo 10">
+		    <img src="./logos/logo11.png" alt="Logo 11">
+		    <img src="./logos/logo12.png" alt="Logo 12">
+		    <img src="./logos/logo13.png" alt="Logo 13">
+		    <img src="./logos/logo14.png" alt="Logo 14">
+		    <img src="./logos/logo15.png" alt="Logo 15">
+		    <img src="./logos/logo16.png" alt="Logo 16">
+		    <img src="./logos/logo17.png" alt="Logo 17">
+		    <img src="./logos/logo18.png" alt="Logo 18">
+		    <img src="./logos/logo19.png" alt="Logo 19">
+		    <img src="./logos/logo20.png" alt="Logo 20">
+		    <img src="./logos/logo21.png" alt="Logo 21">
+		    <img src="./logos/logo22.png" alt="Logo 22">
+		    <img src="./logos/logo23.png" alt="Logo 23">
+            </div>
         </div>
     </div>
 </div>
 
 <style>
+    /* Wrapper to prevent Cayman theme from centering content */
+    .logo-slider-wrapper {
+        width: 100%; /* Full width */
+        padding: 0; /* Remove any padding */
+        margin: 0; /* Remove any margin */
+    }
+
     .logo-slider-container {
-        width: 100vw;
+        max-width: 100vw; /* Ensure full viewport width */
         overflow: hidden;
         background-color: #f0f0f0;
-        margin: 0;
         padding: 0;
-        position: relative; /* Fixed position */
-        top: 0; /* Start at the top of the viewport */
-        left: 0;
-        z-index: 10; /* Ensure it stays above other sections */
+        margin: 0 auto; /* Center it relative to other content */
+        position: relative; /* Relative position to avoid overlap */
     }
 
     .logo-slider {
@@ -311,7 +316,7 @@
 
     .logo-group {
         display: flex;
-        gap: 40px; /* Increased gap for more spacing between logos */
+        gap: 40px; /* Space between each logo */
     }
 
     .logo-slider img {
@@ -329,6 +334,7 @@
         }
     }
 </style>
+
     <!-- Journey Timeline -->
     <div id="journeyTimeline" style="max-width: 800px; margin: auto;">
         <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
