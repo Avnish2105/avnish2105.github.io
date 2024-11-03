@@ -253,7 +253,7 @@
 }
 .logo-slider {
     display: flex;
-    animation: scroll 30s linear infinite;
+    animation: scroll 60s linear infinite;
 }
 .logo-slider img {
     height: 80px;
