@@ -310,21 +310,25 @@
 	left: 0;
     }
 
-    .logo-slider {
-        display: flex;
-        animation: scroll 30s linear infinite;
-    }
+.logo-slider img {
+    width: auto; /* Let width adjust based on height */
+    height: 80px; /* Fixed height */
+    border-radius: 15px;
+    object-fit: contain; /* Maintain aspect ratio */
+}
 
-    .logo-group {
-        display: flex;
-        gap: 40px; /* Increase spacing between logos */
-    }
+.logo-group {
+    display: flex;
+    gap: 20px; /* Adjust spacing as needed */
+    flex-shrink: 0; /* Prevent images from shrinking */
+}
 
-    .logo-slider img {
-        width: 150px;
-        height: 80px;
-        border-radius: 15px;
-    }
+.logo-slider {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    animation: scroll 30s linear infinite;
+    gap: 20px; /* Ensure there's space between logo groups */
+}
 
     @keyframes scroll {
         0% {
