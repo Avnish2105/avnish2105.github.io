@@ -293,20 +293,20 @@
 </div>
 
 <style>
-    /* Wrapper to prevent Cayman theme from centering content */
-    .logo-slider-wrapper {
-        width: 100%; /* Full width */
-        padding: 0; /* Remove any padding */
-        margin: 0; /* Remove any margin */
+    /* Ensure body has no overflow or padding */
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scroll */
     }
 
     .logo-slider-container {
-        max-width: 100vw; /* Ensure full viewport width */
+        width: 100vw; /* Full viewport width */
         overflow: hidden;
         background-color: #f0f0f0;
+        margin: 0;
         padding: 0;
-        margin: 0 auto; /* Center it relative to other content */
-        position: relative; /* Relative position to avoid overlap */
+        position: relative; /* Keep in document flow */
     }
 
     .logo-slider {
@@ -316,7 +316,7 @@
 
     .logo-group {
         display: flex;
-        gap: 40px; /* Space between each logo */
+        gap: 40px; /* Increase spacing between logos */
     }
 
     .logo-slider img {
