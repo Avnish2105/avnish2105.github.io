@@ -506,5 +506,28 @@
         };
     </script>
 
+    <div id="cursor-trail"></div>
+
+	<style>
+	#cursor-trail {
+	    position: fixed;
+	    width: 10px;
+	    height: 10px;
+	    border-radius: 50%;
+	    background-color: #ff4500;
+	    pointer-events: none;
+	    transform: translate(-50%, -50%);
+	    z-index: 1000;
+	}
+	</style>
+	
+	<script>
+	document.addEventListener('mousemove', function(e) {
+	    let cursorTrail = document.getElementById('cursor-trail');
+	    cursorTrail.style.left = e.pageX + 'px';
+	    cursorTrail.style.top = e.pageY + 'px';
+	});
+	</script>
+
 </body>
 </html>
