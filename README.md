@@ -291,17 +291,15 @@
 </div>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
+    /* Override theme's default centering and padding */
     .logo-slider-container {
         width: 100vw;
         overflow: hidden;
         background-color: #f0f0f0;
-        padding: 0; /* Ensure no extra padding */
-        margin: 0; /* Remove any margin */
+        padding: 0;
+        margin: 0 auto; /* Center horizontally while using full width */
+        position: relative;
+        left: 0;
     }
 
     .logo-slider {
@@ -315,7 +313,7 @@
     }
 
     .logo-slider img {
-        width: 150px; /* Fixed width to avoid overlap */
+        width: 150px;
         height: 80px;
         border-radius: 15px;
     }
