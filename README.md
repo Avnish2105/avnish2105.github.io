@@ -303,7 +303,6 @@
     .logo-slider-container {
         width: 100vw; /* Full viewport width */
         overflow: hidden;
-        background-color: #f0f0f0;
         margin: 0;
         padding: 0;
         position: absolute; /* Keep in document flow */
