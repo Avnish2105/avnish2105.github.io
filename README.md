@@ -1,6 +1,4 @@
-<div style="text-align: center;">
-    <h1>👋 Hi! I am Avnish Deshmukh</h1>
-</div>
+## 👋 Hi! I am Avnish Deshmukh
 
 <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin: 20px 0;">
     <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 200px; height: 200px; margin: 10px;">
@@ -14,6 +12,28 @@
         </p>
     </div>
 </div>
+
+<!-- Back-to-Top Button -->
+<button id="backToTopBtn" style="display: none; position: fixed; bottom: 40px; right: 40px; background-color: #333; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; z-index: 1000;">Back to Top</button>
+
+<script>
+    // Get the button
+    var backToTopBtn = document.getElementById("backToTopBtn");
+
+    // Show the button when scrolling down 100px from the top of the document
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    };
+
+    // Scroll to the top of the page when the button is clicked
+    backToTopBtn.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
 
 ## Skills
 
