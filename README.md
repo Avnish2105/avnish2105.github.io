@@ -324,8 +324,19 @@
 .logo-slider {
     display: flex;
     flex-wrap: nowrap; /* Prevents wrapping */
-    animation: scroll 20s linear infinite;
+    animation: scroll 40s linear infinite;
     gap: 20px; /* Ensure there's space between logo groups */
+}
+@media (max-width: 768px) {
+    .logo-slider img {
+        height: 50px; /* Smaller height for mobile */
+    }
+    .logo-group {
+        gap: 10px; /* Reduce spacing on smaller screens */
+    }
+    .logo-slider {
+        gap: 10px; /* Adjust the overall gap */
+    }
 }
 
     @keyframes scroll {
