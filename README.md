@@ -298,6 +298,7 @@
         padding: 0;
         height: 120px; /* Adjust to desired height */
         position: relative; /* Keeps it in the document flow */
+        left: 0;
     }
 
     .logo-slider {
