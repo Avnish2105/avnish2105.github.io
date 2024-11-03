@@ -265,13 +265,31 @@
             </div>
         </div>
     
-        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
+        <div class="timeline-event moving-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
             <div style="flex: 1; min-width: 120px;">
                 <h3>Aiming for DD Robocon Air 1</h3>
                 <p>2025</p>
             </div>
         </div>
     </div>
+    
+    <style>
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    
+        .moving-event {
+            animation: bounce 1s infinite;
+            color: #0078D4; /* Optional: change color for the future event */
+            font-weight: bold; /* Optional: make it bold */
+        }
+    </style>
+
 
 
     <!-- Social Links Section -->
