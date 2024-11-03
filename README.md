@@ -190,6 +190,21 @@
                 bottom: 20px;
             }
         }
+
+        @media (max-width: 480px) {
+            .timeline-event {
+                padding-left: 30px; /* Reduced padding for smaller screens */
+            }
+
+            .timeline-event::before {
+                left: -30px; /* Adjust year label position */
+                font-size: 0.8em; /* Smaller font size for mobile */
+            }
+
+            .timeline-event > div {
+                padding: 10px; /* Adjust padding */
+            }
+        }
     </style>
 </head>
 <body>
@@ -209,52 +224,53 @@
     </div>
 
     <!-- Journey Timeline -->
-    <div id="journeyTimeline">
+    <div id="journeyTimeline" style="max-width: 800px; margin: auto;">
         <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
-        
+    
         <!-- Timeline Events -->
-        <div class="timeline-event" data-year="2005">
-            <div>
+        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
+            <div style="flex: 1; min-width: 120px;">
                 <h3>Born</h3>
                 <p>2005</p>
             </div>
         </div>
-        
-        <div class="timeline-event" data-year="2021">
-            <div>
+    
+        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
+            <div style="flex: 1; min-width: 120px;">
                 <h3>Completed 10th Grade</h3>
                 <p>Stella Maris School</p>
             </div>
         </div>
-
-        <div class="timeline-event" data-year="2022">
-            <div>
+    
+        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
+            <div style="flex: 1; min-width: 120px;">
                 <h3>Started Diploma & Joined MIT Tech Team</h3>
                 <p>Participated in DD Robocon Air 4<br>MIT World Peace University</p>
             </div>
         </div>
-
-        <div class="timeline-event" data-year="2023">
-            <div>
+    
+        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
+            <div style="flex: 1; min-width: 120px;">
                 <h3>Participated in DD Robocon Air 2</h3>
                 <p>2023</p>
             </div>
         </div>
-
-        <div class="timeline-event" data-year="2024">
-            <div>
+    
+        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
+            <div style="flex: 1; min-width: 120px;">
                 <h3>Started with ROS2</h3>
                 <p>Participated in DD Robocon Air 3<br>2024</p>
             </div>
         </div>
-
-        <div class="timeline-event" data-year="2025">
-            <div>
+    
+        <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0;">
+            <div style="flex: 1; min-width: 120px;">
                 <h3>Aiming for DD Robocon Air 1</h3>
                 <p>2025</p>
             </div>
         </div>
     </div>
+
 
     <!-- Social Links Section -->
     <div id="socialLinks">
