@@ -1,11 +1,17 @@
-# 👋Hi! I am Avnish Deshmukh
+<div style="text-align: center;">
+    <h1>👋 Hi! I am Avnish Deshmukh</h1>
+</div>
 
-## About Me
-<div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 20px;">
-    <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 150px; height: 150px; margin-bottom: 15px;">
-    <div style="max-width: 600px; padding: 0 15px;">
+<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin: 20px 0;">
+    <img src="./profile_picture.jpeg" alt="Profile Picture" style="border-radius: 50%; width: 200px; height: 200px; margin: 10px;">
+    <div style="max-width: 600px; text-align: center;">
         <h2>Robotics Enthusiast & Tech Innovator</h2>
-        <p>I am a 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. I love solving complex problems and pushing the boundaries of technology. Living with ⚡ epilepsy has taught me resilience and has been an integral part of my journey, shaping who I am today. Welcome to my personal website, where I share my projects, experiences, and insights from the world of robotics and beyond! 🚀</p>
+        <p>
+            A 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. 
+            I love solving complex problems and pushing the boundaries of technology. Living with ⚡ epilepsy has taught me resilience and has been an integral 
+            part of my journey, shaping who I am today. Welcome to my personal website, where I share my projects, experiences, and insights from the world of 
+            robotics and beyond! 🚀
+        </p>
     </div>
 </div>
 
