@@ -354,9 +354,6 @@
 <div id="journeyTimeline" style="max-width: 800px; margin-top: 200px;">
     <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
 
-<div id="journeyTimeline" style="max-width: 800px; margin-top: 200px;">
-    <h2 style="text-align: center; color: #0078D4;">My Journey</h2>
-
     <!-- Timeline Events -->
     <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
