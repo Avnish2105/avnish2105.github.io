@@ -292,61 +292,63 @@
 </div>
 
 <style>
-    /* Ensure body has no overflow or padding */
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* Prevent horizontal scroll */
-    }
+	body {
+	    margin: 0;
+	    padding: 0;
+	    overflow-x: hidden; /* Prevent horizontal scroll */
+	}
+	
+	.logo-slider-container {
+	    width: 100vw; /* Full viewport width */
+	    overflow: hidden;
+	    margin: 0;
+	    padding: 0;
+	    position: absolute; /* Keep in document flow */
+	    left: 0;
+	}
+	
+	.logo-slider {
+	    display: flex;
+	    flex-wrap: nowrap; /* Prevents wrapping */
+	    animation: scroll 40s linear infinite; /* Adjust duration as needed */
+	    gap: 20px; /* Ensure there's space between logo groups */
+	}
+	
+	.logo-slider img {
+	    width: auto; /* Let width adjust based on height */
+	    height: 80px; /* Fixed height */
+	    border-radius: 15px;
+	    object-fit: contain; /* Maintain aspect ratio */
+	}
+	
+	.logo-group {
+	    display: flex;
+	    gap: 20px; /* Adjust spacing as needed */
+	    flex-shrink: 0; /* Prevent images from shrinking */
+	}
+	
+	/* For smaller screens */
+	@media (max-width: 768px) {
+	    .logo-slider img {
+	        height: 50px; /* Smaller height for mobile */
+	    }
+	    .logo-group {
+	        gap: 10px; /* Reduce spacing on smaller screens */
+	    }
+	    .logo-slider {
+	        gap: 10px; /* Adjust the overall gap */
+	    }
+	}
+	
+	@keyframes scroll {
+	    0% {
+	        transform: translateX(0);
+	    }
+	    100% {
+	        transform: translateX(-100%); /* Scroll the entire width of the combined content */
+	    }
+	}
 
-    .logo-slider-container {
-        width: 100vw; /* Full viewport width */
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        position: absolute; /* Keep in document flow */
-	left: 0;
-    }
-
-.logo-slider img {
-    width: auto; /* Let width adjust based on height */
-    height: 80px; /* Fixed height */
-    border-radius: 15px;
-    object-fit: contain; /* Maintain aspect ratio */
-}
-
-.logo-group {
-    display: flex;
-    gap: 20px; /* Adjust spacing as needed */
-    flex-shrink: 0; /* Prevent images from shrinking */
-}
-
-.logo-slider {
-    display: flex;
-    flex-wrap: nowrap; /* Prevents wrapping */
-    animation: scroll 40s linear infinite;
-    gap: 20px; /* Ensure there's space between logo groups */
-}
-@media (max-width: 768px) {
-    .logo-slider img {
-        height: 50px; /* Smaller height for mobile */
-    }
-    .logo-group {
-        gap: 10px; /* Reduce spacing on smaller screens */
-    }
-    .logo-slider {
-        gap: 10px; /* Adjust the overall gap */
-    }
-}
-
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-50%);
-        }
-    }
 </style>
 
     <!-- Journey Timeline -->
