@@ -12,6 +12,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            height: 120px;
             box-sizing: border-box;
         }
 
