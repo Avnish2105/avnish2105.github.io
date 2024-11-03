@@ -397,12 +397,12 @@
         </div>
     </div>
 
-    <div class="timeline-event moving-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 1; transform: translateY(30px);">
-        <div style="flex: 1; min-width: 120px;">
-            <h3>Aiming for DD Robocon Air 1</h3>
-            <p>2025</p>
-        </div>
-    </div>
+	<div class="timeline-event moving-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 1; transform: translateY(30px); color: #ff4500;">
+	    <div style="flex: 1; min-width: 120px;">
+		<h3>Aiming for DD Robocon Air 1</h3>
+		<p>2025</p>
+	    </div>
+	</div>
 </div>
 
 <style>
