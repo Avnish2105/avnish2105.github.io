@@ -306,7 +306,7 @@
         background-color: #f0f0f0;
         margin: 0;
         padding: 0;
-        position: absolute; /* Keep in document flow */
+        position: relative; /* Keep in document flow */
 	left: 0;
     }
 
