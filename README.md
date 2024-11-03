@@ -426,19 +426,26 @@
         }
     }
 
-    .timeline-event {
-        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    }
+	.timeline-event {
+	  opacity: 0;
+	  transform: translateY(30px);
+	  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	}
+	
+	.timeline-event.visible {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+	
+	.moving-event {
+	  animation: bounce 1s ease-in-out;
+	}
+	
+	@keyframes bounce {
+	  0%, 100% { transform: translateY(0); }
+	  50% { transform: translateY(-15px); }
+	}
 
-    .visible {
-        animation: fadeInUp 0.5s forwards;
-    }
-
-    .moving-event {
-        animation: bounce 1s infinite;
-        color: #FF4500; /* Change to an eye-catching color, like orange-red */
-        font-weight: bold; /* Make it bold */
-    }
 </style>
 
 <script>
