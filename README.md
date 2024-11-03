@@ -392,8 +392,8 @@
 
     <div class="timeline-event" style="display: flex; flex-wrap: wrap; margin: 10px 0; opacity: 0; transform: translateY(30px);">
         <div style="flex: 1; min-width: 120px;">
-            <h3>Participated in DD Robocon Air 3</h3>
-            <p>2024</p>
+            <h3>Started with ROS2</h3>
+            <p>Participated in DD Robocon Air 3<br>2024</p>
         </div>
     </div>
 
@@ -426,26 +426,19 @@
         }
     }
 
-	.timeline-event {
-	  opacity: 1;
-	  transform: translateY(0);
-	  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-	}
-	
-	.timeline-event.visible {
-	  opacity: 1;
-	  transform: translateY(0);
-	}
-	
-	.moving-event {
-	  animation: bounce 1s ease-in-out;
-	}
-	
-	@keyframes bounce {
-	  0%, 100% { transform: translateY(0); }
-	  50% { transform: translateY(-15px); }
-	}
+    .timeline-event {
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
 
+    .visible {
+        animation: fadeInUp 0.5s forwards;
+    }
+
+    .moving-event {
+        animation: bounce 1s infinite;
+        color: #FF4500; /* Change to an eye-catching color, like orange-red */
+        font-weight: bold; /* Make it bold */
+    }
 </style>
 
 <script>
