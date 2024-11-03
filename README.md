@@ -249,10 +249,10 @@
     width: 100%;
     overflow: hidden;
     padding: 10px;
-    background-color: #f0f0f0;
 }
 .logo-slider {
     display: flex;
+    width: fit-content;
     animation: scroll 60s linear infinite;
 }
 .logo-slider img {
