@@ -212,9 +212,22 @@
 <body>
 
     <!-- Profile Section -->
-    <div class="profile-container">
-        <img src="./profile_picture.jpeg" alt="Profile Picture">
-        <div class="profile-text">
+        <div class="profile-container" style="text-align: center; margin-top: 20px;">
+            <img id="profilePicture" src="./profile_picture.jpeg" alt="Profile Picture" style="width: 200px; height: auto; transform: scale(0); transition: transform 0.5s ease-in-out;" />
+            <div class="profile-text">
+                <!-- Add your profile text here -->
+                <h2 style="color: #0078D4;">Hi! I am Avnish Deshmukh.</h2>
+                <p>Your description goes here.</p>
+            </div>
+        </div>
+        
+        <script>
+            // Wait for the image to load before scaling it
+            window.onload = function() {
+                const img = document.getElementById('profilePicture');
+                img.style.transform = 'scale(1)'; // Zoom in the image
+            };
+        </script>
             <h2>Robotics Enthusiast & Tech Innovator</h2>
             <p>
                 A 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. 
