@@ -213,7 +213,6 @@
 
 <div class="logo-slider-container">
     <div class="logo-slider">
-        <!-- Duplicate logos for seamless scrolling -->
         <div class="logo-group">
             <img src="./logos/logo1.png" alt="Logo 1">
             <img src="./logos/logo2.png" alt="Logo 2">
@@ -269,11 +268,14 @@
 </div>
 
 <style>
+    body {
+        margin: 0; /* Remove default margin */
+    }
+
     .logo-slider-container {
-        width: 100%; /* Full width */
+        width: 100vw; /* Full viewport width */
         overflow: hidden;
         background-color: #f0f0f0; /* Optional background */
-        padding: 10px; /* Optional padding */
     }
 
     .logo-slider {
@@ -296,10 +298,11 @@
             transform: translateX(0);
         }
         100% {
-            transform: translateX(-50%); /* Adjust to half of the logos for seamless scrolling */
+            transform: translateX(-50%); /* Adjust for seamless scrolling */
         }
     }
 </style>
+
 
 <!-- Profile Section -->
 <div class="profile-container" style="text-align: center; margin-top: 20px;">
