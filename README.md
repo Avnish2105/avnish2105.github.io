@@ -49,9 +49,9 @@
         /* Journey Timeline */
         #journeyTimeline {
             position: relative;
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto 40px;
-            padding: 20px 30px;
+            padding: 20px 20px 20px 30px;
             border-left: 4px solid #0078D4;
             background-color: #f9f9f9;
         }
@@ -59,7 +59,7 @@
         .timeline-event {
             margin: 20px 0;
             position: relative;
-            padding-left: 50px;
+            padding-left: 60px;
         }
 
         .timeline-event::before {
@@ -67,7 +67,7 @@
             font-weight: bold;
             color: #0078D4;
             position: absolute;
-            left: -65px;
+            left: -70px;
             top: 0;
             font-size: 0.9em;
         }
@@ -140,7 +140,7 @@
             text-decoration: none;
             padding: 10px 20px;
             transition: background-color 0.3s, transform 0.3s;
-            margin: 40px 0 20px;
+            margin: 60px 0 20px; /* Added margin for spacing */
         }
 
         .contact-button:hover {
@@ -170,11 +170,11 @@
             }
 
             .timeline-event {
-                padding-left: 30px;
+                padding-left: 50px;
             }
 
             .timeline-event::before {
-                left: -50px;
+                left: -55px;
             }
 
             #socialLinks {
@@ -277,7 +277,7 @@
 
         <!-- Instagram Profile Box -->
         <div class="profile-box" style="border: 2px solid #E4405F;">
-            <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram Logo">
+            <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram Logo">
             <h3>Avnish Deshmukh</h3>
             <p>Follow me for behind-the-scenes of my tech and robotic endeavors!</p>
             <a href="https://www.instagram.com/avnishdeshmukh" class="profile-link" style="background-color: #E4405F;">View Instagram</a>
@@ -286,6 +286,7 @@
 
     <!-- Contact Button -->
     <div style="text-align: center;">
+        <br><br><br> <!-- Added space -->
         <a href="mailto:avnishdeshmukh2105@gmail.com" class="contact-button">Contact Me</a>
     </div>
 
