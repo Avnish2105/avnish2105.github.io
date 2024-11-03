@@ -427,8 +427,8 @@
     }
 
 	.timeline-event {
-	  opacity: 0;
-	  transform: translateY(30px);
+	  opacity: 1;
+	  transform: translateY(0);
 	  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 	}
 	
