@@ -249,8 +249,7 @@
         <h2 style="color: #0078D4;">Hi! I am Avnish Deshmukh.</h2>
         <p>
             A 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. 
-            I love solving complex problems and pushing the boundaries of technology. Living with ⚡ epilepsy has taught me resilience and has been an integral 
-            part of my journey, shaping who I am today. Welcome to my personal website, where I share my projects, experiences, and insights from the world of 
+            I love solving complex problems and pushing the boundaries of technology. Welcome to my personal website, where I share my projects, experiences, and insights from the world of 
             robotics and beyond! 🚀
         </p>
     </div>
@@ -517,8 +516,9 @@
         <a href="mailto:avnishd2105@gmail.com" class="contact-button">Contact Me</a>
     </div>
 
+	<!-- Back to Top Button -->
 	<button id="backToTopBtn" onclick="scrollToTop()" style="display: none; border: none; background: transparent; cursor: pointer;">
-	    <img src="path/to/your/logo.png" alt="Back to Top" style="width: 30px; height: 30px;" />
+	    <i class="fas fa-arrow-up" style="font-size: 30px; color: #333;"></i>
 	</button>
 	
 	<script>
@@ -537,6 +537,10 @@
 	        }
 	    };
 	</script>
+	
+	<!-- Include Font Awesome CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
 	<div id="cursor-trail"></div>
 	
