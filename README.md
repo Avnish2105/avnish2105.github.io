@@ -2,9 +2,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
     <title>Avnish Deshmukh - Robotics Enthusiast</title>
+    <meta name="title" content="Avnish Deshmukh - Robotics Enthusiast">
+    <meta name="description" content="Explore Avnish Deshmukh's journey in robotics, coding, and electronics. Discover innovative projects, insights, and experiences shared through tech-focused articles and showcases.">
+    <meta name="keywords" content="Avnish Deshmukh, robotics, electronics, coding, projects, tech articles">
+    <meta name="author" content="Avnish Deshmukh">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Avnish2105.github.io/">
+    <meta property="og:title" content="Avnish Deshmukh - Robotics Enthusiast">
+    <meta property="og:description" content="Explore Avnish Deshmukh's journey in robotics, coding, and electronics. Discover innovative projects, insights, and experiences.">
+    <meta property="og:image" content="https://avnish2105.github.io/profile_picture.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://Avnish2105.github.io/">
+    <meta property="twitter:title" content="Avnish Deshmukh - Robotics Enthusiast">
+    <meta property="twitter:description" content="Explore Avnish Deshmukh's journey in robotics, coding, and electronics. Discover innovative projects, insights, and experiences.">
+    <meta property="twitter:image" content="https://avnish2105.github.io/profile_picture.jpeg">
+
+    <!-- Favicon -->
     <link rel="icon" sizes="32x32" href="favicon-32x32.png" type="image/png">
     <link rel="icon" sizes="16x16" href="favicon-16x16.png" type="image/png">
+    
     <style>
         /* General Styles */
         body {
