@@ -499,7 +499,7 @@
             <img src="https://img.icons8.com/material-rounded/48/000000/github.png" alt="GitHub Logo">
             <h3>Avnish Deshmukh</h3>
             <p>Robotics Enthusiast & Tech Innovator | Exploring code and hardware</p>
-            <a href="https://github.com/avnishd2105" class="profile-link" style="background-color: #181717;">View GitHub</a>
+            <a href="https://github.com/avnish2105" class="profile-link" style="background-color: #181717;">View GitHub</a>
         </div>
 
         <!-- Instagram Profile Box -->
