@@ -1,5 +1,6 @@
 theme: jekyll-theme-Cayman
-title: Avnish's webpage
+title: Avnish Deshmukh
+description: "Explore Avnish Deshmukh's journey in robotics, coding, and electronics. Discover innovative projects, insights, and experiences shared through tech-focused articles and showcases."
 url: "https://avnishd2105.github.io"
 baseurl: ""
 author: "Avnish Deshmukh"
@@ -8,6 +9,9 @@ color_scheme: light
 
 # Adding profile picture
 profile_image: /profile_picture.jpeg # Ensure the path matches your image location
+
+plugins:
+  - jekyll-seo-tag
 
 social_links:
   - name: GitHub
