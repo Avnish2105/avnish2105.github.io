@@ -13,6 +13,9 @@ profile_image: /profile_picture.jpeg # Ensure the path matches your image locati
 plugins:
   - jekyll-seo-tag
 
+plugins:
+  - jekyll-sitemap
+
 social_links:
   - name: GitHub
     url: https://github.com/avnishd2105
