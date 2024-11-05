@@ -248,9 +248,7 @@
     <div class="profile-text">
         <h2 style="color: #0078D4;">Hi! I am Avnish Deshmukh.</h2>
         <p>
-            A 🤖 robotics enthusiast, tech team member at MTT ROBOCON, and a dedicated learner passionate about 🔧 electronics, 💻 coding, and 🛠️ mechanical design. 
-            I love solving complex problems and pushing the boundaries of technology. Welcome to my personal website, where I share my projects, experiences, and insights from the world of 
-            robotics and beyond! 🚀
+		A robotics enthusiast and tech team member at MTT ROBOCON, I'm passionate about electronics, coding, and mechanical design. I enjoy tackling complex problems and advancing technology. Welcome to my site, where I share my projects, experiences, and insights—from robotics to beyond!
         </p>
     </div>
 </div>
