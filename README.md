@@ -244,7 +244,7 @@
 
 <!-- Profile Section -->
 <div class="profile-container" style="text-align: center; margin-top: 20px;">
-    <img id="profilePicture" src="./profile_picture.jpeg" alt="Profile Picture" style="width: 200px; height: auto; transform: scale(0); transition: transform 0.5s ease-in-out;" />
+    <img id="profilePicture" src="./profile_picture.jpeg" alt="Avnish Deshmukh" style="width: 200px; height: auto; transform: scale(0); transition: transform 0.5s ease-in-out;" />
     <div class="profile-text">
         <h2 style="color: #0078D4;">Hi! I am Avnish Deshmukh.</h2>
         <p>
