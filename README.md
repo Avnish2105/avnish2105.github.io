@@ -504,7 +504,7 @@
             <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram Logo">
             <h3>Avnish Deshmukh</h3>
             <p>Follow my journey through tech, adventures, and everything in between.!</p>
-            <a href="https://www.instagram.com/avnishdeshmukh" class="profile-link" style="background-color: #E4405F;">View Instagram</a>
+            <a href="https://www.instagram.com/av.nish2105/" class="profile-link" style="background-color: #E4405F;">View Instagram</a>
         </div>
     </div>
 
