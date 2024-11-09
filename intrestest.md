@@ -1,23 +1,38 @@
 ---
 layout: default
 title: My Interests
+description: Explore the passions that shape my journey.
 ---
 
-# My Interests
+# Robotics  
 
-Welcome to the page where I share a bit about what interests me! Click on the buttons below to explore more about my passions in robotics and adventure.
+I have been passionate about robotics since childhood, attending workshops in school and beyond. My real robotics journey started in the first year of my diploma at MIT Tech Team Robocon, where I joined as an electronics enthusiast. Over time, I expanded my knowledge and skills, particularly in ROS (Robot Operating System).
 
-## Robotics and Technology
-Robotics is where my passion for technology and problem-solving converge. I am always fascinated by the innovative applications and potential for robotics to improve our lives.
+### Important People Who Shaped My Journey
 
-[Explore Robotics](#robotics){: .btn .btn-primary }
+- **Suman Maldal** (Electronics)  
+- **Soham Patil** (Electronics and ROS)  
+- **Rahul Katiyar** (ROS)  
 
-## Adventure and Trekking
-Outside of the tech world, I am an avid trekker and hiker. Nature always offers a new challenge, and the journey through the mountains and valleys is one I cherish.
-
-[Explore Trekking](#trekking){: .btn .btn-secondary }
+You can connect with them on [LinkedIn](https://www.linkedin.com).
 
 ---
 
-Feel free to reach out if you'd like to learn more about any of these areas!
+### Key Milestones in My Robotics Journey
 
+- **Early Days**: Attended robotics workshops during school.  
+- **First Year**: Joined MIT Tech Team Robocon, focusing on electronics.  
+- **Current Focus**: Working with ROS to advance my robotics skills.
+
+---
+
+### My Robotics Projects
+
+Here are some of the projects I have worked on as part of my journey:
+
+- **[Project 1: Holonomic Drive Robot](#)**: A robot that uses advanced control algorithms.  
+- **[Project 2: Joint Trajectory Controller](#)**: A project focusing on precise control of robot arm movements using ROS.
+
+---
+
+This journey continues to inspire me as I dive deeper into the world of robotics, learning from others and contributing my knowledge to the field.
