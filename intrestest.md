@@ -6,33 +6,49 @@ description: Explore the passions that shape my journey.
 
 # Robotics  
 
-I have been passionate about robotics since childhood, attending workshops in school and beyond. My real robotics journey started in the first year of my diploma at MIT Tech Team Robocon, where I joined as an electronics enthusiast. Over time, I expanded my knowledge and skills, particularly in ROS (Robot Operating System).
-
-### Important People Who Shaped My Journey
-
-- **Suman Maldal** (Electronics)  
-- **Soham Patil** (Electronics and ROS)  
-- **Rahul Katiyar** (ROS)  
-
-You can connect with them on [LinkedIn](https://www.linkedin.com).
+<div style="text-align: center;">
+  <img src="/assets/images/robotics-passion.jpg" alt="Passion for Robotics" width="300" style="border-radius: 10px; margin-bottom: 20px;">
+  <p><em>From early workshops in school to hands-on experiences in the MIT Tech Team, my journey in robotics has been transformative.</em></p>
+</div>
 
 ---
 
-### Key Milestones in My Robotics Journey
+### Key Mentors in My Journey
 
-- **Early Days**: Attended robotics workshops during school.  
-- **First Year**: Joined MIT Tech Team Robocon, focusing on electronics.  
-- **Current Focus**: Working with ROS to advance my robotics skills.
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
 
----
+  <!-- Mentor Card 1 -->
+  <a href="https://in.linkedin.com/in/suman-mandal05" target="_blank" style="width: 200px; text-align: center; text-decoration: none; color: inherit; background: #f5f5f5; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; margin-bottom: 20px;">
+    <img src="/assets/images/suman-mandal.jpg" alt="Suman Mandal" style="width: 100%; height: 180px; object-fit: cover;">
+    <div style="padding: 10px;">
+      <h3 style="margin: 10px 0 5px;">Suman Mandal</h3>
+      <p style="margin: 0; color: #666;">Expertise: Electronics</p>
+    </div>
+  </a>
 
-### My Robotics Projects
+  <!-- Mentor Card 2 -->
+  <a href="https://in.linkedin.com/in/sohampatil2560" target="_blank" style="width: 200px; text-align: center; text-decoration: none; color: inherit; background: #f5f5f5; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; margin-bottom: 20px;">
+    <img src="/assets/images/soham-patil.jpg" alt="Soham Patil" style="width: 100%; height: 180px; object-fit: cover;">
+    <div style="padding: 10px;">
+      <h3 style="margin: 10px 0 5px;">Soham Patil</h3>
+      <p style="margin: 0; color: #666;">Expertise: Electronics & ROS</p>
+    </div>
+  </a>
 
-Here are some of the projects I have worked on as part of my journey:
+  <!-- Mentor Card 3 -->
+  <a href="https://in.linkedin.com/in/rahulkatiyar1995" target="_blank" style="width: 200px; text-align: center; text-decoration: none; color: inherit; background: #f5f5f5; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; margin-bottom: 20px;">
+    <img src="/assets/images/rahul-katiyar.jpg" alt="Rahul Katiyar" style="width: 100%; height: 180px; object-fit: cover;">
+    <div style="padding: 10px;">
+      <h3 style="margin: 10px 0 5px;">Rahul Katiyar</h3>
+      <p style="margin: 0; color: #666;">Expertise: ROS</p>
+    </div>
+  </a>
 
-- **[Project 1: Holonomic Drive Robot](#)**: A robot that uses advanced control algorithms.  
-- **[Project 2: Joint Trajectory Controller](#)**: A project focusing on precise control of robot arm movements using ROS.
+</div>
 
----
-
-This journey continues to inspire me as I dive deeper into the world of robotics, learning from others and contributing my knowledge to the field.
+<style>
+  a:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+</style>
