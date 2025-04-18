@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT Tech Team Gallery - Avnish Deshmukh</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-container {
+            max-width: 1600px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .gallery-section {
+            margin-bottom: 4rem;
+        }
+
+        .gallery-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .gallery-section h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            margin: 1rem auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        .gallery-grid-row {
+            display: flex;
+            gap: 1.5rem; /* Increased gap */
+            width: 100%;
+            grid-column: 1 / -1;
+            min-height: 650px; /* Increased minimum height for the row */
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: var(--white);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Grid size variations */
+        .size-full {
+            grid-column: span 12;
+            aspect-ratio: 21/9;
+        }
+
+        .size-large {
+            grid-column: span 8;
+            aspect-ratio: 16/9;
+        }
+
+        .size-medium {
+            grid-column: span 6;
+            aspect-ratio: 4/3;
+        }
+
+        .size-small {
+            grid-column: span 4;
+            aspect-ratio: 3/4;
+        }
+
+        .size-6 {
+            flex: 1;
+            height: 400px;
+        }
+
+        .size-8 {
+            flex: 2;
+            min-height: 650px; /* Matching the row height */
+        }
+
+        .size-4 {
+            flex: 1;
+            min-height: 650px; /* Matching the row height */
+        }
+
+        .dual-image-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem; /* Increased gap between images */
+            height: 100%;
+        }
+
+        .dual-image {
+            flex: 1;
+            position: relative;
+            height: calc(50% - 0.75rem); /* Adjusted for new gap */
+            min-height: 280px; /* Increased minimum height */
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .dual-image:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .dual-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .dual-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .caption,
+        .dual-image:hover .caption {
+            transform: translateY(0);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        @media (max-width: 1200px) {
+            .size-large {
+                grid-column: span 12;
+            }
+            .size-medium {
+                grid-column: span 6;
+            }
+            .size-small {
+                grid-column: span 6;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                gap: 0.75rem;
+            }
+            .gallery-grid-row {
+                flex-direction: column;
+                min-height: auto;
+            }
+            .size-full,
+            .size-large,
+            .size-medium,
+            .size-small {
+                grid-column: span 12;
+                aspect-ratio: 16/9;
+            }
+            .size-small.portrait {
+                aspect-ratio: 3/4;
+            }
+            .size-8, .size-4, .size-6 {
+                min-height: auto;
+            }
+            .dual-image {
+                min-height: 250px;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">AD</div>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="index.html#journey">Journey</a>
+                <a href="index.html#connect">Connect</a>
+                <a href="gallery.html" class="active">Gallery</a>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding-top: 5rem;">
+        <div class="gallery-container">
+            <h1 class="section-title">MIT Tech Team Gallery</h1>
+            
+            <!-- Competition Highlights -->
+            <section class="gallery-section">
+                <h2>Competition Highlights</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item size-full">
+                        <img src="MTT_Photos/Tyagraj stadium robocon 2024.jpg" alt="Robocon Competition Arena">
+                        <div class="caption">Competition Arena at Tyagraj Stadium - Where dreams take flight</div>
+                    </div>
+                    <div class="gallery-grid-row">
+                        <div class="gallery-item size-6">
+                            <img src="MTT_Photos/2024 robocon team trophy.jpg" alt="Victory Celebration">
+                            <div class="caption">Celebrating our achievement at Robocon 2024</div>
+                        </div>
+                        <div class="gallery-item size-6">
+                            <img src="MTT_Photos/MTT Cheering.JPG" alt="Team Celebration">
+                            <div class="caption">The winning spirit of MIT Tech Team</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Teams -->
+            <section class="gallery-section">
+                <h2>Our Dynamic Teams</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item size-medium">
+                        <img src="MTT_Photos/Robocn elex team 2024.jpg" alt="Electronics Team">
+                        <div class="caption">Electronics Team - Powering our innovations</div>
+                    </div>
+                    <div class="gallery-item size-medium">
+                        <img src="MTT_Photos/Robocn control team 2024.jpg" alt="Control Team">
+                        <div class="caption">Control Team - Masters of precision</div>
+                    </div>
+                    <div class="gallery-item size-medium">
+                        <img src="MTT_Photos/2024 robocon mechanical team.jpg" alt="Mechanical Team">
+                        <div class="caption">Mechanical Team - Building excellence</div>
+                    </div>
+                    <div class="gallery-item size-medium">
+                        <img src="MTT_Photos/2024 robocn 2024 non-tech team.jpg" alt="Non-Tech Team">
+                        <div class="caption">Non-Tech Team - The backbone of our success</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Spirit -->
+            <section class="gallery-section">
+                <h2>Team Spirit</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-grid-row">
+                        <div class="gallery-item size-8">
+                            <img src="MTT_Photos/2024 robocon 2024.jpg" alt="Team Photo">
+                            <div class="caption">United in purpose - MIT Tech Team 2024</div>
+                        </div>
+                        <div class="gallery-item size-4">
+                            <img src="MTT_Photos/2024 robocn team participants.jpg" alt="Team Participants">
+                            <div class="caption">Our dedicated team members at Robocon 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Behind the Scenes -->
+            <section class="gallery-section">
+                <h2>Behind the Scenes</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-grid-row">
+                        <div class="gallery-item size-8">
+                            <div class="dual-image-container">
+                                <div class="dual-image">
+                                    <img src="MTT_Photos/robots night light.jpg" alt="Night Development">
+                                    <div class="caption">Late night innovation sessions</div>
+                                </div>
+                                <div class="dual-image">
+                                    <img src="MTT_Photos/robot 2023.JPG" alt="2023 Robot">
+                                    <div class="caption">Our 2023 Robot in testing</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-item size-4">
+                            <img src="MTT_Photos/robocon lab form outside.jpeg" alt="Robocon Lab">
+                            <div class="caption">Our Robocon Lab - Home of innovation</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="lightbox">
+        <button class="close-lightbox">&times;</button>
+        <img src="" alt="Enlarged image">
+    </div>
+
+    <script>
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const closeButton = lightbox.querySelector('.close-lightbox');
+
+        document.querySelectorAll('.gallery-item, .dual-image').forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+            });
+        });
+
+        closeButton.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
