@@ -9,22 +9,21 @@ document.documentElement.style.scrollBehavior = 'smooth';
 
 // Navbar scroll behavior
 const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
+let lastScroll = window.pageYOffset;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
     if (currentScroll <= 0) {
         navbar.style.transform = 'translateY(0)';
-        return;
+        navbar.style.boxShadow = 'none';
+    } else {
+        navbar.style.boxShadow = 'var(--shadow)';
+        if (currentScroll > lastScroll) {
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            navbar.style.transform = 'translateY(0)';
+        }
     }
-    
-    if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
-        navbar.style.transform = 'translateY(-100%)';
-    } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
-        navbar.style.transform = 'translateY(0)';
-    }
-    
     lastScroll = currentScroll;
 });
 
@@ -277,3 +276,134 @@ if (existingCanvas) {
 
 // Initialize network background
 new NetworkBackground();
+
+// Robotics Jokes System
+const roboticsJokes = [
+    "If you ever feel useless, just remember: An over-discharged LiPo is still technically a battery.",
+    "I told my robot, \"You still have so much potential!\"\nIt said, \"Bro, I'm at 2.9V per cell... stop lying.\"",
+    "An over-discharged LiPo is like a gifted student who never slept —\nBurned out, unstable, and full of wasted potential.",
+    "Told my robot to navigate using ROS 2...\nNow it publishes its anxiety and subscribes to bad decisions.",
+    "I tried debugging a ROS 2 launch file.\nNow I'm 4 hours older, 3 terminals deeper, and questioning all my parameters in life.",
+    "Configured navigation in ROS 2…\nRobot made it 2 meters, gave up, and started broadcasting emotional damage.",
+    "Running Humble on my robot.\nNow it's very humble about its capabilities.",
+    "Flashed new firmware to the robot.\nNow it thinks it's a blender.",
+    "Robot started spinning uncontrollably after a debug session.\nI told my team it's \"just stress testing the chassis.\"",
+    "Put the robot in debug mode.\nNow it's just sitting there… judging me.",
+    "Maturity is when you name your bugs, because at this point…\nThey've been with you longer than some of your friends.",
+    "Maturity is when you stop chasing perfection,\nand start chasing the one log file that might tell you why the IMU is upside down again."
+];
+
+let currentJokeIndex = -1;
+
+function showNextJoke() {
+    const jokeText = document.getElementById('jokeText');
+    const jokeCard = document.getElementById('jokeCard');
+    
+    // Get next joke
+    currentJokeIndex = (currentJokeIndex + 1) % roboticsJokes.length;
+    
+    // Add exit animation
+    jokeCard.style.transform = 'translateY(10px)';
+    jokeText.style.opacity = '0';
+    
+    // Change joke text and animate in after a short delay
+    setTimeout(() => {
+        jokeText.innerText = roboticsJokes[currentJokeIndex];
+        jokeCard.style.transform = 'translateY(0)';
+        jokeText.style.opacity = '1';
+    }, 500);
+}
+
+// Start showing jokes immediately and set interval
+showNextJoke();
+setInterval(showNextJoke, 10000); // Changed to 10 seconds for better readability
+
+// Scroll reveal animation
+function createScrollReveal() {
+    const sections = document.querySelectorAll('section');
+    const options = {
+        threshold: 0.1,
+        rootMargin: '-50px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        observer.observe(section);
+    });
+}
+
+// Dynamic active link updating
+function updateActiveLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').slice(1) === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
+
+// Initialize all animations
+document.addEventListener('DOMContentLoaded', () => {
+    createScrollReveal();
+    updateActiveLink();
+    // Timeline events
+    const events = document.querySelectorAll('.timeline-event');
+    events.forEach((event, index) => {
+        event.dataset.delay = `${index * 200}ms`;
+        observer.observe(event);
+    });
+
+    // Social cards
+    const cards = document.querySelectorAll('.social-card');
+    cards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 100}ms`;
+        observer.observe(card);
+    });
+
+    // Profile picture animation
+    const img = document.getElementById('profilePicture');
+    if (img) {
+        img.style.opacity = '0';
+        img.style.transform = 'scale(0.8) rotate(-10deg)';
+        
+        setTimeout(() => {
+            img.style.opacity = '1';
+            img.style.transform = 'scale(1) rotate(0deg)';
+        }, 300);
+    }
+
+    // Logo slider clone for infinite scroll
+    const logoSlider = document.querySelector('.logo-slider');
+    const logoGroup = document.querySelector('.logo-group');
+    
+    if (logoSlider && logoGroup) {
+        const clone = logoGroup.cloneNode(true);
+        logoSlider.appendChild(clone);
+    }
+});

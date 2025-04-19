@@ -1,17 +1,21 @@
 :root {
-  --primary: #2563eb;
-  --secondary: #3b82f6;
-  --accent: #f59e0b;
-  --background: #ffffff;
-  --dark: #1f2937;
-  --light: #f3f4f6;
-  --text: #374151;
-  --white: #ffffff;
-  --glass: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    --primary: #2563eb;
+    --secondary: #3b82f6;
+    --accent: #f59e0b;
+    --background: #ffffff;
+    --dark: #1f2937;
+    --light: #f8fafc;
+    --text: #374151;
+    --text-light: #6b7280;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    --section-padding: 6rem 2rem;
+    --card-radius: 1rem;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Base Styles */
@@ -286,6 +290,50 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
+/* Hobbies Section */
+.hobbies {
+    padding: 6rem 2rem;
+    background: linear-gradient(to top, var(--background), var(--light));
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hobby-card {
+    background: var(--white);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.hobby-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hobby-card h3 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.hobby-card p {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 /* Social Cards */
 .connect {
   padding: 6rem 2rem;
@@ -396,6 +444,75 @@ footer {
     background: var(--background);
 }
 
+/* Joke Card */
+.joke-card {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    z-index: 1000;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.joke-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.joke-label {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.joke-icon {
+    font-size: 1.25rem;
+    animation: bounce 2s infinite;
+}
+
+.joke-content {
+    padding: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    background: transparent;
+    transition: opacity 0.5s ease;
+}
+
+#jokeText {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+    .joke-card {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hero-content {
@@ -451,6 +568,13 @@ footer {
     left: -2rem;
     width: 0.8rem;
     height: 0.8rem;
+  }
+
+  .joke-card {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    max-width: calc(100% - 2rem);
   }
 }
 
