@@ -1,0 +1,230 @@
+.gallery-container {
+    max-width: 1600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.gallery-section {
+    margin-bottom: 4rem;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--dark);
+    font-size: 2rem;
+    position: relative;
+}
+
+.gallery-section h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin: 1rem auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.gallery-grid-row {
+    display: flex;
+    gap: 1.5rem; /* Increased gap */
+    width: 100%;
+    grid-column: 1 / -1;
+    min-height: 650px; /* Increased minimum height for the row */
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: var(--white);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Grid size variations */
+.size-full {
+    grid-column: span 12;
+    aspect-ratio: 21/9;
+}
+
+.size-large {
+    grid-column: span 8;
+    aspect-ratio: 16/9;
+}
+
+.size-medium {
+    grid-column: span 6;
+    aspect-ratio: 4/3;
+}
+
+.size-small {
+    grid-column: span 4;
+    aspect-ratio: 3/4;
+}
+
+.size-6 {
+    flex: 1;
+    height: 400px;
+}
+
+.size-8 {
+    flex: 2;
+    min-height: 650px; /* Matching the row height */
+}
+
+.size-4 {
+    flex: 1;
+    min-height: 650px; /* Matching the row height */
+}
+
+.dual-image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Increased gap between images */
+    height: 100%;
+}
+
+.dual-image {
+    flex: 1;
+    position: relative;
+    height: calc(50% - 0.75rem); /* Adjusted for new gap */
+    min-height: 280px; /* Increased minimum height */
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.dual-image:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.dual-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dual-image:hover img {
+    transform: scale(1.05);
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .caption,
+.dual-image:hover .caption {
+    transform: translateY(0);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+    .size-large {
+        grid-column: span 12;
+    }
+    .size-medium {
+        grid-column: span 6;
+    }
+    .size-small {
+        grid-column: span 6;
+        aspect-ratio: 4/3;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        gap: 0.75rem;
+    }
+    .gallery-grid-row {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .size-full,
+    .size-large,
+    .size-medium,
+    .size-small {
+        grid-column: span 12;
+        aspect-ratio: 16/9;
+    }
+    .size-small.portrait {
+        aspect-ratio: 3/4;
+    }
+    .size-8, .size-4, .size-6 {
+        min-height: auto;
+    }
+    .dual-image {
+        min-height: 250px;
+        margin-bottom: 1rem;
+    }
+}

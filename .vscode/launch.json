@@ -1,0 +1,17 @@
+{
+  // Run and Debug panel -> pick "Preview site" -> green ▶ (or press F5).
+  // Starts the local server, then opens the site in a Chrome window that VS Code controls.
+  // Closing that window or pressing Stop ends the session; the server keeps running
+  // in its terminal so the next F5 is instant.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Preview site",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:8000",
+      "webRoot": "${workspaceFolder}/site",
+      "preLaunchTask": "Start preview server"
+    }
+  ]
+}

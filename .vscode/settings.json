@@ -1,0 +1,7 @@
+{
+  // Status-bar buttons; requires the recommended "Task Buttons" extension.
+  "VsCodeTaskButtons.tasks": [
+    { "label": "$(play) Preview site", "task": "Preview site", "tooltip": "Serve site/ locally and open the browser" },
+    { "label": "$(check) Check links", "task": "Check links", "tooltip": "Find broken links/images in site/" }
+  ]
+}

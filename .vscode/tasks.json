@@ -1,0 +1,50 @@
+{
+  // Ctrl+Shift+B  -> "Preview site" (starts the server and opens your browser)
+  // To stop it: click the trash-can icon on the "Preview site" terminal,
+  // or Terminal > Terminate Task.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Preview site",
+      "detail": "Serve site/ at http://localhost:8000 with live reload and open the browser",
+      "type": "shell",
+      "command": "python3 -u scripts/serve.py --open",
+      "isBackground": true,
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": {
+        "owner": "preview",
+        "pattern": { "regexp": "^__never_matches__$" },
+        "background": {
+          "activesBegins": true,
+          "beginsPattern": "^Serving ",
+          "endsPattern": "^Preview ready at "
+        }
+      }
+    },
+    {
+      // Used by the ▶ button in Run and Debug (launch.json), which opens the browser itself.
+      "label": "Start preview server",
+      "type": "shell",
+      "command": "python3 -u scripts/serve.py",
+      "isBackground": true,
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": {
+        "owner": "preview",
+        "pattern": { "regexp": "^__never_matches__$" },
+        "background": {
+          "activesBegins": true,
+          "beginsPattern": "^Serving ",
+          "endsPattern": "^Preview ready at "
+        }
+      }
+    },
+    {
+      "label": "Check links",
+      "detail": "Report any href/src in site/ that points to a missing file",
+      "type": "shell",
+      "command": "python3 scripts/check_links.py site",
+      "problemMatcher": []
+    }
+  ]
+}
