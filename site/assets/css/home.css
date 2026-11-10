@@ -665,16 +665,55 @@
 }
 
 .skill-group {
-  grid-column: span 2;
+  grid-column: span 3;
   padding: 1.5rem;
   border: 1px solid var(--border);
   border-radius: 1rem;
   background: rgba(13, 20, 36, 0.7);
 }
 
-.skill-group:nth-child(1),
-.skill-group:nth-child(2) {
-  grid-column: span 3;
+/* Core strengths: full width, emphasised */
+.skill-group.skill-core {
+  grid-column: 1 / -1;
+  border-color: rgba(96, 165, 250, 0.35);
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.1), rgba(13, 20, 36, 0.75));
+}
+
+.core-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 0.75rem;
+}
+
+.core-list li {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--primary-text);
+  border-radius: 0.6rem;
+  background: rgba(7, 11, 20, 0.45);
+}
+
+.core-list strong {
+  color: var(--heading);
+  font-family: var(--display);
+  font-size: 1rem;
+}
+
+.core-list span {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.familiar-label {
+  grid-column: 1 / -1;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
 }
 
 .skill-group h3 {
@@ -1218,8 +1257,7 @@
   }
 
   .skill-group,
-  .skill-group:nth-child(1),
-  .skill-group:nth-child(2) {
+  .skill-group.skill-core {
     grid-column: auto;
   }
 

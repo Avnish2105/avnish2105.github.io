@@ -5,12 +5,12 @@ Guidance for Claude Code when working in this repository. Sections marked **TODO
 ## 1. About the owner
 
 - **Name:** Avnish Deshmukh
-- **Tagline (live on the site):** "I debug robots by day, and my thoughts on the trail."
+- **Tagline (live on the site):** "Final year at MIT-WPU, Pune. I debug robots by day and think on the trail."
 - **Headline (live):** Robotics engineer: electronics, embedded systems & autonomy.
 - **Education:** Integrated B.Tech in Electronics & Communication Engineering (AI & ML), MIT World Peace University (MIT-WPU), Pune. Diploma + B.Tech integrated programme, started 2022. Final year, graduating 2027.
 - **Team:** MIT WPU-Tech Team (ABU/DD Robocon). Joined 2022 in Electronics, Electronics + Control from 2023. Vice-Captain in 2026 (15-member team). Technical mentor to ~20 recruits across electronics, mechanical and software, 2023 to present.
-- **Competitions (DD Robocon, All India rank):** 2022: 4, 2023: 2, 2024: 3, 2025: participated (rank TODO), 2026: 2. That is three top-3 finishes across five seasons.
-- **Experience:** Intern at DRDO, ends 10 Feb 2027. Start date: TODO. Project details are NOT public; see section 12.
+- **Competitions (DD Robocon, All India rank, per the resume, confirmed by owner 2026-11-11):** 2022: 3, 2023: 2, 2024: 3, 2025: participated (rank TODO), 2026: 2. That is four top-3 finishes across five seasons.
+- **Experience:** Research Intern, Quadruped Robotics, DRDO, 2026 to 10 Feb 2027. Only the approved one-liner is public; see section 12.
 - **Skills / tools (grouped, see section 9)**
 - **Target roles:** robotics and autonomy, defence, micro robotics, swarm robotics.
 - **Interests:** electronics, robotics, coding, trekking, philosophy and ideas. Proud of being multi-talented: has worked across all three robotics fields (mechanical, software, electronics) plus side interests in philosophy and trekking.
@@ -20,9 +20,9 @@ Guidance for Claude Code when working in this repository. Sections marked **TODO
   - Email (owner approved for the site): avnishd2105@gmail.com
   - Instagram: dropped from the site.
 - **Current focus:** final-year capstone (autonomous college guide AGV) and the DRDO internship (no details public).
-- **Location / availability:** Pune, India. Open to internships anywhere in India and full-time roles from mid-2027 (confirm exact wording).
+- **Location / availability:** Pune, India. Live on the site: "Available full-time from mid-2027" (hero chip and Work page).
 - **Short bio (live on the home page):**
-  > Final-year B.Tech ECE (AI & ML) student at MIT-WPU, Pune, and Vice-Captain of the MIT WPU-Tech Robocon team. I design the electronics, write the firmware and ROS 2 software, and build the mechanisms for competition robots, with three All India top-3 finishes across five seasons. I'm looking for robotics and autonomy roles, especially in defence, micro and swarm robotics, and I like thinking about ideas as much as building machines.
+  > Final-year B.Tech ECE (AI & ML) student at MIT-WPU, Pune, and Vice-Captain of the MIT WPU-Tech Robocon team. I design the electronics, write the firmware and ROS 2 software, and build the mechanisms for competition robots, with four All India top-3 finishes across five seasons. I'm looking for robotics and autonomy roles, especially in defence, micro and swarm robotics, and I like thinking about ideas as much as building machines.
 
 ## 2. Site goals
 
@@ -50,7 +50,7 @@ Guidance for Claude Code when working in this repository. Sections marked **TODO
 
 Pages (politics gets no standalone page; any civic or ideas essays live in Writing. confirm):
 
-All five pages exist. Nav on every page: Home · Work · Writing · Treks · Gallery (current page gets `aria-current="page"`).
+All five pages exist. Nav on every page: Home · Work · Writing · Treks · Gallery · Resume (PDF) (current page gets `aria-current="page"`).
 
 | Page | File | Purpose |
 |---|---|---|
@@ -171,7 +171,8 @@ Don't commit or push unless asked.
 - Links / media: TODO
 
 ### DRDO internship
-- Public statement on the site: "Intern at DRDO, until 10 February 2027." No project statement or details (owner's decision). Start date: TODO.
+- Public title: "Research Intern, Quadruped Robotics", 2026 to 10 February 2027.
+- Approved public one-liner (owner, 2026-11-11): "State estimation for a legged robot operating in GPS-denied settings." Nothing more: no sensors, hardware, simulators, controllers, methods or results.
 
 **Other projects (from resume)**
 - ESP32 & STM32 breakout/shield boards (custom PCBs + firmware)
@@ -201,6 +202,7 @@ Per-project template for case-study pages:
 - DD Robocon placements (section 1). Nothing else to list at this time.
 
 ### Skills (grouped)
+- **Core strengths (shown first on the site; owner to confirm the pick):** PCB design (Altium), embedded firmware (STM32, ESP32), C / C++, ROS 2 + ros2_control, motor control (ODrive, VESC), Python. Everything else below is listed as "Also familiar with". GPS and rotary encoders added from the resume.
 - **Electronics:** Altium Designer, Autodesk EAGLE, PCB design, embedded debugging, battery management, embedded firmware development (STM32, ESP32), motor drivers
 - **Robotics / ROS 2:** ROS 2, ros2_control, Docker, GitHub, Gazebo, Isaac Sim, Pure Pursuit navigation
 - **Programming languages:** C, C++, Python
@@ -222,14 +224,14 @@ Photos are available; to be added later. Trek list and stories: TODO.
 Skipped.
 
 ### Resume / CV
-Public PDF in `site/assets/docs/`, linked from the hero and Work page. See the phone-number rule in section 12.
+Public PDF: `site/assets/docs/avnish-deshmukh-resume.pdf`, linked from the nav (every page), the hero and the Work page. Source: `scripts/resume/public-resume.html` (rebuild command in its header comment). The private original `Avnish_Deshmukh_Resume.pdf` in the repo root is git-ignored. See the phone-number rule in section 12.
 
 ## 10. SEO & analytics
 
 - Primary meta description lives in `site/index.html`; keep it in sync with the bio above.
 - JSON-LD `Person` markup is on the home page (name, links, MIT-WPU, Pune). Keep it in sync with section 1.
 - Owner action: submit `sitemap.xml` in Search Console (verification file already in place). `feed.xml` is the RSS feed for Writing.
-- Social preview image: `assets/images/profile.jpeg`. TODO: consider a dedicated 1200×630 image
+- Social preview image: `assets/images/og-card.jpg` (1200×630, 2023 robot photo + name) on every page; the JSON-LD `image` stays `profile.jpeg`.
 - Analytics: Google Analytics ID is in `site/assets/js/analytics.js`, loaded on every page.
 - Custom domain: none planned.
 
@@ -238,7 +240,7 @@ Public PDF in `site/assets/docs/`, linked from the hero and Work page. See the p
 - [x] Work page with featured projects (AGV and Robocon case-study pages; DRDO as a one-liner)
 - [x] Writing page, `new_post.py` and `feed.xml`
 - [x] Treks page (placeholder)
-- [ ] Resume download button: commented out in the hero and Work page until the public PDF exists
+- [x] Resume: public PDF (no phone, DRDO one-liner) linked from nav, hero and Work page
 - [x] "Now" line on the home page
 - [x] JSON-LD Person markup (submit sitemap in Search Console: owner)
 - [x] Mailto contact button
@@ -254,7 +256,7 @@ Public PDF in `site/assets/docs/`, linked from the hero and Work page. See the p
 - Only edit under `site/` for website changes; keep tooling changes in `scripts/` and `.vscode/`.
 - Keep the site static and dependency-free.
 - Don't invent facts about the owner (projects, dates, employers, awards). If content is missing, leave a TODO or ask.
-- DRDO: publish only the role and dates the owner has approved. Never describe the project, its goals, tech or results on the site.
+- DRDO: publish only the title, dates and approved one-liner (section 9). Never add sensors, hardware, methods or results, on the site or in the public resume, even though the private resume lists them.
 - Never publish the owner's phone number. The resume PDF contains one, so publish a version without it.
 - Politics is not a page. Writing posts stay calm and respectful in tone.
 - Never delete or rename `google73981eb1df2e57f0.html`, `robots.txt` or `sitemap.xml` without asking, as they affect search indexing.

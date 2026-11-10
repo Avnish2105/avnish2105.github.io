@@ -8,3 +8,6 @@ __pycache__/
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/settings.json
+
+# private resume (contains phone number); the public copy is site/assets/docs/avnish-deshmukh-resume.pdf
+/Avnish_Deshmukh_Resume.pdf

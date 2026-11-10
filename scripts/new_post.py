@@ -50,7 +50,7 @@ TEMPLATE = """<!DOCTYPE html>
     <meta property="og:url" content="{url}">
     <meta property="og:title" content="{title} - Avnish Deshmukh">
     <meta property="og:description" content="{description}">
-    <meta property="og:image" content="{base}assets/images/profile.jpeg">
+    <meta property="og:image" content="{base}assets/images/og-card.jpg">
     <meta property="article:published_time" content="{iso_date}">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -83,6 +83,7 @@ TEMPLATE = """<!DOCTYPE html>
                 <a href="index.html" aria-current="page">Writing</a>
                 <a href="../treks.html">Treks</a>
                 <a href="../gallery.html">Gallery</a>
+                <a href="../assets/docs/avnish-deshmukh-resume.pdf">Resume</a>
             </div>
         </div>
     </nav>
@@ -105,7 +106,7 @@ TEMPLATE = """<!DOCTYPE html>
     </main>
 
     <footer>
-        <p>&copy; {year} Avnish Deshmukh. Building the future with code and robotics.</p>
+        <p>&copy; {year} Avnish Deshmukh · Robotics engineer, Pune, India.</p>
     </footer>
 </body>
 

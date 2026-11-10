@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+  Source for the PUBLIC resume: site/assets/docs/avnish-deshmukh-resume.pdf
+  Rules (CLAUDE.md section 12): no phone number; DRDO limited to the approved one-liner.
+  Rebuild:
+    google-chrome --headless --disable-gpu --no-pdf-header-footer \
+      --print-to-pdf=site/assets/docs/avnish-deshmukh-resume.pdf scripts/resume/public-resume.html
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Avnish Deshmukh – Resume</title>
+<meta name="author" content="Avnish Deshmukh">
+<style>
+  @page { size: A4; margin: 14mm 15mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font: 10pt/1.4 "Helvetica Neue", Arial, "Liberation Sans", sans-serif; color: #1a1a1a; }
+  a { color: inherit; text-decoration: none; }
+  header { text-align: center; margin-bottom: 8pt; }
+  h1 { font-size: 19pt; letter-spacing: 0.06em; font-weight: 700; }
+  .contact { font-size: 8.8pt; color: #333; margin-top: 2pt; }
+  .contact span + span::before { content: " | "; color: #888; }
+  h2 { font-size: 10pt; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid #1a1a1a;
+       padding-bottom: 1pt; margin: 10pt 0 4pt; break-after: avoid; }
+  h3 { font-size: 9.6pt; font-weight: 700; margin-top: 3pt; }
+  h3 .meta { font-weight: 400; color: #333; }
+  h4 { font-size: 9.8pt; font-weight: 700; font-style: italic; margin-top: 4pt; break-after: avoid; }
+  ul { padding-left: 13pt; }
+  li { margin: 1.5pt 0; break-inside: avoid; }
+  p { margin: 1pt 0; }
+  .skills p b { display: inline-block; min-width: 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>AVNISH DESHMUKH</h1>
+  <p class="contact">
+    <span><a href="mailto:avnishd2105@gmail.com">avnishd2105@gmail.com</a></span><span>Pune, India</span><span><a href="https://avnish2105.github.io">avnish2105.github.io</a></span><span><a href="https://www.linkedin.com/in/avnish-deshmukh">linkedin.com/in/avnish-deshmukh</a></span><span><a href="https://github.com/avnish2105">github.com/avnish2105</a></span>
+  </p>
+</header>
+
+<h2>Professional Summary</h2>
+<p>Robotics engineer (final-year B.Tech, ECE – AI &amp; ML) with 5 years on the MIT WPU-Tech DD Robocon team across electronics, embedded systems and mechanical design, now working on state estimation for legged robots as a DRDO intern. Designed and debugged custom PCBs and embedded control systems for competition robots; 2+ years of ROS 2 for system integration; 1 year designing lightweight mechanisms in SolidWorks and manufacturing them via 3D printing, laser cutting, milling and turning. Comfortable owning a subsystem end-to-end, from schematic to firmware to mechanical fit.</p>
+
+<h2>Professional Experience</h2>
+<h3>Research Intern – Quadruped Robotics | DRDO <span class="meta">| 2026 – Feb 2027</span></h3>
+<ul>
+  <li>State estimation for a legged robot operating in GPS-denied settings.</li>
+</ul>
+
+<h2>Achievements &amp; Competitions</h2>
+<h3>ABU Robocon / DD Robocon – National Competition</h3>
+<ul>
+  <li>All India Rank 2 – DD Robocon 2026 | All India Rank 3 – DD Robocon 2024</li>
+  <li>All India Rank 2 – DD Robocon 2023 | All India Rank 3 – DD Robocon 2022</li>
+</ul>
+
+<h2>Technical Experience – MIT WPU-Tech Team (DD Robocon)</h2>
+<h4>Embedded Systems &amp; Electronics | 2022 – Present</h4>
+<ul>
+  <li>Owned electrical and embedded subsystem design across 5 competition cycles (2022–2026), from schematic through firmware to on-robot integration.</li>
+  <li>Designed and fabricated 10+ custom PCBs for motor control, sensor interfacing and pneumatic actuation, removing third-party module dependencies and field failure points.</li>
+  <li>Programmed and debugged STM32-based control systems handling ~10 actuators and ~15 sensors.</li>
+</ul>
+<h4>Programming &amp; Robotics Software | 2024 – Present</h4>
+<ul>
+  <li>Developed embedded software for microcontrollers, including custom libraries and integration of sensors, actuators and communication interfaces.</li>
+  <li>Used ROS 2 since 2024 for robotic software development, hardware integration and navigation.</li>
+</ul>
+<h4>Mechanical Design &amp; Manufacturing | 2026</h4>
+<ul>
+  <li>Designed robotic mechanisms in SolidWorks and took them from CAD to fabricated, assembled parts using 3D printing, laser cutting, milling, turning and other machining processes.</li>
+</ul>
+
+<h2>Leadership</h2>
+<ul>
+  <li><b>Vice-Captain, MIT WPU-Tech Team</b> | 2026 – Led a 15-member ABU/DD Robocon team.</li>
+  <li><b>Technical Mentor, Electronics &amp; Cross-Department Recruits</b> | 2023 – Present – Mentored ~20 recruits.</li>
+</ul>
+
+<h2>Education</h2>
+<h3>MIT World Peace University (MIT-WPU), Pune <span class="meta">| Expected 2027</span></h3>
+<p>Integrated B.Tech in Electronics &amp; Communication Engineering (AI &amp; ML) – CGPA 7.36/10</p>
+
+<h2>Technical Skills</h2>
+<div class="skills">
+  <p><b>PCB &amp; Electronics:</b> Altium Designer, Autodesk EAGLE, PCB design, embedded systems, electronics debugging</p>
+  <p><b>Programming &amp; Robotics:</b> C, C++, Python, ROS 2, ros2_control, Docker, Gazebo</p>
+  <p><b>Mechanical:</b> SolidWorks, mechanical design, manufacturing &amp; fabrication</p>
+  <p><b>Motor Control &amp; Hardware:</b> ODrive, VESC, motor drivers, STM32, ESP32</p>
+  <p><b>Sensors &amp; Navigation:</b> VectorNav IMUs, GPS, SICK distance sensors, Baumer proximity sensors, rotary encoders</p>
+</div>
+
+<h2>Projects</h2>
+<h4>Robotics Software</h4>
+<ul>
+  <li><b>ODrive ROS 2 Hardware Interface</b> – ros2_control hardware interface for ODrive controllers, providing motor command and feedback integration.</li>
+  <li><b>DualShock 4 ROS 2 Interface</b> – maps DualShock 4 inputs to ROS 2 commands for robot teleoperation.</li>
+  <li><b>Pure Pursuit Navigation</b> – autonomous path following in ROS 2 using a Pure Pursuit controller.</li>
+</ul>
+<h4>Embedded Systems &amp; Electronics</h4>
+<ul>
+  <li><b>ESP32 &amp; STM32 Breakout/Shield Boards</b> – custom PCBs and firmware for robot control and hardware interfacing.</li>
+  <li><b>Smart Pneumatic Solenoid Control Board</b> – custom PCB using protected high-side switch/driver ICs for reliable pneumatic actuation.</li>
+  <li><b>Robocon Robot Electronics Integration</b> – integrated controllers, sensors, motor drivers and communication interfaces across multiple competition robots.</li>
+</ul>
+<h4>Mechanical Design &amp; Robotic Mechanisms</h4>
+<ul>
+  <li><b>Staff Handling &amp; Lifting Robot (prototype)</b> – sub-25 kg mobile robot with automated staff pickup, assembly and 25 kg load lifting.</li>
+  <li><b>Basketball Throwing Mechanism</b> – prototyped and evaluated wheel-based and linear throwers; contributed to calculations, actuator selection, electronics and control.</li>
+  <li><b>Ring-Throwing Catapult</b> – BLDC-driven catapult (Nidec gearbox, ODrive); contributed to mechanical and electronics integration.</li>
+</ul>
+<h4>Final-Year Capstone</h4>
+<ul>
+  <li><b>Autonomous College Guide AGV</b> – developing an autonomous guided vehicle that works as a campus guide robot.</li>
+</ul>
+</body>
+</html>
