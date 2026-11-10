@@ -389,18 +389,27 @@
 .fb-dim text { fill: var(--text-light); font: 10px var(--mono); text-anchor: middle; letter-spacing: 0.1em; }
 .fb-shadow { fill: rgba(0, 0, 0, 0.45); }
 .fb-ground { stroke: rgba(96, 165, 250, 0.35); stroke-width: 1; }
-.fb-leg path { stroke: #4b5b7a; stroke-width: 12; fill: none; }
-.fb-far path { stroke: #26324a; }
+.fb-leg path { fill: none; }
+.fb-thigh { stroke: #31436b; stroke-width: 20; }
+.fb-arm { stroke: #31436b; stroke-width: 18; }
+.fb-tube { stroke: #2a3550; stroke-width: 8; }
+.fb-lobe { fill: #31436b; }
+.fb-drive { fill: #141c2e; stroke: rgba(96, 165, 250, 0.5); stroke-width: 1.5; }
+.fb-ring { fill: none; stroke: var(--accent); stroke-width: 2; }
+.fb-foot { fill: #07090f; stroke: #4b5b7a; stroke-width: 1.5; }
+.fb-far { opacity: 0.45; }
 .fb-body { stroke: rgba(96, 165, 250, 0.55); stroke-width: 1.5; }
-.fb-strip { stroke: var(--primary-text); stroke-width: 3; opacity: 0.8; }
-.fb-lidar { fill: #1b2540; stroke: rgba(96, 165, 250, 0.6); stroke-width: 1.5; }
-.fb-antenna { stroke: #4b5b7a; stroke-width: 2; }
+.fb-frame { fill: #0a0f1c; }
+.fb-face { fill: #1b2540; stroke: rgba(96, 165, 250, 0.45); stroke-width: 1.5; }
+.fb-hatch, .fb-radio { fill: #0a0f1c; }
+.fb-rail { stroke: #4b5b7a; stroke-width: 3; fill: none; }
+.fb-mast { stroke: #4b5b7a; stroke-width: 2; }
+.fb-slant { stroke: #050913; stroke-width: 4; }
+.fb-tail { stroke: var(--accent); stroke-width: 2.5; }
+.fb-lidar { fill: #31436b; stroke: rgba(96, 165, 250, 0.6); stroke-width: 1.5; }
 .fb-blink { fill: var(--accent); }
-.fb-head { fill: #1b2540; stroke: rgba(96, 165, 250, 0.55); stroke-width: 1.5; }
 .fb-visor { fill: #050913; }
 .fb-eye { fill: var(--primary-text); }
-.fb-joint { fill: #121a2c; stroke: var(--accent); stroke-width: 2; }
-.fb-knee { fill: #121a2c; stroke: rgba(96, 165, 250, 0.7); stroke-width: 2; }
 
 /* Scroll cue */
 .scroll-cue {

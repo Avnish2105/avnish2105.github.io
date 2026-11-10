@@ -91,35 +91,65 @@
                         </linearGradient>
                     </defs>
                     <g class="fb-dim">
-                        <path d="M88 60h232M88 54v12M320 54v12"/>
-                        <text x="204" y="48">L 0.96 m</text>
+                        <path d="M71 38h268M71 32v12M339 32v12"/>
+                        <text x="205" y="26">L 1.05 m</text>
                     </g>
                     <ellipse class="fb-shadow" cx="205" cy="262" rx="150" ry="10"/>
                     <path class="fb-ground" d="M10 262h400"/>
-                    <!-- far legs -->
-                    <g class="fb-leg fb-far">
-                        <path d="M118 128l-16 58 30 70"/>
-                        <path d="M292 128l-16 58 30 70"/>
+                    <!-- far legs (X stance: front knee back, hind knee forward) -->
+                    <g class="fb-leg fb-far" transform="translate(-7 -4)">
+                        <path class="fb-tube" d="M267.9 168.8L296.7 254"/>
+                        <path class="fb-thigh" d="M296.7 129.4L249.7 184.9"/>
+                        <path class="fb-arm" d="M249.7 184.9L270.9 177.7"/>
+                        <circle class="fb-lobe" cx="296.7" cy="129.4" r="16"/>
+                        <circle class="fb-lobe" cx="249.7" cy="184.9" r="17.5"/>
+                        <circle class="fb-drive" cx="249.7" cy="184.9" r="11"/>
+                        <circle class="fb-ring" cx="296.7" cy="129.4" r="9"/>
+                        <circle class="fb-foot" cx="296.7" cy="254" r="8"/>
+                        <path class="fb-tube" d="M142.1 168.8L113.3 254"/>
+                        <path class="fb-thigh" d="M113.3 129.4L160.3 184.9"/>
+                        <path class="fb-arm" d="M160.3 184.9L139.1 177.7"/>
+                        <circle class="fb-lobe" cx="113.3" cy="129.4" r="16"/>
+                        <circle class="fb-lobe" cx="160.3" cy="184.9" r="17.5"/>
+                        <circle class="fb-drive" cx="160.3" cy="184.9" r="11"/>
+                        <circle class="fb-ring" cx="113.3" cy="129.4" r="9"/>
+                        <circle class="fb-foot" cx="113.3" cy="254" r="8"/>
                     </g>
-                    <!-- body -->
-                    <rect class="fb-body" x="88" y="96" width="232" height="52" rx="14" fill="url(#fbBody)"/>
-                    <path class="fb-strip" d="M108 122h186"/>
-                    <rect class="fb-lidar" x="186" y="80" width="38" height="16" rx="5"/>
-                    <path class="fb-antenna" d="M112 96l-14-30"/>
-                    <circle class="fb-blink" cx="97" cy="64" r="4"/>
-                    <!-- head -->
-                    <rect class="fb-head" x="314" y="92" width="62" height="40" rx="10"/>
-                    <rect class="fb-visor" x="338" y="104" width="34" height="12" rx="6"/>
-                    <circle class="fb-eye" cx="349" cy="110" r="3"/>
-                    <circle class="fb-eye" cx="362" cy="110" r="3"/>
+                    <!-- top: rear LiDAR cage, radio mast, docking hatch, front handle -->
+                    <path class="fb-rail" d="M99 110C99 53 125 53 125 110"/>
+                    <rect class="fb-lidar" x="99" y="84" width="26" height="19" rx="3"/>
+                    <rect class="fb-radio" x="143" y="101" width="41" height="10" rx="2"/>
+                    <path class="fb-mast" d="M179.5 101V60"/>
+                    <circle class="fb-blink" cx="179.5" cy="56" r="3"/>
+                    <path class="fb-rail" d="M284 112C284 80 310 80 310 112"/>
+                    <!-- hip gaps, shell (waist + wide ends), faces -->
+                    <rect class="fb-frame" x="99" y="112" width="212" height="44" rx="3"/>
+                    <path class="fb-body" d="M127 108l4-4h27l4 4h86l4-4h27l4 4v43l-5 5H131l-4-5z" fill="url(#fbBody)"/>
+                    <rect class="fb-hatch" x="211" y="105" width="47" height="3" rx="1"/>
+                    <rect class="fb-visor" x="193" y="120" width="24" height="8" rx="2"/>
+                    <path class="fb-face" d="M311 111l9 1 7 2 7 1.4 5 1.2V132l-5 7-7 10-7 7h-9zM99 111l-9 1-7 2-7 1.4-5 1.2V132l5 7 7 10 7 7h9z"/>
+                    <rect class="fb-visor" x="334" y="117" width="5" height="14" rx="1"/>
+                    <circle class="fb-eye" cx="336.5" cy="124" r="2.4"/>
+                    <path class="fb-slant" d="M334 140l-6 8"/>
+                    <path class="fb-tail" d="M72 118v12"/>
                     <!-- near legs -->
                     <g class="fb-leg">
-                        <path d="M126 136l-20 56 34 70"/>
-                        <path d="M300 136l-20 56 34 70"/>
-                        <circle class="fb-joint" cx="126" cy="136" r="9"/>
-                        <circle class="fb-joint" cx="300" cy="136" r="9"/>
-                        <circle class="fb-knee" cx="106" cy="192" r="6"/>
-                        <circle class="fb-knee" cx="280" cy="192" r="6"/>
+                        <path class="fb-tube" d="M267.9 168.8L296.7 254"/>
+                        <path class="fb-thigh" d="M296.7 129.4L249.7 184.9"/>
+                        <path class="fb-arm" d="M249.7 184.9L270.9 177.7"/>
+                        <circle class="fb-lobe" cx="296.7" cy="129.4" r="16"/>
+                        <circle class="fb-lobe" cx="249.7" cy="184.9" r="17.5"/>
+                        <circle class="fb-drive" cx="249.7" cy="184.9" r="11"/>
+                        <circle class="fb-ring" cx="296.7" cy="129.4" r="9"/>
+                        <circle class="fb-foot" cx="296.7" cy="254" r="8"/>
+                        <path class="fb-tube" d="M142.1 168.8L113.3 254"/>
+                        <path class="fb-thigh" d="M113.3 129.4L160.3 184.9"/>
+                        <path class="fb-arm" d="M160.3 184.9L139.1 177.7"/>
+                        <circle class="fb-lobe" cx="113.3" cy="129.4" r="16"/>
+                        <circle class="fb-lobe" cx="160.3" cy="184.9" r="17.5"/>
+                        <circle class="fb-drive" cx="160.3" cy="184.9" r="11"/>
+                        <circle class="fb-ring" cx="113.3" cy="129.4" r="9"/>
+                        <circle class="fb-foot" cx="113.3" cy="254" r="8"/>
                     </g>
                 </svg>
 
