@@ -37,7 +37,7 @@ const roboticsJokes = [
 
 let jokeIndex = -1;
 let bubbleTimer = 0;
-let robot = null; // set once the 3D scene is live: { hop() }
+let robot = null; // set once the 3D scene is live: { act() }
 
 function sayJoke() {
     if (!bubble) return;
@@ -50,7 +50,7 @@ function sayJoke() {
 
 function ping() {
     sayJoke();
-    if (robot) robot.hop();
+    if (robot) robot.act();
 }
 
 if (pingBtn) pingBtn.addEventListener('click', ping);
@@ -134,15 +134,19 @@ function initScene(THREE) {
     grid.position.y = 0.002;
     scene.add(grid);
 
-    // ----- Materials -----
+    // ----- Materials (site palette, not ANYbotics red) -----
     const M = {
-        shell: new THREE.MeshStandardMaterial({ color: 0x1d2944, metalness: 0.55, roughness: 0.36 }),
-        plate: new THREE.MeshStandardMaterial({ color: 0x31436b, metalness: 0.5, roughness: 0.3 }),
+        shell: new THREE.MeshStandardMaterial({ color: 0x1d2944, metalness: 0.45, roughness: 0.42 }),
+        plate: new THREE.MeshStandardMaterial({ color: 0x31436b, metalness: 0.5, roughness: 0.32 }),
         dark: new THREE.MeshStandardMaterial({ color: 0x0a0f1c, metalness: 0.4, roughness: 0.55 }),
-        joint: new THREE.MeshStandardMaterial({ color: 0x141c2e, metalness: 0.7, roughness: 0.3 }),
+        glass: new THREE.MeshStandardMaterial({ color: 0x05080f, metalness: 0.9, roughness: 0.12 }),
+        joint: new THREE.MeshStandardMaterial({ color: 0x141c2e, metalness: 0.75, roughness: 0.28 }),
+        carbon: new THREE.MeshStandardMaterial({ color: 0x0c111c, metalness: 0.3, roughness: 0.35 }),
         rubber: new THREE.MeshStandardMaterial({ color: 0x07090f, metalness: 0.1, roughness: 0.9 }),
         blue: new THREE.MeshStandardMaterial({ color: 0x93c5fd, emissive: 0x3b82f6, emissiveIntensity: 2.4 }),
+        blueDim: new THREE.MeshStandardMaterial({ color: 0x1e3a8a, emissive: 0x3b82f6, emissiveIntensity: 0.7 }),
         amber: new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 2.0 }),
+        led: new THREE.MeshStandardMaterial({ color: 0xfbbf24, emissive: 0xf59e0b, emissiveIntensity: 2.0 }),
         hit: new THREE.MeshBasicMaterial({ visible: false })
     };
 
@@ -152,134 +156,330 @@ function initScene(THREE) {
         return m;
     }
 
-    // ----- Robot -----
-    // Body frame: +x forward, +y up, +z to the robot's right... (left-handed naming aside,
-    // only the x/y plane matters for the leg IK).
-    const L1 = 0.3;          // thigh
-    const L2 = 0.32;         // shin
-    const FOOT_R = 0.042;
-    const STAND_H = 0.5;     // body centre height when standing
+    // Side profile (x/y) extruded across the body (z), with bevelled edges
+    function extrude(shapeOrPoints, depth, bevel, curveSegments = 12) {
+        const shape = Array.isArray(shapeOrPoints)
+            ? new THREE.Shape(shapeOrPoints.map(([x, y]) => new THREE.Vector2(x, y)))
+            : shapeOrPoints;
+        const geo = new THREE.ExtrudeGeometry(shape, {
+            depth, bevelEnabled: bevel > 0, bevelThickness: bevel, bevelSize: bevel, bevelSegments: 3, curveSegments
+        });
+        geo.translate(0, 0, -depth / 2);
+        return geo;
+    }
+
+    // Half of a rounded body cross-section (lateral u, vertical v), extruded along x.
+    // top = true builds the upper half (v 0..h), false the lower half (v -h..0).
+    function shellHalf(width, h, r, length, top) {
+        const W = width / 2;
+        const s = new THREE.Shape();
+        if (top) {
+            s.moveTo(-W, 0);
+            s.lineTo(W, 0);
+            s.lineTo(W, h - r);
+            s.absarc(W - r, h - r, r, 0, Math.PI / 2, false);
+            s.lineTo(-W + r, h);
+            s.absarc(-W + r, h - r, r, Math.PI / 2, Math.PI, false);
+        } else {
+            s.moveTo(W, 0);
+            s.lineTo(-W, 0);
+            s.lineTo(-W, -h + r);
+            s.absarc(-W + r, -h + r, r, Math.PI, Math.PI * 1.5, false);
+            s.lineTo(W - r, -h);
+            s.absarc(W - r, -h + r, r, Math.PI * 1.5, Math.PI * 2, false);
+        }
+        s.closePath();
+        const geo = extrude(s, length, 0.006, 16);
+        geo.rotateY(Math.PI / 2);   // depth now runs along x
+        return geo;
+    }
+
+    // Rounded link from (0,0) radius r1 to (0,-len) radius r2, flat sides
+    function linkGeo(r1, r2, len, depth, bevel) {
+        const s = new THREE.Shape();
+        s.moveTo(-r1, 0);
+        s.absarc(0, 0, r1, Math.PI, 0, true);
+        s.lineTo(r2, -len);
+        s.absarc(0, -len, r2, 0, Math.PI, true);
+        s.closePath();
+        return extrude(s, depth, bevel, 16);
+    }
+
+    // Dog-bone thigh: round lobes at hip and knee joined by a pinched waist
+    function thighGeo(r1, r2, len, waist, depth, bevel) {
+        const s = new THREE.Shape();
+        s.moveTo(-r1, 0);
+        s.absarc(0, 0, r1, Math.PI, 0, true);
+        s.quadraticCurveTo(waist, -len / 2, r2, -len);
+        s.absarc(0, -len, r2, 0, Math.PI, true);
+        s.quadraticCurveTo(-waist, -len / 2, -r1, 0);
+        return extrude(s, depth, bevel, 18);
+    }
+
+    // Half-ellipse tube arch standing on the x/y plane (rails, cage hoops)
+    function archGeo(rx, ry, tube) {
+        const pts = [];
+        for (let i = 0; i <= 24; i++) {
+            const a = (i / 24) * Math.PI;
+            pts.push(new THREE.Vector3(Math.cos(a) * rx, Math.sin(a) * ry, 0));
+        }
+        return new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 32, tube, 8, false);
+    }
+
+    // ANYdrive actuator: r 0.045, 0.137 long, slight waist. Axis along x or z,
+    // centred on the given point.
+    function drive(axis) {
+        const g = new THREE.Group();
+        const can = mesh(new THREE.CylinderGeometry(0.045, 0.045, 0.137, 28), M.joint);
+        const band = mesh(new THREE.CylinderGeometry(0.0465, 0.0465, 0.03, 28), M.dark, false);
+        band.position.y = 0.035;
+        g.add(can, band);
+        if (axis === 'x') g.rotation.z = Math.PI / 2;
+        else g.rotation.x = Math.PI / 2;
+        return g;
+    }
+
+    // ----- Robot: ANYmal C proportions -----
+    // Dimensions follow ANYbotics' open anymal_c_simple_description (BSD-3-Clause):
+    // URDF joint origins plus extents measured from its meshes. Geometry here is
+    // our own simplified rebuild; no meshes are shipped.
+    // Body frame: +x forward, +y up, z across. The leg IK works in the x/y plane.
+    const L1 = 0.285;                 // HFE -> KFE
+    const SHANK_DX = 0.088;           // shank arm: foot tube sits this far ahead of the knee
+    const SHANK_DY = 0.316;           // knee level -> foot ball centre
+    const L2 = Math.hypot(SHANK_DX, SHANK_DY);
+    const SHANK_BETA = Math.atan2(SHANK_DX, SHANK_DY);
+    const FOOT_R = 0.031;
+    const STAND_H = 0.52;             // HFE axis height when standing
+    const HFE_X = 0.3598;
+    const HFE_Z = 0.1878;
+    const KFE_Z = 0.1003;             // knee is this far outboard of the HFE plane
+    const SHANK_Z = KFE_Z + 0.013;    // foot tube plane, relative to the HFE plane
+    const HAA_Z = 0.104;              // HAA axis (runs along x), lateral offset
+    const HAA_X = 0.30;               // HAA output flange
+    const LEG_OFF = HFE_Z - HAA_Z + SHANK_Z;   // HAA axis -> leg plane, 0.197
+    // Feet are planted well inboard of the leg plane (0.301 at HAA = 0): the HAA
+    // joints roll every leg inward (~11 deg standing), as ANYmal C walks.
+    const STANCE_Z = 0.2;
 
     const root = new THREE.Group();     // position on the floor + heading
-    const body = new THREE.Group();     // height, pitch, roll
+    const body = new THREE.Group();     // height, pitch, roll, posing yaw
     root.add(body);
     scene.add(root);
 
-    // Torso: a flattened, widened capsule reads as a moulded shell
-    const torso = mesh(new THREE.CapsuleGeometry(0.15, 0.62, 6, 18), M.shell);
-    torso.rotation.z = Math.PI / 2;
-    torso.scale.set(0.82, 1, 1.32);
-    body.add(torso);
+    // Shell: narrow waist, wide rounded ends over the HAA drives.
+    // Upper halves in the lighter cover colour, lower halves darker.
+    const waistTop = mesh(shellHalf(0.21, 0.083, 0.035, 0.34, true), M.plate);
+    const waistBot = mesh(shellHalf(0.21, 0.1, 0.07, 0.34, false), M.shell);
+    body.add(waistTop, waistBot);
+    for (const sx of [-1, 1]) {
+        const endTop = mesh(shellHalf(0.32, 0.1, 0.1, 0.15, true), M.plate);
+        const endBot = mesh(shellHalf(0.32, 0.105, 0.075, 0.15, false), M.shell);
+        endTop.position.x = endBot.position.x = sx * 0.235;
+        body.add(endTop, endBot);
 
-    const deck = mesh(new THREE.BoxGeometry(0.6, 0.03, 0.28), M.plate);
-    deck.position.y = 0.118;
-    body.add(deck);
-
-    for (const side of [-1, 1]) {
-        const strip = mesh(new THREE.BoxGeometry(0.48, 0.016, 0.01), M.blue, false);
-        strip.position.set(0.02, 0.0, side * 0.199);
-        body.add(strip);
-        const vent = mesh(new THREE.BoxGeometry(0.16, 0.05, 0.012), M.dark, false);
-        vent.position.set(-0.18, -0.045, side * 0.19);
-        body.add(vent);
+        // Hip gap between shell and face: inner frame + skid plate
+        const frame = mesh(new THREE.BoxGeometry(0.11, 0.14, 0.14), M.dark);
+        frame.position.set(sx * 0.362, 0.0, 0);
+        const skid = mesh(new THREE.BoxGeometry(0.11, 0.03, 0.2), M.shell);
+        skid.position.set(sx * 0.362, -0.085, 0);
+        body.add(frame, skid);
     }
 
-    // LiDAR puck with a spinning head
-    const lidarBase = mesh(new THREE.CylinderGeometry(0.075, 0.08, 0.05, 24), M.dark);
-    lidarBase.position.set(-0.04, 0.158, 0);
-    body.add(lidarBase);
+    // Docking hatch on the top cover
+    const hatch = mesh(new THREE.BoxGeometry(0.184, 0.008, 0.13), M.dark, false);
+    hatch.position.set(0.116, 0.085, 0);
+    body.add(hatch);
+
+    // Side depth cameras on the waist, tilted down
+    for (const s of [-1, 1]) {
+        const win = mesh(new THREE.BoxGeometry(0.094, 0.036, 0.008), M.glass, false);
+        win.position.set(0, 0.022, s * 0.106);
+        win.rotation.x = s * 0.5;
+        body.add(win);
+        for (const lx of [-0.024, 0.024]) {
+            const lens = mesh(new THREE.CylinderGeometry(0.008, 0.008, 0.006, 12), M.blueDim, false);
+            lens.rotation.x = Math.PI / 2 + s * 0.5;
+            lens.position.set(lx, 0.022, s * 0.11);
+            body.add(lens);
+        }
+    }
+
+    // Faces: measured side profile, steep under-slant for the downward depth camera
+    const faceGeo = extrude([
+        [0, 0.052], [0.03, 0.05], [0.055, 0.042], [0.088, 0.034], [0.091, 0.0],
+        [0.075, -0.024], [0.052, -0.055], [0.035, -0.074], [0.02, -0.083], [-0.02, -0.084], [-0.02, 0.052]
+    ], 0.25, 0.022);
+    const eyes = new THREE.Group();   // front lenses, hidden briefly to "blink"
+    function face(front) {
+        const g = new THREE.Group();
+        g.position.x = front ? 0.4145 : -0.4145;
+        if (!front) g.rotation.y = Math.PI;
+        g.add(mesh(faceGeo, M.shell));
+        const lensMat = front ? M.blue : M.blueDim;
+
+        // Upper glass band with the wide-angle camera
+        const band = mesh(new THREE.BoxGeometry(0.006, 0.042, 0.19), M.glass, false);
+        band.position.set(0.112, 0.022, 0);
+        g.add(band);
+        const wide = mesh(new THREE.CylinderGeometry(0.013, 0.013, 0.006, 18), lensMat, false);
+        wide.rotation.z = Math.PI / 2;
+        wide.position.set(0.116, 0.02, 0);
+
+        // Depth camera bar on the under-slant, pitched 30 degrees down
+        const depth = new THREE.Group();
+        depth.position.set(0.094, -0.052, 0);
+        depth.rotation.z = -0.62;
+        depth.add(mesh(new THREE.BoxGeometry(0.012, 0.034, 0.12), M.glass, false));
+        for (const z of [-0.035, 0.035]) {
+            const lens = mesh(new THREE.CylinderGeometry(0.009, 0.009, 0.006, 14), lensMat, false);
+            lens.rotation.z = Math.PI / 2;
+            lens.position.set(0.006, 0, z);
+            depth.add(lens);
+        }
+        if (front) eyes.add(wide, depth);
+        else g.add(wide, depth);
+
+        if (!front) {
+            const tail = mesh(new THREE.BoxGeometry(0.006, 0.008, 0.12), M.amber, false);
+            tail.position.set(0.112, 0.048, 0);
+            g.add(tail);
+        }
+        body.add(g);
+        return g;
+    }
+    const faceFront = face(true);
+    faceFront.add(eyes);
+    face(false);
+    const eyeLight = new THREE.PointLight(0x60a5fa, 1.4, 2.2, 2);
+    eyeLight.position.set(0.25, 0, 0);
+    faceFront.add(eyeLight);
+
+    // Carry handle over the front hip gap: two elliptical rails
+    const railGeo = archGeo(0.05, 0.1, 0.009);
+    for (const z of [-0.05, 0.05]) {
+        const rail = mesh(railGeo, M.joint);
+        rail.position.set(0.36, 0.07, z);
+        body.add(rail);
+    }
+
+    // LiDAR in its cage over the rear hip gap (the puck spins)
+    const cageBase = mesh(new THREE.CylinderGeometry(0.07, 0.072, 0.012, 24), M.joint);
+    cageBase.position.set(-0.364, 0.076, 0);
+    body.add(cageBase);
+    const hoopLat = mesh(archGeo(0.066, 0.17, 0.007), M.joint);
+    hoopLat.rotation.y = Math.PI / 2;
+    hoopLat.position.set(-0.364, 0.076, 0);
+    const hoopLong = mesh(archGeo(0.05, 0.17, 0.007), M.joint);
+    hoopLong.position.set(-0.364, 0.076, 0);
+    body.add(hoopLat, hoopLong);
     const lidarTop = new THREE.Group();
-    lidarTop.position.set(-0.04, 0.2, 0);
-    const lidarCap = mesh(new THREE.CylinderGeometry(0.06, 0.068, 0.035, 24), M.shell);
-    const lidarEye = mesh(new THREE.BoxGeometry(0.02, 0.014, 0.05), M.blue, false);
-    lidarEye.position.x = 0.06;
-    lidarTop.add(lidarCap, lidarEye);
+    lidarTop.position.set(-0.364, 0.1405, 0);
+    const lidarCap = mesh(new THREE.CylinderGeometry(0.051, 0.051, 0.073, 28), M.plate);
+    const lidarBand = mesh(new THREE.CylinderGeometry(0.0525, 0.0525, 0.02, 28), M.glass, false);
+    const lidarEye = mesh(new THREE.BoxGeometry(0.008, 0.012, 0.03), M.blue, false);
+    lidarEye.position.x = 0.052;
+    lidarTop.add(lidarCap, lidarBand, lidarEye);
     body.add(lidarTop);
 
-    // Antenna with a blinking tip
-    const antenna = new THREE.Group();
-    antenna.position.set(-0.36, 0.12, 0.09);
-    antenna.rotation.z = 0.35;
-    const mast = mesh(new THREE.CylinderGeometry(0.006, 0.009, 0.24, 8), M.joint);
-    mast.position.y = 0.12;
-    const tip = mesh(new THREE.SphereGeometry(0.018, 12, 12), M.amber, false);
-    tip.position.y = 0.245;
-    antenna.add(mast, tip);
-    body.add(antenna);
-
-    const tailLight = mesh(new THREE.BoxGeometry(0.012, 0.03, 0.14), M.amber, false);
-    tailLight.position.set(-0.505, 0.02, 0);
-    body.add(tailLight);
-
-    // Head on a neck pivot
-    const neck = new THREE.Group();
-    neck.position.set(0.44, 0.06, 0);
-    body.add(neck);
-    const head = new THREE.Group();
-    neck.add(head);
-    const skull = mesh(new THREE.BoxGeometry(0.2, 0.13, 0.24), M.shell);
-    skull.position.x = 0.07;
-    const brow = mesh(new THREE.BoxGeometry(0.17, 0.02, 0.22), M.plate);
-    brow.position.set(0.07, 0.073, 0);
-    const visor = mesh(new THREE.BoxGeometry(0.02, 0.07, 0.2), M.dark, false);
-    visor.position.set(0.172, 0, 0);
-    const eyes = new THREE.Group();
-    eyes.position.set(0.184, 0.004, 0);
-    for (const side of [-1, 1]) {
-        const eye = mesh(new THREE.SphereGeometry(0.022, 14, 14), M.blue, false);
-        eye.scale.x = 0.4;
-        eye.position.z = side * 0.05;
-        eyes.add(eye);
-    }
-    const eyeLight = new THREE.PointLight(0x60a5fa, 1.6, 2.2, 2);
-    eyeLight.position.set(0.3, -0.05, 0);
-    head.add(skull, brow, visor, eyes, eyeLight);
+    // Radio module with antenna mast, blinking LED on top
+    const radio = mesh(new THREE.BoxGeometry(0.161, 0.037, 0.098), M.dark);
+    radio.position.set(-0.1635, 0.0915, 0);
+    const mast = mesh(new THREE.CylinderGeometry(0.006, 0.009, 0.174, 10), M.joint);
+    mast.position.set(-0.1, 0.197, 0);
+    const tip = mesh(new THREE.SphereGeometry(0.011, 12, 12), M.led, false);
+    tip.position.set(-0.1, 0.29, 0);
+    body.add(radio, mast, tip);
 
     // Invisible hit box so clicks on thin legs still count
-    const hitBox = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.85, 0.6), M.hit);
+    const hitBox = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.85, 0.7), M.hit);
     hitBox.position.y = -0.15;
     body.add(hitBox);
 
-    // Legs: FL, FR, RL, RR. Diagonal pairs trot together.
+    // Legs: LF, RF, LH, RH. Diagonal pairs step together (Lindy-hop rhythm).
+    // kneeDir: +1 knee bends back and the shank arm points forward (front legs),
+    // -1 the mirror (hind legs): ANYmal's X stance.
     const legDefs = [
-        { x: 0.31, z: -0.235 },
-        { x: 0.31, z: 0.235 },
-        { x: -0.31, z: -0.235 },
-        { x: -0.31, z: 0.235 }
+        { x: HFE_X, s: -1, kneeDir: 1 },
+        { x: HFE_X, s: 1, kneeDir: 1 },
+        { x: -HFE_X, s: -1, kneeDir: -1 },
+        { x: -HFE_X, s: 1, kneeDir: -1 }
     ];
     const pairs = [[0, 3], [1, 2]];
 
-    const legs = legDefs.map((d) => {
-        const hip = new THREE.Group();
-        hip.position.set(d.x, -0.03, d.z);
-        body.add(hip);
+    const thighShape = thighGeo(0.063, 0.069, L1, 0.012, 0.05, 0.008);
+    const tubeGeo = new THREE.CylinderGeometry(0.0175, 0.0175, SHANK_DY + 0.037, 12);
+    const footGeo = new THREE.SphereGeometry(FOOT_R, 18, 18);
+    const ringGeo = new THREE.TorusGeometry(0.036, 0.005, 6, 28);
 
-        const actuator = mesh(new THREE.CylinderGeometry(0.068, 0.068, 0.085, 20), M.joint);
-        actuator.rotation.x = Math.PI / 2;
-        const ring = mesh(new THREE.TorusGeometry(0.068, 0.008, 6, 24), M.amber, false);
-        ring.position.z = Math.sign(d.z) * 0.044;
-        hip.add(actuator, ring);
+    const legs = legDefs.map((d) => {
+        const { s, kneeDir } = d;
+        const sx = Math.sign(d.x);
+
+        // HAA drive sits inside the shell bulge; its output flange faces the hip gap
+        const haa = drive('x');
+        haa.position.set(sx * 0.2315, 0, s * 0.104);
+        body.add(haa);
+
+        // Everything outboard of the HAA output rolls about the body's x axis
+        const roll = new THREE.Group();
+        roll.position.set(sx * HAA_X, 0, s * HAA_Z);
+        body.add(roll);
+        const flange = mesh(new THREE.CylinderGeometry(0.047, 0.047, 0.012, 28), M.joint);
+        flange.rotation.z = Math.PI / 2;
+        flange.position.x = sx * 0.006;
+        const haaRing = mesh(ringGeo, M.amber, false);
+        haaRing.rotation.y = Math.PI / 2;
+        haaRing.position.x = sx * 0.013;
+        // Hip bracket joining the HAA output to the HFE drive
+        const bracket = mesh(new THREE.BoxGeometry(0.03, 0.12, 0.09), M.plate);
+        bracket.position.set(sx * 0.025, 0.005, s * 0.001);
+        roll.add(flange, haaRing, bracket);
+
+        const hip = new THREE.Group();
+        hip.position.set(d.x - sx * HAA_X, 0, s * (HFE_Z - HAA_Z));
+        roll.add(hip);
+        // HFE drive runs inboard from the hip plane
+        const hfe = drive('z');
+        hfe.position.z = -s * 0.0684;
+        hip.add(hfe);
 
         const thigh = new THREE.Group();
         hip.add(thigh);
-        const thighMesh = mesh(new THREE.CapsuleGeometry(0.042, L1 - 0.06, 4, 12), M.plate);
-        thighMesh.position.y = -L1 / 2;
-        thighMesh.scale.z = 1.25;
-        thigh.add(thighMesh);
+        const thighMesh = mesh(thighShape, M.plate);
+        thighMesh.position.z = s * 0.033;
+        const hfeRing = mesh(ringGeo, M.amber, false);
+        hfeRing.position.z = s * 0.068;
+        thigh.add(thighMesh, hfeRing);
 
         const knee = new THREE.Group();
         knee.position.y = -L1;
         thigh.add(knee);
-        const kneeJoint = mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.07, 16), M.joint);
-        kneeJoint.rotation.x = Math.PI / 2;
-        const shinMesh = mesh(new THREE.CapsuleGeometry(0.026, L2 - 0.05, 4, 10), M.shell);
-        shinMesh.position.y = -L2 / 2;
-        const foot = mesh(new THREE.SphereGeometry(FOOT_R, 14, 14), M.rubber);
-        foot.position.y = -L2;
-        knee.add(kneeJoint, shinMesh, foot);
+        const kfe = drive('z');
+        kfe.position.z = s * 0.0318;
+        knee.add(kfe);
+
+        // L-shaped shank: arm from the knee, then a straight tube to the ball foot.
+        // shankFrame turns it so the IK's straight knee->foot line lands on the ball.
+        const shankFrame = new THREE.Group();
+        shankFrame.rotation.z = -kneeDir * SHANK_BETA;
+        knee.add(shankFrame);
+        const arm = mesh(linkGeo(0.06, 0.045, SHANK_DX, 0.032, 0.008), M.plate);
+        arm.rotation.z = kneeDir * Math.PI / 2;
+        arm.position.z = s * (KFE_Z + 0.0085);
+        const tube = mesh(tubeGeo, M.carbon);
+        tube.position.set(kneeDir * SHANK_DX, (0.037 - SHANK_DY) / 2, s * SHANK_Z);
+        const foot = mesh(footGeo, M.rubber);
+        foot.position.set(kneeDir * SHANK_DX, -SHANK_DY, s * SHANK_Z);
+        shankFrame.add(arm, tube, foot);
 
         return {
-            hipLocal: hip.position.clone(),
+            hipLocal: hip.position.clone(),   // in the roll (HAA) frame
+            homeX: d.x,
+            footZ: s * STANCE_Z,
+            s,
+            roll,
+            kneeDir,
             thigh,
             knee,
             foot: new THREE.Vector3(),   // planted / swinging world position
@@ -318,6 +518,11 @@ function initScene(THREE) {
     scene.add(scan);
 
     // ----- State -----
+    // Cursor following: the goal only moves when the cursor lands this far from it,
+    // the robot sets off once the goal is FOLLOW_START away, and stops inside ARRIVE.
+    const FOLLOW_MIN = 0.35;
+    const FOLLOW_START = 0.3;
+    const ARRIVE = 0.12;
     const pos = new THREE.Vector3(0, 0, 0);
     const target = new THREE.Vector3(0, 0, 0);
     const lookPoint = new THREE.Vector3();
@@ -340,8 +545,17 @@ function initScene(THREE) {
     let spin = 0;
     let spinOnHop = false;
     let hopCount = 0;
-    let headYaw = 0;
-    let headPitch = 0;
+    let poseYaw = 0;      // body posing toward the look point
+    let posePitch = 0;
+    let accelPitch = 0;
+    let turnRoll = 0;
+    // Lindy hop: swung step rhythm, kicks, bounce and sway
+    let stepCount = 0;
+    let kickLeg = -1;
+    let sway = 0;
+    let danceUntil = 0;
+    let nextDance = 4;
+    let walking = false;     // hysteresis: start beyond FOLLOW_START, stop inside ARRIVE
     let blinkAt = 2;
     let hudAt = 0;
     let pointerNdc = null;
@@ -408,7 +622,7 @@ function initScene(THREE) {
         const fwdX = Math.cos(yaw);
         const fwdZ = -Math.sin(yaw);
         for (const leg of legs) {
-            tmp.set(leg.hipLocal.x, 0, leg.hipLocal.z * 1.06);
+            tmp.set(leg.homeX, 0, leg.footZ);
             root.localToWorld(leg.home.copy(tmp));
             leg.home.x += fwdX * speed * lead;
             leg.home.z += fwdZ * speed * lead;
@@ -444,7 +658,10 @@ function initScene(THREE) {
         lastPointer = now;
         lastInput = now;
         lookPoint.set(hit.x, 0.3, hit.z);
-        target.copy(clampToBounds(hit.clone()));
+        // Small cursor moves only turn its attention; it walks once the cursor
+        // has moved a real distance from the current goal.
+        const goal = clampToBounds(hit.clone());
+        if (goal.distanceTo(target) > FOLLOW_MIN) target.copy(goal);
     }, { passive: true });
 
     hero.addEventListener('pointerleave', () => {
@@ -472,7 +689,8 @@ function initScene(THREE) {
         }
     });
 
-    function hop() {
+    // Click / ping: hop (every third hop spins)
+    function act() {
         if (hopPhase !== 'none' || bootT < 1) return;
         hopCount += 1;
         spinOnHop = hopCount % 3 === 0;
@@ -513,7 +731,7 @@ function initScene(THREE) {
         // Idle wander after a while without input (also gives phones some life)
         const idleFor = t - lastInput;
         const wandering = idleFor > 7;
-        if (wandering && t > nextWander) {
+        if (wandering && t > nextWander && t > danceUntil) {
             target.set(
                 lerp(bounds.xMin, bounds.xMax, Math.random()),
                 0,
@@ -534,11 +752,20 @@ function initScene(THREE) {
         const dist = Math.hypot(dx, dz);
         let desiredSpeed = 0;
         let desiredTurn = 0;
-        if (grounded && dist > 0.12) {
+        if (!grounded) walking = false;
+        else if (dist > FOLLOW_START) walking = true;
+        else if (dist < ARRIVE) walking = false;
+        let facingViewer = false;
+        if (walking) {
             const dyaw = wrapAngle(Math.atan2(-dz, dx) - yaw);
             desiredTurn = clamp(dyaw * 3.2, -2.4, 2.4);
             const facing = Math.max(0, Math.cos(dyaw));
             desiredSpeed = Math.min(1.15, dist * 1.7) * facing * facing;
+        } else if (grounded) {
+            // At the goal: turn on the spot to face the viewer
+            const fyaw = wrapAngle(Math.atan2(-(camera.position.z - pos.z), camera.position.x - pos.x) - yaw);
+            if (Math.abs(fyaw) > 0.06) desiredTurn = clamp(fyaw * 2.6, -1.8, 1.8);
+            facingViewer = Math.abs(fyaw) <= 0.12;
         }
         const prevSpeed = speed;
         speed = damp(speed, desiredSpeed, 5, dt);
@@ -548,6 +775,17 @@ function initScene(THREE) {
         pos.z += -Math.sin(yaw) * speed * dt;
         clampToBounds(pos);
         const accel = (speed - prevSpeed) / Math.max(dt, 1e-3);
+
+        // Standing around: now and then, a few bars of Lindy on the spot
+        const still = grounded && !walking && facingViewer && speed < 0.05;
+        if (!still) {
+            nextDance = Math.max(nextDance, t + 3);
+            danceUntil = Math.min(danceUntil, t);
+        } else if (t > nextDance) {
+            danceUntil = t + 4.2;
+            nextDance = t + 11 + Math.random() * 7;
+        }
+        const dancing = still && t < danceUntil;
 
         // ---- Hop / spin ----
         let crouch = 0;
@@ -567,11 +805,15 @@ function initScene(THREE) {
             if (hopT >= 1) hopPhase = 'none';
         }
 
-        // ---- Foot placement (trot: diagonal pairs swing together) ----
-        swingDur = clamp(0.32 - speed * 0.09, 0.2, 0.32);
-        computeHomes(swingDur * 0.6);
+        // ---- Foot placement: Lindy-hop gait ----
+        // Diagonal pairs still carry the robot, but on a swung (long-short) rhythm,
+        // with a bounce on every step, a hip sway, and a kick every few counts.
+        const baseDur = clamp(0.34 - speed * 0.1, 0.22, 0.34);
+        swingDur = baseDur * (stepCount % 2 === 0 ? 1.2 : 0.8);
+        computeHomes(baseDur * 0.6);
 
         let bob = 0;
+        let swayTarget = 0;
         if (hopPhase === 'air' || hopPhase === 'crouch' && hopT > 0.9) {
             // Feet tuck up and follow the body in the air
             legs.forEach((leg) => {
@@ -582,11 +824,14 @@ function initScene(THREE) {
         } else if (swingPair === -1) {
             const errs = pairs.map((p) => Math.max(...p.map((i) => Math.hypot(legs[i].foot.x - legs[i].home.x, legs[i].foot.z - legs[i].home.z))));
             const moving = speed > 0.05 || Math.abs(yawRate) > 0.15;
-            const threshold = moving ? 0.025 : 0.05;
+            const threshold = dancing ? -1 : moving ? 0.025 : 0.05;
             const next = lastPair === 0 ? 1 : 0;
             if (errs[next] > threshold || errs[1 - next] > threshold) {
-                swingPair = errs[next] >= errs[1 - next] * 0.4 ? next : 1 - next;
+                swingPair = dancing || errs[next] >= errs[1 - next] * 0.4 ? next : 1 - next;
                 swingT = 0;
+                stepCount += 1;
+                // Kick with the pair's front foot: every 4th count walking, every 2nd dancing
+                kickLeg = stepCount % (dancing ? 2 : 4) === 0 ? pairs[swingPair].find((i) => i < 2) : -1;
                 pairs[swingPair].forEach((i) => legs[i].start.copy(legs[i].foot));
             }
         }
@@ -594,38 +839,72 @@ function initScene(THREE) {
             swingT += dt / swingDur;
             const s = Math.min(swingT, 1);
             const e = smooth(s);
-            const lift = Math.sin(Math.PI * s) * clamp(0.05 + speed * 0.05, 0.05, 0.1);
+            const arc = Math.sin(Math.PI * s);
+            const lift = arc * clamp(0.06 + speed * 0.05, 0.06, 0.11);
+            const fwdX = Math.cos(yaw);
+            const fwdZ = -Math.sin(yaw);
             pairs[swingPair].forEach((i) => {
                 const leg = legs[i];
                 leg.foot.lerpVectors(leg.start, leg.home, e);
                 leg.foot.y = FOOT_R + lift;
+                if (i === kickLeg) {
+                    // Lindy kick: flick the foot forward and up, back down on the count
+                    const k = Math.sin(Math.PI * Math.min(s * 1.15, 1));
+                    leg.foot.x += fwdX * 0.16 * k;
+                    leg.foot.z += fwdZ * 0.16 * k;
+                    leg.foot.y += 0.1 * k;
+                }
             });
-            bob = Math.sin(Math.PI * s) * 0.012;
+            bob = -arc * (dancing ? 0.045 : 0.03);   // bounce up mid-step, settle on the beat
+            swayTarget = (swingPair === 0 ? 1 : -1) * arc;
             if (swingT >= 1) {
                 lastPair = swingPair;
                 swingPair = -1;
+                kickLeg = -1;
             }
         }
+        sway = damp(sway, swayTarget, 10, dt);
+
 
         // ---- Body pose ----
         const bootH = lerp(0.24, STAND_H, smooth(bootT));
         const breathe = Math.sin(t * 2.1) * 0.006 * (1 - Math.min(speed, 1));
         body.position.y = bootH - crouch - bob + breathe + hopY;
-        body.rotation.z = damp(body.rotation.z, clamp(-accel * 0.03, -0.08, 0.08) + (hopPhase === 'air' ? hopV * 0.03 : 0), 6, dt);
-        body.rotation.x = damp(body.rotation.x, clamp(yawRate * speed * 0.09, -0.12, 0.12), 6, dt);
+        // No head: like the real robot, it "looks" by posing its body with the feet planted
+        root.worldToLocal(tmp.copy(lookPoint));
+        tmp.y -= body.position.y;
+        const calm = grounded ? 1 - Math.min(speed * 2.5, 1) : 0;
+        poseYaw = damp(poseYaw, clamp(Math.atan2(-tmp.z, tmp.x), -1.2, 1.2) * 0.07 * calm, 4, dt);
+        posePitch = damp(posePitch, clamp(Math.atan2(tmp.y, Math.hypot(tmp.x, tmp.z)), -0.5, 0.5) * 0.25 * calm, 4, dt);
+        accelPitch = damp(accelPitch, clamp(-accel * 0.03, -0.08, 0.08) + (hopPhase === 'air' ? hopV * 0.03 : 0), 6, dt);
+        turnRoll = damp(turnRoll, clamp(yawRate * speed * 0.09, -0.12, 0.12), 6, dt);
+        // Lindy: hip sway and swivel
+        body.rotation.y = poseYaw + sway * 0.05;
+        body.rotation.z = accelPitch + posePitch;
+        body.rotation.x = turnRoll + sway * 0.07;
         root.position.copy(pos);
         root.rotation.y = yaw + spin;
         root.updateMatrixWorld(true);
 
-        // ---- Leg IK (2-bone, knees point backwards) ----
+        // ---- Leg IK: HAA roll first, then the 2-bone HFE/KFE solve in the leg plane ----
+        // (front knees bend back, hind knees forward)
         for (const leg of legs) {
             body.worldToLocal(tmp.copy(leg.foot));
+            const dy = tmp.y - leg.roll.position.y;
+            const dz = tmp.z - leg.roll.position.z;
+            const r = Math.max(Math.hypot(dy, dz), LEG_OFF + 0.01);
+            const depth = Math.sqrt(r * r - LEG_OFF * LEG_OFF);
+            // Rolling by q about +x turns a downward vector by -q toward +z
+            const q = Math.atan2(leg.s * LEG_OFF, depth) - Math.atan2(dz, -dy);
+            leg.roll.rotation.x = clamp(q, -0.72, 0.72);
+            leg.roll.updateMatrixWorld(true);
+            leg.roll.worldToLocal(tmp.copy(leg.foot));
             const lx = tmp.x - leg.hipLocal.x;
             const ly = tmp.y - leg.hipLocal.y;
             const d = clamp(Math.hypot(lx, ly), 0.08, L1 + L2 - 0.002);
             const phi = Math.atan2(lx, -ly);
             const alpha = Math.acos(clamp((L1 * L1 + d * d - L2 * L2) / (2 * L1 * d), -1, 1));
-            const th1 = phi - alpha;
+            const th1 = phi - leg.kneeDir * alpha;
             const kx = L1 * Math.sin(th1);
             const ky = -L1 * Math.cos(th1);
             // Foot along the clamped reach (keeps the shin pointing at the target)
@@ -636,20 +915,11 @@ function initScene(THREE) {
             leg.knee.rotation.z = th2 - th1;
         }
 
-        // ---- Head tracks the look point ----
-        body.updateMatrixWorld(true);
-        neck.worldToLocal(tmp.copy(lookPoint));
-        const wantYaw = clamp(Math.atan2(-tmp.z, tmp.x), -0.9, 0.9);
-        const wantPitch = clamp(Math.atan2(tmp.y, Math.hypot(tmp.x, tmp.z)), -0.45, 0.4);
-        headYaw = damp(headYaw, wantYaw, 6, dt);
-        headPitch = damp(headPitch, wantPitch, 6, dt);
-        head.rotation.set(0, headYaw, headPitch, 'YZX');
-
         // Blink
         if (t > blinkAt) {
-            eyes.scale.y = 0.15;
+            eyes.visible = false;
             if (t > blinkAt + 0.12) {
-                eyes.scale.y = 1;
+                eyes.visible = true;
                 blinkAt = t + 2.5 + Math.random() * 3;
             }
         }
@@ -657,7 +927,6 @@ function initScene(THREE) {
         // Details
         lidarTop.rotation.y += dt * 7;
         tip.material.emissiveIntensity = (Math.sin(t * 5) > 0.6) ? 3.2 : 0.4;
-        antenna.rotation.x = Math.sin(t * 9) * 0.04 * (speed + (hopPhase !== 'none' ? 1 : 0));
 
         // ---- Goal marker + path ----
         marker.position.x = target.x;
@@ -703,10 +972,10 @@ function initScene(THREE) {
             }
         }
 
-        // ---- Speech bubble follows the head ----
+        // ---- Speech bubble follows the front face ----
         if (bubble.classList.contains('show')) {
-            head.getWorldPosition(tmp);
-            tmp.y += 0.28;
+            faceFront.getWorldPosition(tmp);
+            tmp.y += 0.25;
             tmp.project(camera);
             const w = stage.clientWidth;
             const h = stage.clientHeight;
@@ -721,8 +990,8 @@ function initScene(THREE) {
         if (t > hudAt) {
             hudAt = t + 0.1;
             hudTarget.textContent = `${target.x.toFixed(2)}, ${(-target.z).toFixed(2)}`;
-            hudGait.textContent = hopPhase !== 'none' ? 'HOP' : bootT < 1 ? 'STAND' : (swingPair !== -1 || speed > 0.05) ? 'TROT' : 'IDLE';
-            hudMode.textContent = bootT < 1 ? 'BOOT' : wandering ? 'AUTO' : (t - lastPointer < 2.5 ? 'FOLLOW' : 'GOAL');
+            hudGait.textContent = hopPhase !== 'none' ? 'HOP' : bootT < 1 ? 'STAND' : (swingPair !== -1 || speed > 0.05) ? 'LINDY' : 'IDLE';
+            hudMode.textContent = bootT < 1 ? 'BOOT' : dancing ? 'DANCE' : wandering ? 'AUTO' : (t - lastPointer < 2.5 ? 'FOLLOW' : 'GOAL');
         }
     }
 
@@ -739,5 +1008,5 @@ function initScene(THREE) {
     stage.classList.add('is-live');
     setRunning();
 
-    return { hop };
+    return { act };
 }
