@@ -1,35 +1,8 @@
-// Home page behaviour. Analytics lives in analytics.js, the 3D robot in robot.js.
+// Home page behaviour. Analytics lives in analytics.js, the navbar and
+// back-to-top button in nav.js (shared), the 3D robot in robot.js.
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer = window.matchMedia('(pointer: fine)').matches;
-
-// Navbar: hide on scroll down, show on scroll up
-const navbar = document.querySelector('.navbar');
-let lastScroll = window.scrollY;
-
-// Back to top button
-const backToTopBtn = document.getElementById('backToTopBtn');
-
-window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (navbar) {
-        const hide = y > 120 && y > lastScroll;
-        navbar.style.transform = hide ? 'translateY(-150%)' : '';
-    }
-    if (backToTopBtn) backToTopBtn.classList.toggle('show', y > 600);
-    lastScroll = y;
-}, { passive: true });
-
-// Show the navbar again when keyboard focus moves into it
-if (navbar) {
-    navbar.addEventListener('focusin', () => { navbar.style.transform = ''; });
-}
-
-if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-    });
-}
 
 // Logo marquee: duplicate the group once so the CSS loop is seamless.
 const logoSlider = document.querySelector('.logo-slider');

@@ -1,28 +1,35 @@
-// Lightbox for gallery.html
+// Lightbox for gallery.html. Uses the native <dialog>: showModal() gives focus
+// handling, Escape-to-close and an inert page behind it; focus returns to the
+// tile that opened it.
 const lightbox = document.querySelector('.lightbox');
-const lightboxImg = lightbox.querySelector('img');
-const closeButton = lightbox.querySelector('.close-lightbox');
 
-document.querySelectorAll('.gallery-item, .dual-image').forEach(item => {
-    item.addEventListener('click', () => {
-        const imgSrc = item.querySelector('img').src;
-        lightboxImg.src = imgSrc;
-        lightbox.classList.add('active');
+if (lightbox && typeof lightbox.showModal === 'function') {
+    const lightboxImg = lightbox.querySelector('img');
+    const lightboxCaption = lightbox.querySelector('figcaption');
+    const closeButton = lightbox.querySelector('.close-lightbox');
+
+    document.querySelectorAll('.gallery-tile').forEach(tile => {
+        tile.addEventListener('click', () => {
+            const img = tile.querySelector('img');
+            const caption = tile.querySelector('.caption');
+            lightboxImg.src = img.currentSrc || img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.textContent = caption ? caption.textContent : '';
+            lightbox.showModal();
+        });
     });
-});
 
-closeButton.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-});
+    closeButton.addEventListener('click', () => lightbox.close());
 
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.classList.remove('active');
-    }
-});
+    // Tap or click outside the photo closes it
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.tagName === 'FIGURE') lightbox.close();
+    });
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        lightbox.classList.remove('active');
-    }
-});
+    lightbox.addEventListener('close', () => {
+        lightboxImg.removeAttribute('src');
+    });
+} else {
+    // No <dialog> support: tiles stay as plain, non-interactive photos.
+    document.querySelectorAll('.gallery-tile').forEach(tile => { tile.disabled = true; });
+}

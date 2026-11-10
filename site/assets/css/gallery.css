@@ -1,249 +1,266 @@
+/* Gallery page. Shared tokens, nav and footer live in styles.css. */
+
 .gallery-main {
-    padding-top: 7rem;
+  padding-top: 7rem;
 }
 
 .gallery-container {
-    max-width: 1600px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.gallery-main .section-title {
+  margin-bottom: 0.75rem;
+}
+
+.gallery-hint {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 3rem;
 }
 
 .gallery-section {
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 
 .gallery-section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--heading);
-    font-size: 2rem;
-    position: relative;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: clamp(1.6rem, 4vw, 2rem);
 }
 
-.gallery-section h2:after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--primary);
-    margin: 1rem auto;
+.gallery-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  margin: 1rem auto 0;
 }
 
+/* Two equal columns by default; .split is a 2:1 layout. */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1rem;
-    padding: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
 }
 
-.gallery-grid-row {
-    display: flex;
-    gap: 1.5rem; /* Increased gap */
-    width: 100%;
-    grid-column: 1 / -1;
-    min-height: 650px; /* Increased minimum height for the row */
+.gallery-grid.split {
+  grid-template-columns: 2fr 1fr;
 }
 
-.gallery-item {
-    position: relative;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    background: var(--surface);
+/* Two photos stacked in one column, sharing the row height */
+.gallery-stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.25rem;
 }
 
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+/* ---------- Tiles (buttons that open the lightbox) ---------- */
+.gallery-tile {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: zoom-in;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s ease;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+.gallery-tile.wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 21 / 9;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.05);
+.gallery-tile.tall {
+  aspect-ratio: 3 / 4;
 }
 
-/* Grid size variations */
-.size-full {
-    grid-column: span 12;
-    aspect-ratio: 21/9;
+/* Takes its height from the row instead of its own ratio */
+.gallery-tile.fill {
+  aspect-ratio: auto;
+  height: 100%;
 }
 
-.size-large {
-    grid-column: span 8;
-    aspect-ratio: 16/9;
+.gallery-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
 }
 
-.size-medium {
-    grid-column: span 6;
-    aspect-ratio: 4/3;
-}
-
-.size-small {
-    grid-column: span 4;
-    aspect-ratio: 3/4;
-}
-
-.size-6 {
-    flex: 1;
-    height: 400px;
-}
-
-.size-8 {
-    flex: 2;
-    min-height: 650px; /* Matching the row height */
-}
-
-.size-4 {
-    flex: 1;
-    min-height: 650px; /* Matching the row height */
-}
-
-.dual-image-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem; /* Increased gap between images */
-    height: 100%;
-}
-
-.dual-image {
-    flex: 1;
-    position: relative;
-    height: calc(50% - 0.75rem); /* Adjusted for new gap */
-    min-height: 280px; /* Increased minimum height */
-    border-radius: 0.75rem;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-}
-
-.dual-image:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.dual-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.dual-image:hover img {
-    transform: scale(1.05);
+.gallery-tile:disabled {
+  cursor: default;
 }
 
 .caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    color: white;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem 1rem 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--white);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.82));
+  transform: translateY(100%);
+  transition: transform 0.3s var(--ease);
 }
 
-.gallery-item:hover .caption,
-.dual-image:hover .caption {
-    transform: translateY(0);
+.gallery-tile:focus-visible {
+  outline-offset: 4px;
 }
 
+.gallery-tile:focus-visible .caption {
+  transform: none;
+}
+
+/* Hover effects only where hover exists; touch screens always show captions. */
+@media (hover: hover) {
+  .gallery-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .gallery-tile:hover img {
+    transform: scale(1.04);
+  }
+
+  .gallery-tile:hover .caption {
+    transform: none;
+  }
+}
+
+@media (hover: none) {
+  .caption {
+    transform: none;
+    font-size: 0.88rem;
+    padding: 1.5rem 0.85rem 0.7rem;
+  }
+}
+
+/* ---------- Lightbox (native <dialog>) ---------- */
 .lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    padding: 2rem;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 1rem;
+  border: 0;
+  background: rgba(0, 0, 0, 0.92);
+  color: var(--white);
 }
 
-.lightbox.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.lightbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.lightbox figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 }
 
 .lightbox img {
-    max-width: 90%;
-    max-height: 90vh;
-    object-fit: contain;
+  max-width: 100%;
+  max-height: calc(100% - 3rem);
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.lightbox figcaption {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text);
 }
 
 .close-lightbox {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0.5rem;
+  position: absolute;
+  top: max(0.75rem, env(safe-area-inset-top));
+  right: max(0.75rem, env(safe-area-inset-right));
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--white);
+  background: rgba(13, 20, 36, 0.7);
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-@media (max-width: 1200px) {
-    .size-large {
-        grid-column: span 12;
-    }
-    .size-medium {
-        grid-column: span 6;
-    }
-    .size-small {
-        grid-column: span 6;
-        aspect-ratio: 4/3;
-    }
+.close-lightbox:hover {
+  border-color: var(--primary-text);
 }
 
+/* Stop the page scrolling behind the open lightbox */
+html:has(.lightbox[open]) {
+  overflow: hidden;
+}
+
+/* ---------- Phones / small tablets ---------- */
 @media (max-width: 768px) {
-    .gallery-grid {
-        gap: 0.75rem;
-    }
-    .gallery-grid-row {
-        flex-direction: column;
-        min-height: auto;
-    }
-    .size-full,
-    .size-large,
-    .size-medium,
-    .size-small {
-        grid-column: span 12;
-        aspect-ratio: 16/9;
-    }
-    .size-small.portrait {
-        aspect-ratio: 3/4;
-    }
-    .size-8, .size-4, .size-6 {
-        min-height: auto;
-    }
-    .dual-image {
-        min-height: 250px;
-        margin-bottom: 1rem;
-    }
-}
+  .gallery-main {
+    padding-top: 6rem; /* slim navbar with a menu button on phones */
+  }
 
-@media (max-width: 768px) {
-    .gallery-main {
-        padding-top: 8rem; /* navbar wraps to two rows on phones */
-    }
+  .gallery-container {
+    margin-top: 1rem;
+  }
+
+  .gallery-section {
+    margin-bottom: 3rem;
+  }
+
+  .gallery-grid,
+  .gallery-grid.split {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .gallery-stack {
+    grid-template-rows: none;
+    gap: 0.85rem;
+  }
+
+  .gallery-tile.wide {
+    aspect-ratio: 16 / 9;
+  }
+
+  .gallery-tile.fill {
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .gallery-item:hover,
-    .dual-image:hover,
-    .gallery-item:hover img,
-    .dual-image:hover img {
-        transform: none;
-    }
+  .gallery-tile:hover,
+  .gallery-tile:hover img {
+    transform: none;
+  }
 }

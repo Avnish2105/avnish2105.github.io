@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
-    <meta name="theme-color" content="#0b1120">
+    <meta name="theme-color" content="#070b14">
     <title>MIT Tech Team Gallery - Avnish Deshmukh</title>
     <meta name="description" content="Photos from Avnish Deshmukh's seasons with the MIT WPU-Tech Team at DD Robocon: the arena, the sub-teams and the lab.">
     <meta name="author" content="Avnish Deshmukh">
@@ -19,6 +19,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <script defer src="assets/js/analytics.js"></script>
+    <script defer src="assets/js/nav.js"></script>
     <script defer src="assets/js/gallery.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/gallery.css">
@@ -53,102 +54,105 @@
     <main class="gallery-main">
         <div class="gallery-container">
             <h1 class="section-title">MIT Tech Team Gallery</h1>
-            
+            <p class="gallery-hint">Tap or click a photo to view it larger.</p>
+
             <!-- Competition Highlights -->
-            <section class="gallery-section">
-                <h2>Competition Highlights</h2>
+            <section class="gallery-section" aria-labelledby="g-highlights">
+                <h2 id="g-highlights">Competition Highlights</h2>
                 <div class="gallery-grid">
-                    <div class="gallery-item size-full">
-                        <img src="assets/images/gallery/robocon-2024-tyagraj-stadium.jpg" alt="Robocon Competition Arena">
-                        <div class="caption">Competition Arena at Tyagraj Stadium - Where dreams take flight</div>
-                    </div>
-                    <div class="gallery-grid-row">
-                        <div class="gallery-item size-6">
-                            <img src="assets/images/gallery/robocon-2024-team-trophy.jpg" alt="Victory Celebration">
-                            <div class="caption">Celebrating our achievement at Robocon 2024</div>
-                        </div>
-                        <div class="gallery-item size-6">
-                            <img src="assets/images/gallery/mtt-cheering.jpg" alt="Team Celebration">
-                            <div class="caption">The winning spirit of MIT Tech Team</div>
-                        </div>
-                    </div>
+                    <button type="button" class="gallery-tile wide">
+                        <img src="assets/images/gallery/robocon-2024-tyagraj-stadium.webp" alt="The Robocon competition arena at Tyagraj Stadium" width="1600" height="900" fetchpriority="high" decoding="async">
+                        <span class="caption">Competition Arena at Tyagraj Stadium - Where dreams take flight</span>
+                    </button>
+                    <button type="button" class="gallery-tile">
+                        <img src="assets/images/gallery/robocon-2024-team-trophy.webp" alt="MIT WPU-Tech Team celebrating with the trophy at Robocon 2024" width="1600" height="1200" loading="lazy" decoding="async">
+                        <span class="caption">Celebrating our achievement at Robocon 2024</span>
+                    </button>
+                    <button type="button" class="gallery-tile">
+                        <img src="assets/images/gallery/mtt-cheering.webp" alt="MIT Tech Team members cheering together" width="1600" height="1067" loading="lazy" decoding="async">
+                        <span class="caption">The winning spirit of MIT Tech Team</span>
+                    </button>
                 </div>
             </section>
 
             <!-- Our Teams -->
-            <section class="gallery-section">
-                <h2>Our Dynamic Teams</h2>
+            <section class="gallery-section" aria-labelledby="g-teams">
+                <h2 id="g-teams">Our Dynamic Teams</h2>
                 <div class="gallery-grid">
-                    <div class="gallery-item size-medium">
-                        <img src="assets/images/gallery/robocon-2024-electronics-team.jpg" alt="Electronics Team">
-                        <div class="caption">Electronics Team - Powering our innovations</div>
-                    </div>
-                    <div class="gallery-item size-medium">
-                        <img src="assets/images/gallery/robocon-2024-control-team.jpg" alt="Control Team">
-                        <div class="caption">Control Team - Masters of precision</div>
-                    </div>
-                    <div class="gallery-item size-medium">
-                        <img src="assets/images/gallery/robocon-2024-mechanical-team.jpg" alt="Mechanical Team">
-                        <div class="caption">Mechanical Team - Building excellence</div>
-                    </div>
-                    <div class="gallery-item size-medium">
-                        <img src="assets/images/gallery/robocon-2024-non-tech-team.jpg" alt="Non-Tech Team">
-                        <div class="caption">Non-Tech Team - The backbone of our success</div>
-                    </div>
+                    <button type="button" class="gallery-tile">
+                        <img src="assets/images/gallery/robocon-2024-electronics-team.webp" alt="The electronics team, Robocon 2024" width="1600" height="1200" loading="lazy" decoding="async">
+                        <span class="caption">Electronics Team - Powering our innovations</span>
+                    </button>
+                    <button type="button" class="gallery-tile">
+                        <img src="assets/images/gallery/robocon-2024-control-team.webp" alt="The control team, Robocon 2024" width="1600" height="1200" loading="lazy" decoding="async">
+                        <span class="caption">Control Team - Masters of precision</span>
+                    </button>
+                    <button type="button" class="gallery-tile">
+                        <img src="assets/images/gallery/robocon-2024-mechanical-team.webp" alt="The mechanical team, Robocon 2024" width="1600" height="1200" loading="lazy" decoding="async">
+                        <span class="caption">Mechanical Team - Building excellence</span>
+                    </button>
+                    <button type="button" class="gallery-tile">
+                        <img src="assets/images/gallery/robocon-2024-non-tech-team.webp" alt="The non-tech team, Robocon 2024" width="1600" height="1079" loading="lazy" decoding="async">
+                        <span class="caption">Non-Tech Team - The backbone of our success</span>
+                    </button>
                 </div>
             </section>
 
             <!-- Team Spirit -->
-            <section class="gallery-section">
-                <h2>Team Spirit</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-grid-row">
-                        <div class="gallery-item size-8">
-                            <img src="assets/images/gallery/robocon-2024-team.jpg" alt="Team Photo">
-                            <div class="caption">United in purpose - MIT Tech Team 2024</div>
-                        </div>
-                        <div class="gallery-item size-4">
-                            <img src="assets/images/gallery/robocon-2024-team-participants.jpg" alt="Team Participants">
-                            <div class="caption">Our dedicated team members at Robocon 2024</div>
-                        </div>
-                    </div>
+            <section class="gallery-section" aria-labelledby="g-spirit">
+                <h2 id="g-spirit">Team Spirit</h2>
+                <div class="gallery-grid split">
+                    <button type="button" class="gallery-tile">
+                        <img src="assets/images/gallery/robocon-2024-team.webp" alt="MIT Tech Team group photo, 2024" width="1600" height="1301" loading="lazy" decoding="async">
+                        <span class="caption">United in purpose - MIT Tech Team 2024</span>
+                    </button>
+                    <button type="button" class="gallery-tile fill">
+                        <img src="assets/images/gallery/robocon-2024-team-participants.webp" alt="Team members at Robocon 2024" width="1600" height="1200" loading="lazy" decoding="async">
+                        <span class="caption">Our dedicated team members at Robocon 2024</span>
+                    </button>
                 </div>
             </section>
 
             <!-- Behind the Scenes -->
-            <section class="gallery-section">
-                <h2>Behind the Scenes</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-grid-row">
-                        <div class="gallery-item size-8">
-                            <div class="dual-image-container">
-                                <div class="dual-image">
-                                    <img src="assets/images/gallery/robots-night-light.jpg" alt="Night Development">
-                                    <div class="caption">Late night innovation sessions</div>
-                                </div>
-                                <div class="dual-image">
-                                    <img src="assets/images/gallery/robot-2023.jpg" alt="2023 Robot">
-                                    <div class="caption">Our 2023 Robot in testing</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gallery-item size-4">
-                            <img src="assets/images/gallery/robocon-lab-outside.jpeg" alt="Robocon Lab">
-                            <div class="caption">Our Robocon Lab - Home of innovation</div>
-                        </div>
+            <section class="gallery-section" aria-labelledby="g-behind">
+                <h2 id="g-behind">Behind the Scenes</h2>
+                <div class="gallery-grid split">
+                    <div class="gallery-stack">
+                        <button type="button" class="gallery-tile fill">
+                        <img src="assets/images/gallery/robots-night-light.webp" alt="Robots during a late-night work session" width="1600" height="901" loading="lazy" decoding="async">
+                        <span class="caption">Late night innovation sessions</span>
+                    </button>
+                        <button type="button" class="gallery-tile fill">
+                        <img src="assets/images/gallery/robot-2023.webp" alt="The 2023 robot during testing" width="1600" height="1067" loading="lazy" decoding="async">
+                        <span class="caption">Our 2023 Robot in testing</span>
+                    </button>
                     </div>
+                    <button type="button" class="gallery-tile tall">
+                        <img src="assets/images/gallery/robocon-lab-outside.webp" alt="Outside the MIT-WPU Robocon Robotics Innovation Lab at sunset" width="1200" height="1600" loading="lazy" decoding="async">
+                        <span class="caption">Our Robocon Lab - Home of innovation</span>
+                    </button>
                 </div>
             </section>
         </div>
     </main>
 
-    <div class="lightbox">
-        <button class="close-lightbox">&times;</button>
-        <img src="" alt="Enlarged image">
-    </div>
+    <dialog class="lightbox" aria-label="Photo viewer">
+        <figure>
+            <img src="" alt="">
+            <figcaption></figcaption>
+        </figure>
+        <button type="button" class="close-lightbox" aria-label="Close photo">&times;</button>
+    </dialog>
 
     <footer>
         <p>&copy; 2026 Avnish Deshmukh. Building the future with code and robotics.</p>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" type="button" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z" />
+        </svg>
+    </button>
 </body>
 </html>

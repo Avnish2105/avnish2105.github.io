@@ -39,7 +39,7 @@ TEMPLATE = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
-    <meta name="theme-color" content="#0b1120">
+    <meta name="theme-color" content="#070b14">
     <title>{title} - Avnish Deshmukh</title>
     <meta name="description" content="{description}">
     <meta name="author" content="Avnish Deshmukh">
@@ -55,6 +55,7 @@ TEMPLATE = """<!DOCTYPE html>
     <meta name="twitter:card" content="summary_large_image">
 
     <script defer src="../assets/js/analytics.js"></script>
+    <script defer src="../assets/js/nav.js"></script>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/writing.css">
 
