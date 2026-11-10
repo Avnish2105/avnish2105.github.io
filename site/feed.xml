@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Avnish Deshmukh - Writing</title>
+        <link>https://avnish2105.github.io/writing/</link>
+        <atom:link href="https://avnish2105.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <description>Essays on philosophy and ideas, and short technical notes, by Avnish Deshmukh.</description>
+        <language>en</language>
+        <lastBuildDate>Tue, 10 Nov 2026 00:00:00 +0530</lastBuildDate>
+        <!-- ITEMS (newest first; scripts/new_post.py inserts here) -->
+    </channel>
+</rss>

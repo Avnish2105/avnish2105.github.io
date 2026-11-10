@@ -4,39 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE3FHFGW3S"></script>
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#070b14">
+    <script defer src="assets/js/analytics.js"></script>
     <script defer src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/robot.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/home.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Primary Meta Tags -->
-    <title>Avnish Deshmukh - Robotics Enthusiast</title>
-    <meta name="title" content="Avnish Deshmukh - Robotics Enthusiast">
-    <meta name="description"
-        content="Explore Avnish Deshmukh's journey in robotics, coding, and electronics. Discover innovative projects, insights, and experiences shared through tech-focused articles and showcases.">
-    <meta name="keywords" content="Avnish Deshmukh, robotics, electronics, coding, projects, tech articles">
+    <title>Avnish Deshmukh - Robotics Engineer</title>
+    <meta name="description" content="Avnish Deshmukh: robotics engineer and Vice-Captain of the MIT WPU-Tech Robocon team. Electronics, embedded firmware and ROS 2 for competition robots.">
     <meta name="author" content="Avnish Deshmukh">
+    <link rel="canonical" href="https://avnish2105.github.io/">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://Avnish2105.github.io/">
-    <meta property="og:title" content="Avnish Deshmukh - Robotics Enthusiast">
-    <meta property="og:description"
-        content="Explore Avnish Deshmukh's journey in robotics, coding, and electronics. Discover innovative projects, insights, and experiences.">
+    <meta property="og:url" content="https://avnish2105.github.io/">
+    <meta property="og:title" content="Avnish Deshmukh - Robotics Engineer">
+    <meta property="og:description" content="Avnish Deshmukh: robotics engineer and Vice-Captain of the MIT WPU-Tech Robocon team. Electronics, embedded firmware and ROS 2 for competition robots.">
     <meta property="og:image" content="https://avnish2105.github.io/assets/images/profile.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Avnish Deshmukh - Robotics Engineer">
+    <meta name="twitter:description" content="Avnish Deshmukh: robotics engineer and Vice-Captain of the MIT WPU-Tech Robocon team. Electronics, embedded firmware and ROS 2 for competition robots.">
+    <meta name="twitter:image" content="https://avnish2105.github.io/assets/images/profile.jpeg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://Avnish2105.github.io/">
-    <meta property="twitter:title" content="Avnish Deshmukh - Robotics Enthusiast">
-    <meta property="twitter:description"
-        content="Explore Avnish Deshmukh's journey in robotics, coding, and electronics. Discover innovative projects, insights, and experiences.">
-    <meta property="twitter:image" content="https://avnish2105.github.io/assets/images/profile.jpeg">
+    <!-- Structured data (a JSON data block, not executable script) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Avnish Deshmukh",
+        "url": "https://avnish2105.github.io/",
+        "image": "https://avnish2105.github.io/assets/images/profile.jpeg",
+        "jobTitle": "Robotics engineer",
+        "email": "mailto:avnishd2105@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressCountry": "IN" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "MIT World Peace University" },
+        "knowsAbout": ["Robotics", "Embedded systems", "PCB design", "ROS 2", "Autonomous navigation"],
+        "sameAs": [
+            "https://github.com/avnish2105",
+            "https://www.linkedin.com/in/avnish-deshmukh"
+        ]
+    }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -44,202 +61,439 @@
     <link rel="icon" sizes="16x16" href="assets/icons/favicon-16x16.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Avnish Deshmukh - Writing" href="feed.xml">
 
 </head>
 
-<body>
-    <nav class="navbar">
+<body class="home">
+    <nav class="navbar" aria-label="Main">
         <div class="nav-content">
-            <div class="logo">AD</div>
+            <a href="index.html" class="logo" aria-label="Avnish Deshmukh, home">AD</a>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#journey">Journey</a>
-                <a href="#hobbies">Hobbies</a>
-                <a href="#connect">Connect</a>
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="work.html">Work</a>
+                <a href="writing/index.html">Writing</a>
+                <a href="treks.html">Treks</a>
                 <a href="gallery.html">Gallery</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero" id="about">
-            <div class="hero-content">
+        <!-- Hero: text + interactive 3D quadruped (robot.js). The SVG is the static fallback. -->
+        <section class="hero" id="top" aria-labelledby="hero-name">
+            <div class="hero-stage" id="robotStage">
+                <svg class="robot-fallback" viewBox="0 0 420 300" aria-hidden="true" focusable="false">
+                    <defs>
+                        <linearGradient id="fbBody" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#22304d"/>
+                            <stop offset="1" stop-color="#121a2c"/>
+                        </linearGradient>
+                    </defs>
+                    <g class="fb-dim">
+                        <path d="M88 60h232M88 54v12M320 54v12"/>
+                        <text x="204" y="48">L 0.96 m</text>
+                    </g>
+                    <ellipse class="fb-shadow" cx="205" cy="262" rx="150" ry="10"/>
+                    <path class="fb-ground" d="M10 262h400"/>
+                    <!-- far legs -->
+                    <g class="fb-leg fb-far">
+                        <path d="M118 128l-16 58 30 70"/>
+                        <path d="M292 128l-16 58 30 70"/>
+                    </g>
+                    <!-- body -->
+                    <rect class="fb-body" x="88" y="96" width="232" height="52" rx="14" fill="url(#fbBody)"/>
+                    <path class="fb-strip" d="M108 122h186"/>
+                    <rect class="fb-lidar" x="186" y="80" width="38" height="16" rx="5"/>
+                    <path class="fb-antenna" d="M112 96l-14-30"/>
+                    <circle class="fb-blink" cx="97" cy="64" r="4"/>
+                    <!-- head -->
+                    <rect class="fb-head" x="314" y="92" width="62" height="40" rx="10"/>
+                    <rect class="fb-visor" x="338" y="104" width="34" height="12" rx="6"/>
+                    <circle class="fb-eye" cx="349" cy="110" r="3"/>
+                    <circle class="fb-eye" cx="362" cy="110" r="3"/>
+                    <!-- near legs -->
+                    <g class="fb-leg">
+                        <path d="M126 136l-20 56 34 70"/>
+                        <path d="M300 136l-20 56 34 70"/>
+                        <circle class="fb-joint" cx="126" cy="136" r="9"/>
+                        <circle class="fb-joint" cx="300" cy="136" r="9"/>
+                        <circle class="fb-knee" cx="106" cy="192" r="6"/>
+                        <circle class="fb-knee" cx="280" cy="192" r="6"/>
+                    </g>
+                </svg>
+
+                <div class="hud hud-tl" aria-hidden="true">
+                    <span>QUAD-01</span>
+                    <span>MODE <b id="hudMode">STANDBY</b></span>
+                </div>
+                <div class="hud hud-br" aria-hidden="true">
+                    <span>GOAL <b id="hudTarget">0.00, 0.00</b></span>
+                    <span>GAIT <b id="hudGait">IDLE</b></span>
+                </div>
+
+                <div class="robot-bubble" id="robotBubble" role="status" aria-live="polite"></div>
+                <p class="robot-hint" aria-hidden="true"><span class="hint-desktop">Move your cursor, it follows. Click it.</span><span class="hint-touch">Tap the floor to send it. Tap it.</span></p>
+            </div>
+
+            <div class="hero-inner">
                 <div class="hero-text">
-                    <h1 class="glitch-text">Avnish Deshmukh</h1>
-                    <h2>Robotics Enthusiast & Tech Innovator</h2>
+                    <p class="status-chip"><span class="status-dot" aria-hidden="true"></span>Final year · MIT-WPU, Pune</p>
+                    <h1 id="hero-name"><span>Avnish</span> <span class="name-outline">Deshmukh</span></h1>
+                    <h2 class="hero-headline">Robotics engineer: electronics, embedded systems &amp; autonomy</h2>
                     <p class="tagline">I debug robots by day, and my thoughts on the trail.</p>
                     <div class="hero-buttons">
-                        <a href="#journey" class="primary-button">View Journey</a>
-                        <a href="mailto:avnishd2105@gmail.com" class="secondary-button">Get in Touch</a>
+                        <a href="mailto:avnishd2105@gmail.com" class="primary-button">Email me</a>
+                        <a href="https://github.com/avnish2105" class="secondary-button">GitHub</a>
+                        <a href="work.html" class="ghost-button">View work <span class="arrow" aria-hidden="true">→</span></a>
+                        <!-- TODO: resume button once the public PDF (no phone number) is in assets/docs/
+                        <a href="assets/docs/avnish-deshmukh-resume.pdf" class="secondary-button" download>Download resume</a> -->
                     </div>
+                    <button type="button" class="ping-button" id="pingRobot">
+                        <span class="ping-led" aria-hidden="true"></span>Ping the robot for a joke
+                    </button>
                 </div>
-                <div class="hero-image">
-                    <div class="image-wrapper">
-                        <img id="profilePicture" src="assets/images/profile.jpeg" alt="Avnish Deshmukh" />
+            </div>
+
+            <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+                <span class="mono">scroll</span>
+                <span class="scroll-line" aria-hidden="true"></span>
+            </a>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats" aria-label="Highlights">
+            <dl class="stats-grid">
+                <div class="stat reveal">
+                    <dt>All India top-3 finishes at DD Robocon</dt>
+                    <dd><span class="stat-num" data-count="3">3</span></dd>
+                </div>
+                <div class="stat reveal">
+                    <dt>Robocon seasons with MIT WPU-Tech Team</dt>
+                    <dd><span class="stat-num" data-count="5">5</span></dd>
+                </div>
+                <div class="stat reveal">
+                    <dt>Custom PCBs designed for competition robots</dt>
+                    <dd><span class="stat-num" data-count="10" data-suffix="+">10+</span></dd>
+                </div>
+                <div class="stat reveal">
+                    <dt>Recruits mentored across electronics, mechanical and software</dt>
+                    <dd><span class="stat-num" data-count="20" data-prefix="~">~20</span></dd>
+                </div>
+            </dl>
+        </section>
+
+        <!-- 01 About -->
+        <section class="section about" id="about" aria-labelledby="about-title">
+            <div class="section-inner about-grid">
+                <div class="about-text">
+                    <header class="section-head reveal">
+                        <p class="kicker"><span>01</span> About</p>
+                        <h2 id="about-title">Electronics, firmware and ROS&nbsp;2 for competition robots</h2>
+                    </header>
+                    <p class="reveal">Final-year B.Tech ECE (AI &amp; ML) student at MIT-WPU, Pune, and Vice-Captain of the MIT WPU-Tech Robocon team. I design the electronics, write the firmware and ROS 2 software, and build the mechanisms for competition robots, with three All India top-3 finishes across five seasons. I'm looking for robotics and autonomy roles, especially in defence, micro and swarm robotics, and I like thinking about ideas as much as building machines.</p>
+                    <p class="now reveal" id="now"><span class="now-label"><span class="now-dot" aria-hidden="true"></span>Now</span> Building an autonomous campus-guide AGV for my final-year capstone, and interning at DRDO until February 2027.</p>
+                </div>
+                <figure class="portrait reveal">
+                    <div class="portrait-frame">
+                        <img src="assets/images/profile.jpeg" alt="Avnish Deshmukh" width="480" height="480" loading="lazy">
+                        <span class="corner tl" aria-hidden="true"></span>
+                        <span class="corner tr" aria-hidden="true"></span>
+                        <span class="corner bl" aria-hidden="true"></span>
+                        <span class="corner br" aria-hidden="true"></span>
                     </div>
+                    <figcaption class="mono">Avnish Deshmukh · Pune, India</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 02 Featured work -->
+        <section class="section featured" id="work" aria-labelledby="work-title">
+            <div class="section-inner">
+                <header class="section-head section-head-row reveal">
+                    <div>
+                        <p class="kicker"><span>02</span> Work</p>
+                        <h2 id="work-title">Featured work</h2>
+                    </div>
+                    <a href="work.html" class="ghost-button">See all work <span class="arrow" aria-hidden="true">→</span></a>
+                </header>
+                <div class="work-grid">
+                    <article class="work-card work-card-lg spot reveal">
+                        <p class="card-meta">2026–27 · In development</p>
+                        <h3><a href="projects/autonomous-campus-guide-agv.html" class="stretched">Autonomous College Guide AGV</a></h3>
+                        <p>Final-year capstone: an autonomous guided vehicle that guides a user through the MIT-WPU campus on its own.</p>
+                        <span class="work-more" aria-hidden="true">Read more <span class="arrow">→</span></span>
+                        <svg class="work-art" viewBox="0 0 200 120" aria-hidden="true" focusable="false">
+                            <path class="wa-path" d="M10 100 C 50 100, 60 30, 110 40 S 170 90, 190 20"/>
+                            <circle class="wa-node" cx="10" cy="100" r="4"/>
+                            <circle class="wa-goal" cx="190" cy="20" r="6"/>
+                            <circle class="wa-bot" r="5"><animateMotion dur="6s" repeatCount="indefinite" path="M10 100 C 50 100, 60 30, 110 40 S 170 90, 190 20"/></circle>
+                        </svg>
+                    </article>
+                    <article class="work-card spot reveal">
+                        <p class="card-meta">2022–2026 · MIT WPU-Tech Team</p>
+                        <h3><a href="projects/dd-robocon.html" class="stretched">DD Robocon</a></h3>
+                        <p>Electronics and embedded subsystems for national competition robots: custom PCBs, STM32 control, motor control and ROS 2. All India Rank 2 in 2023 and 2026.</p>
+                        <span class="work-more" aria-hidden="true">Read more <span class="arrow">→</span></span>
+                    </article>
+                    <article class="work-card spot reveal">
+                        <p class="card-meta">Until 10 February 2027</p>
+                        <h3>DRDO internship</h3>
+                        <p>Intern at DRDO.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Marquee -->
-        <div class="skills-marquee">
-            <div class="marquee-content">
+        <!-- 03 Toolkit -->
+        <section class="section toolkit" id="toolkit" aria-labelledby="toolkit-title">
+            <div class="section-inner">
+                <header class="section-head reveal">
+                    <p class="kicker"><span>03</span> Toolkit</p>
+                    <h2 id="toolkit-title">Skills and tools</h2>
+                </header>
+                <div class="skill-board">
+                    <div class="skill-group spot reveal">
+                        <h3><span class="sg-index mono">A</span>Electronics</h3>
+                        <ul class="chips">
+                            <li>Altium Designer</li><li>Autodesk EAGLE</li><li>PCB design</li><li>Embedded debugging</li><li>Battery management</li><li>Embedded firmware (STM32, ESP32)</li><li>Motor drivers</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group spot reveal">
+                        <h3><span class="sg-index mono">B</span>Robotics / ROS 2</h3>
+                        <ul class="chips">
+                            <li>ROS 2</li><li>ros2_control</li><li>Docker</li><li>GitHub</li><li>Gazebo</li><li>Isaac Sim</li><li>Pure Pursuit navigation</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group spot reveal">
+                        <h3><span class="sg-index mono">C</span>Programming languages</h3>
+                        <ul class="chips">
+                            <li>C</li><li>C++</li><li>Python</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group spot reveal">
+                        <h3><span class="sg-index mono">D</span>Hardware / sensors</h3>
+                        <ul class="chips">
+                            <li>ODrive</li><li>VESC</li><li>VectorNav IMUs</li><li>SICK</li><li>Baumer</li><li>ifm sensors</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group spot reveal">
+                        <h3><span class="sg-index mono">E</span>Tools / CAD / fabrication</h3>
+                        <ul class="chips">
+                            <li>SolidWorks</li><li>3D printing</li><li>Laser cutting</li><li>Milling</li><li>Turning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decorative logo strip: the skills are listed as text above -->
+            <div class="skills-marquee" aria-hidden="true">
                 <div class="logo-slider">
                     <div class="logo-group">
-                        <img src="assets/images/logos/logo1.png" alt="Logo 1">
-                        <img src="assets/images/logos/logo2.png" alt="Logo 2">
-                        <img src="assets/images/logos/logo3.png" alt="Logo 3">
-                        <img src="assets/images/logos/logo4.png" alt="Logo 4">
-                        <img src="assets/images/logos/logo5.png" alt="Logo 5">
-                        <img src="assets/images/logos/logo6.png" alt="Logo 6">
-                        <img src="assets/images/logos/logo7.png" alt="Logo 7">
-                        <img src="assets/images/logos/logo8.png" alt="Logo 8">
-                        <img src="assets/images/logos/logo9.png" alt="Logo 9">
-                        <img src="assets/images/logos/logo10.png" alt="Logo 10">
-                        <img src="assets/images/logos/logo11.png" alt="Logo 11">
-                        <img src="assets/images/logos/logo12.png" alt="Logo 12">
-                        <img src="assets/images/logos/logo13.png" alt="Logo 13">
-                        <img src="assets/images/logos/logo14.png" alt="Logo 14">
-                        <img src="assets/images/logos/logo15.png" alt="Logo 15">
-                        <img src="assets/images/logos/logo16.png" alt="Logo 16">
-                        <img src="assets/images/logos/logo17.png" alt="Logo 17">
-                        <img src="assets/images/logos/logo18.png" alt="Logo 18">
-                        <img src="assets/images/logos/logo19.png" alt="Logo 19">
-                        <img src="assets/images/logos/logo20.png" alt="Logo 20">
-                        <img src="assets/images/logos/logo21.png" alt="Logo 21">
-                        <img src="assets/images/logos/logo22.png" alt="Logo 22">
-                        <img src="assets/images/logos/logo23.png" alt="Logo 23">
+                        <img src="assets/images/logos/logo1.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo2.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo3.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo4.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo5.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo6.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo7.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo8.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo9.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo10.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo11.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo12.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo13.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo14.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo15.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo16.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo17.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo18.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo19.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo20.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo21.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo22.png" alt="" loading="lazy">
+                        <img src="assets/images/logos/logo23.png" alt="" loading="lazy">
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Journey Timeline -->
-        <section class="journey" id="journey">
-            <h2 class="section-title">My Journey</h2>
-            <div class="timeline-container">
-                <div class="timeline-event">
-                    <h3>Started Diploma</h3>
-                    <p>MIT World Peace University<br>2022</p>
-                </div>
-                <div class="timeline-event">
-                    <h3>Joined MIT Tech Team</h3>
-                    <p>Electronics Team<br>2022</p>
-                </div>
-                <div class="timeline-event">
-                    <h3>Participated in DD Robocon</h3>
-                    <p>Air 4<br>2022</p>
-                </div>
-                <div class="timeline-event">
-                    <h3>MIT Tech Team</h3>
-                    <p>Electronics + Control Team<br>2023</p>
-                </div>
-                <div class="timeline-event">
-                    <h3>Participated in DD Robocon</h3>
-                    <p>Air 2<br>2023</p>
-                </div>
-                <div class="timeline-event">
-                    <h3>Started with ROS2</h3>
-                    <p>Participated in DD Robocon Air 3<br>2024</p>
-                </div>
-                <div class="timeline-event moving-event">
-                    <h3>Aiming for DD Robocon Air 1</h3>
-                    <p>2025</p>
                 </div>
             </div>
         </section>
 
-        <!-- Hobbies Section -->
-        <section class="hobbies" id="hobbies">
-            <h2 class="section-title">My Hobbies</h2>
-            <div class="hobbies-grid">
-                <div class="hobby-card">
-                    <div class="hobby-icon">🔌</div>
-                    <h3>Electronics</h3>
-                    <p>95% knowledge, 5% logic… and 100% checking for a loose wire you swore was fine.</p>
-                </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">🤖</div>
-                    <h3>Robotics</h3>
-                    <p>Build them fast, debug them forever.</p>
-                </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">💻</div>
-                    <h3>Coding</h3>
-                    <p>Where "just one more feature" becomes a lifestyle.</p>
-                </div>
-                <div class="hobby-card">
-                    <div class="hobby-icon">🥾</div>
-                    <h3>Trekking</h3>
-                    <p>The only time getting lost actually calms me down.</p>
+        <!-- 04 Journey -->
+        <section class="section journey" id="journey" aria-labelledby="journey-title">
+            <div class="section-inner">
+                <header class="section-head reveal">
+                    <p class="kicker"><span>04</span> Journey</p>
+                    <h2 id="journey-title">Journey</h2>
+                </header>
+                <ol class="timeline" id="timeline">
+                    <li class="tl-year">
+                        <span class="tl-label mono">2022</span>
+                        <div class="tl-events">
+                            <article class="timeline-event reveal">
+                                <h3>Started Integrated B.Tech, ECE (AI &amp; ML)</h3>
+                                <p>MIT World Peace University, Pune</p>
+                            </article>
+                            <article class="timeline-event reveal">
+                                <h3>Joined MIT WPU-Tech Team</h3>
+                                <p>Electronics team</p>
+                            </article>
+                            <article class="timeline-event rank reveal">
+                                <h3>DD Robocon: All India Rank 4</h3>
+                                <p>First season</p>
+                                <span class="rank-badge" aria-hidden="true">#4</span>
+                            </article>
+                        </div>
+                    </li>
+                    <li class="tl-year">
+                        <span class="tl-label mono">2023</span>
+                        <div class="tl-events">
+                            <article class="timeline-event reveal">
+                                <h3>Electronics + Control, and mentoring</h3>
+                                <p>Technical mentor to ~20 recruits from 2023 on</p>
+                            </article>
+                            <article class="timeline-event rank podium reveal">
+                                <h3>DD Robocon: All India Rank 2</h3>
+                                <span class="rank-badge" aria-hidden="true">#2</span>
+                            </article>
+                        </div>
+                    </li>
+                    <li class="tl-year">
+                        <span class="tl-label mono">2024</span>
+                        <div class="tl-events">
+                            <article class="timeline-event rank podium reveal">
+                                <h3>Started with ROS 2</h3>
+                                <p>DD Robocon: All India Rank 3</p>
+                                <span class="rank-badge" aria-hidden="true">#3</span>
+                            </article>
+                        </div>
+                    </li>
+                    <li class="tl-year">
+                        <span class="tl-label mono">2025</span>
+                        <div class="tl-events">
+                            <article class="timeline-event reveal">
+                                <h3>DD Robocon</h3>
+                                <p>Participated</p>
+                            </article>
+                        </div>
+                    </li>
+                    <li class="tl-year">
+                        <span class="tl-label mono">2026</span>
+                        <div class="tl-events">
+                            <article class="timeline-event rank podium reveal">
+                                <h3>Vice-Captain, MIT WPU-Tech Team</h3>
+                                <p>15-member team. DD Robocon: All India Rank 2</p>
+                                <span class="rank-badge" aria-hidden="true">#2</span>
+                            </article>
+                        </div>
+                    </li>
+                    <li class="tl-year tl-now">
+                        <span class="tl-label mono">Now</span>
+                        <div class="tl-events">
+                            <article class="timeline-event reveal">
+                                <h3>Intern at DRDO</h3>
+                                <p>Until 10 February 2027</p>
+                            </article>
+                            <article class="timeline-event reveal">
+                                <h3>Final year: autonomous campus-guide AGV</h3>
+                                <p>Capstone project, graduating 2027</p>
+                            </article>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 05 Beyond the lab -->
+        <section class="section hobbies" id="hobbies" aria-labelledby="hobbies-title">
+            <div class="section-inner">
+                <header class="section-head reveal">
+                    <p class="kicker"><span>05</span> Hobbies</p>
+                    <h2 id="hobbies-title">Beyond the lab</h2>
+                </header>
+                <div class="hobbies-grid">
+                    <div class="hobby-card spot reveal">
+                        <svg class="hobby-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
+                        <h3>Electronics</h3>
+                        <p>95% knowledge, 5% logic… and 100% checking for a loose wire you swore was fine.</p>
+                    </div>
+                    <div class="hobby-card spot reveal">
+                        <svg class="hobby-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="8" width="16" height="11" rx="3"/><circle cx="9" cy="13.5" r="1.4"/><circle cx="15" cy="13.5" r="1.4"/><path d="M12 8V4.5M12 4.5h.01M2 12.5v3M22 12.5v3"/></svg>
+                        <h3>Robotics</h3>
+                        <p>Build them fast, debug them forever.</p>
+                    </div>
+                    <div class="hobby-card spot reveal">
+                        <svg class="hobby-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>
+                        <h3>Coding</h3>
+                        <p>Where "just one more feature" becomes a lifestyle.</p>
+                    </div>
+                    <div class="hobby-card spot reveal">
+                        <svg class="hobby-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 20l7-12 4 6 3-4 6 10z"/><path d="M7.5 10.5l1.5 1.5 1.5-1.5"/><circle cx="18" cy="5" r="1.6"/></svg>
+                        <h3><a href="treks.html" class="stretched">Trekking</a></h3>
+                        <p>The only time getting lost actually calms me down.</p>
+                    </div>
+                    <div class="hobby-card spot reveal">
+                        <svg class="hobby-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.3 1 2.2h5.2c0-.9.4-1.7 1-2.2A6 6 0 0 0 12 3z"/></svg>
+                        <h3><a href="writing/index.html" class="stretched">Philosophy &amp; Ideas</a></h3>
+                        <p>I like thinking about ideas as much as building machines.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Connect Section -->
-        <section class="connect" id="connect">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="social-grid">
-                <!-- LinkedIn -->
-                <div class="social-card" data-platform="linkedin">
-                    <div class="card-content">
-                        <img src="https://img.icons8.com/color/48/000000/linkedin-circled.png" alt="LinkedIn Logo">
-                        <h3>LinkedIn</h3>
-                        <p>Tech team member at MIT Tech Team</p>
-                        <a href="https://www.linkedin.com/in/avnish-deshmukh" class="social-link">Connect</a>
+        <!-- 06 Connect -->
+        <section class="section connect" id="connect" aria-labelledby="connect-title">
+            <div class="section-inner">
+                <div class="connect-panel reveal">
+                    <p class="kicker"><span>06</span> Contact</p>
+                    <h2 id="connect-title">Let's Connect</h2>
+                    <p class="connect-lede">Internships, roles and collaborations.</p>
+                    <div class="email-row">
+                        <a href="mailto:avnishd2105@gmail.com" class="email-big">avnishd2105@gmail.com</a>
+                        <button type="button" class="copy-button" id="copyEmail" data-email="avnishd2105@gmail.com">Copy</button>
                     </div>
-                </div>
-
-                <!-- GitHub -->
-                <div class="social-card" data-platform="github">
-                    <div class="card-content">
-                        <img src="https://img.icons8.com/material-rounded/48/000000/github.png" alt="GitHub Logo">
-                        <h3>GitHub</h3>
-                        <p>Check out my projects and contributions</p>
-                        <a href="https://github.com/avnish2105" class="social-link">Follow</a>
-                    </div>
-                </div>
-
-                <!-- Instagram -->
-                <div class="social-card" data-platform="instagram">
-                    <div class="card-content">
-                        <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram Logo">
-                        <h3>Instagram</h3>
-                        <p>Behind the scenes of my tech journey</p>
-                        <a href="https://www.instagram.com/av.nish2105/" class="social-link">Follow</a>
-                    </div>
+                    <ul class="social-row">
+                        <li>
+                            <a href="https://www.linkedin.com/in/avnish-deshmukh" class="social-pill">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="i-stroke"><rect x="2.5" y="2.5" width="19" height="19" rx="4"/><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-6M11.5 13.5a2.5 2.5 0 0 1 5 0v3"/></svg>
+                                <span><strong>LinkedIn</strong><small>Vice-Captain, MIT WPU-Tech Team</small></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/avnish2105" class="social-pill">
+                                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" class="i-fill"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                                <span><strong>GitHub</strong><small>Check out my projects and contributions</small></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:avnishd2105@gmail.com" class="social-pill">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="i-stroke"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>
+                                <span><strong>Email</strong><small>Write to me</small></span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Avnish Deshmukh. Building the future with code and robotics.</p>
+        <ul class="footer-links">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="writing/index.html">Writing</a></li>
+            <li><a href="treks.html">Treks</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="feed.xml">RSS</a></li>
+        </ul>
+        <p>&copy; 2026 Avnish Deshmukh. Building the future with code and robotics.</p>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="backToTopBtn" aria-label="Back to top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+    <button id="backToTopBtn" type="button" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
             <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z" />
         </svg>
     </button>
 
-    <!-- Interactive Background -->
-    <div id="particles-js"></div>
-
-    <!-- Joke Card -->
-    <div class="joke-card" id="jokeCard">
-        <div class="joke-label">
-            <span class="joke-icon">🤖</span>
-            <span>Robot's Comedy Circuit</span>
-        </div>
-        <div class="joke-content">
-            <p id="jokeText"></p>
-        </div>
-    </div>
-
-    <div class="cursor-trail"></div>
 </body>
 
 </html>
