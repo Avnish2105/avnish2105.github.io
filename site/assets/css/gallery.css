@@ -1,3 +1,7 @@
+.gallery-main {
+    padding-top: 7rem;
+}
+
 .gallery-container {
     max-width: 1600px;
     margin: 2rem auto;
@@ -11,7 +15,7 @@
 .gallery-section h2 {
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--dark);
+    color: var(--heading);
     font-size: 2rem;
     position: relative;
 }
@@ -47,7 +51,7 @@
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
     cursor: pointer;
-    background: var(--white);
+    background: var(--surface);
 }
 
 .gallery-item:hover {
@@ -226,5 +230,20 @@
     .dual-image {
         min-height: 250px;
         margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-main {
+        padding-top: 8rem; /* navbar wraps to two rows on phones */
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-item:hover,
+    .dual-image:hover,
+    .gallery-item:hover img,
+    .dual-image:hover img {
+        transform: none;
     }
 }

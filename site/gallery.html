@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0b1120">
     <title>MIT Tech Team Gallery - Avnish Deshmukh</title>
+    <meta name="description" content="Photos from Avnish Deshmukh's seasons with the MIT WPU-Tech Team at DD Robocon: the arena, the sub-teams and the lab.">
+    <meta name="author" content="Avnish Deshmukh">
+    <link rel="canonical" href="https://avnish2105.github.io/gallery.html">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://avnish2105.github.io/gallery.html">
+    <meta property="og:title" content="MIT Tech Team Gallery - Avnish Deshmukh">
+    <meta property="og:description" content="Photos from DD Robocon seasons with the MIT WPU-Tech Team.">
+    <meta property="og:image" content="https://avnish2105.github.io/assets/images/profile.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script defer src="assets/js/analytics.js"></script>
+    <script defer src="assets/js/gallery.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/gallery.css">
-    <script defer src="assets/js/gallery.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -14,21 +34,23 @@
     <link rel="icon" sizes="16x16" href="assets/icons/favicon-16x16.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="Avnish Deshmukh - Writing" href="feed.xml">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main">
         <div class="nav-content">
-            <div class="logo">AD</div>
+            <a href="index.html" class="logo" aria-label="Avnish Deshmukh, home">AD</a>
             <div class="nav-links">
-                <a href="index.html#about">About</a>
-                <a href="index.html#journey">Journey</a>
-                <a href="index.html#connect">Connect</a>
-                <a href="gallery.html" class="active">Gallery</a>
+                <a href="index.html">Home</a>
+                <a href="work.html">Work</a>
+                <a href="writing/index.html">Writing</a>
+                <a href="treks.html">Treks</a>
+                <a href="gallery.html" aria-current="page">Gallery</a>
             </div>
         </div>
     </nav>
 
-    <main style="padding-top: 5rem;">
+    <main class="gallery-main">
         <div class="gallery-container">
             <h1 class="section-title">MIT Tech Team Gallery</h1>
             
@@ -125,5 +147,8 @@
         <img src="" alt="Enlarged image">
     </div>
 
+    <footer>
+        <p>&copy; 2026 Avnish Deshmukh. Building the future with code and robotics.</p>
+    </footer>
 </body>
 </html>
